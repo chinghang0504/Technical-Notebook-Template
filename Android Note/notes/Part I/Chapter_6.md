@@ -1,0 +1,226 @@
+# [Kotlin Note](../../README.md) - Chapter 6 Single Activity with ViewModel
+| Chapter | Title |
+| :-: | :- |
+| 6.1 | [Problem: Configuration Changes](#61-problem-configuration-changes) |
+|  | [Screen Orientation Change](#screen-orientation-change) |
+| 6.2 | [ViewModel](#62-viewmodel) |
+| 6.3 | [Gradle Script](#63-gradle-script) |
+| 6.4 | [ViewModel (QuizViewModel.kt)](#64-viewmodel-quizviewmodelkt) |
+| 6.5 | [Activity Class (MainActivity.kt)](#65-activity-class-mainactivitykt) |
+| 6.6 | [Demonstration](#66-demonstration) |
+
+<br />
+
+## 6.1 [Problem: Configuration Changes](https://developer.android.com/guide/topics/resources/runtime-changes)
+- Some device configurations can change while the app is running. These include, but aren't limited to:
+    - App display size
+    - Screen orientation
+    - Font size and weight
+    - Locale
+    - Dark mode versus light mode
+    - Keyboard availability
+- The system recreates an Activity when a configuration change occurs. To do this, the system calls onDestroy() and destroys the existing Activity instance. It then creates a new instance using onCreate(), and this new Activity instance is initialized with the new, updated configuration. This also means that the system also recreates the UI with the new configuration.
+
+### Screen Orientation Change
+After opened the app
+![](../../images/Part%20I/image_6_1.png)
+
+After clicked the next button
+![](../../images/Part%20I/image_6_2.png)
+
+After rotated
+![](../../images/Part%20I/image_6_3.png)
+
+<br />
+
+## 6.2 [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
+- The ViewModel class is a business logic or screen level state holder. It exposes state to the UI and encapsulates related business logic. Its principal advantage is that it caches state and persists it through configuration changes. This means that your UI doesn’t have to fetch data again when navigating between activities, or following configuration changes, such as when rotating the screen.
+
+<br />
+
+## 6.3 Gradle Script
+```kotlin
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+    namespace = "com.example.geoquiz"
+    compileSdk = 33
+
+    defaultConfig {
+        applicationId = "com.example.geoquiz"
+        minSdk = 24
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.activity:activity-ktx:1.7.2")
+}
+```
+
+<br />
+
+## 6.4 ViewModel (QuizViewModel.kt)
+```kotlin
+package com.example.geoquiz
+
+import androidx.lifecycle.ViewModel
+
+class QuizViewModel : ViewModel() {
+
+    private val questionBank = listOf(
+        Question(R.string.question_australia, true),
+        Question(R.string.question_oceans, true),
+        Question(R.string.question_mideast, false),
+        Question(R.string.question_africa, false),
+        Question(R.string.question_americas, true),
+        Question(R.string.question_asia, true)
+    )
+
+    private var currentIndex = 0
+
+    val currentQuestionAnswer: Boolean
+        get() = questionBank[currentIndex].answer
+
+    val currentQuestionText: Int
+        get() = questionBank[currentIndex].textResId
+
+    fun moveToNext() {
+        currentIndex = (currentIndex + 1) % questionBank.size
+    }
+}
+```
+
+<br />
+
+## 6.5 Activity Class (MainActivity.kt)
+```kotlin
+package com.example.geoquiz
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.viewModels
+import com.example.geoquiz.databinding.ActivityMainBinding
+
+private const val TAG = "MainActivity"
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    private val quizViewModel: QuizViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate Callback")
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.trueButton.setOnClickListener {
+            checkAnswer(true)
+        }
+        binding.falseButton.setOnClickListener {
+            checkAnswer(false)
+        }
+        binding.nextButton.setOnClickListener {
+            quizViewModel.moveToNext()
+            updateQuestion()
+        }
+
+        updateQuestion()
+    }
+
+    private fun updateQuestion() {
+        val questionTextResId = quizViewModel.currentQuestionText
+        binding.questionTextView.setText(questionTextResId)
+    }
+
+    private fun checkAnswer(userAnswer: Boolean) {
+        val correctAnswer = quizViewModel.currentQuestionAnswer
+
+        val messageResId = if (userAnswer == correctAnswer) {
+            R.string.correct_toast
+        } else {
+            R.string.incorrect_toast
+        }
+
+        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart Callback")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume Callback")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause Callback")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop Callback")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy Callback")
+    }
+}
+```
+
+<br />
+
+## 6.6 Demonstration
+After opened the app
+![](../../images/Part%20I/image_6_4.png)
+
+After clicked the next button
+![](../../images/Part%20I/image_6_5.png)
+
+After rotated
+![](../../images/Part%20I/image_6_6.png)
+
+<br />
