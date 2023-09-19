@@ -1,64 +1,53 @@
-# [Kotlin Note](../../README.md) - Chapter 3 Data Classes
+# [Kotlin Note](../../README.md) - Chapter 3 Nested Classes
 | Chapter | Title |
 | :-: | :- |
-| 3.1 | [Data Class Delcaration](#31-data-class-delcaration) |
-| 3.2 | [Data Class Default Methods](#32-data-class-default-methods) |
-|  | [Using toString Method](#using-tostring-method) |
-|  | [Using equals Method](#using-equals-method) |
-|  | [Using hashCode Method](#using-hashcode-method) |
-|  | [Using copy Method](#using-copy-method) |
-| 3.3 | [Destructing Data Class](#33-destructing-data-class) |
+| 3.1 | [Nested Class Declaration](#31-nested-class-declaration) |
+| 3.2 | [Nested Class Properties and Methods](#32-nested-class-properties-and-methods) |
+|  | [Accessing Nested Class Properties](#accessing-nested-class-properties) |
+|  | [Calling Nested Class Methods](#calling-nested-class-methods) |
 
 <br />
 
-## 3.1 Data Class Delcaration
+## 3.1 Nested Class Declaration
 ```kotlin
-data class Food(val name: String, val energy: Double)
+class Animal {
+
+    class Body {
+    }
+}
 ```
 ```kotlin
-val food: Food = Food("Meat", 100.0)
+val animalBody: Animal.Body = Animal.Body()
 ```
 
-<br />
-
-## 3.2 Data Class Default Methods
-### Using toString Method
+## 3.2 Nested Class Properties and Methods
 ```kotlin
-println(food.toString())        // Food(name=Meat, energy=100.0)
-```
+class Animal {
 
-### Using equals Method
-```kotlin
-println(food1.equals(food2))    // true
-```
+    class Body {
 
-### Using hashCode Method
-```kotlin
-println(food.hashCode())        // 1153791349
-```
+        var health: Double = 0.0
 
-### Using copy Method
-```kotlin
-val food1: Food = Food("Meat", 100.0)
-val food2: Food = food1.copy()
+        fun printlnHealth() {
+            println("Health: $health")
+        }
+    }
 
-println(food1.equals(food2))        // true
+    var body: Body = Body()
+}
 ```
 ```kotlin
-val food1: Food = Food("Meat", 100.0)
-val food2: Food = food1.copy(name = "Apple")
-
-println(food1.equals(food2))        // false
+val animal: Animal = Animal()
 ```
 
-<br />
-
-## 3.3 Destructing Data Class
+### Accessing Nested Class Properties
 ```kotlin
-val (name, energy) = Food("Meat", 100.0)
+animal.body.health = 100.0
+```
 
-println(name)       // Meat
-println(energy)     // 100.0
+### Calling Nested Class Methods
+```kotlin
+animal.body.printlnHealth()
 ```
 
 <br />

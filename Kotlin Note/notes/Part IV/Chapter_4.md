@@ -1,82 +1,64 @@
-# [Kotlin Note](../../README.md) - Chapter 4 Enum Classes
+# [Kotlin Note](../../README.md) - Chapter 4 Data Classes
 | Chapter | Title |
 | :-: | :- |
-| 4.1 | [Enum Class Declaration](#41-enum-class-declaration) |
-| 4.2 | [Enum Class Properties and Methods](#42-enum-class-properties-and-methods) |
-|  | [Accessing Enum Class Properties](#accessing-enum-class-properties) |
-|  | [Calling Enum Class Methods](#calling-enum-class-methods) |
-| 4.3 | [Enum Class Default Methods](#43-enum-class-default-methods) |
+| 4.1 | [Data Class Delcaration](#41-data-class-delcaration) |
+| 4.2 | [Data Class Default Methods](#42-data-class-default-methods) |
 |  | [Using toString Method](#using-tostring-method) |
 |  | [Using equals Method](#using-equals-method) |
 |  | [Using hashCode Method](#using-hashcode-method) |
+|  | [Using copy Method](#using-copy-method) |
+| 4.3 | [Destructing Data Class](#43-destructing-data-class) |
 
 <br />
 
-## 4.1 Enum Class Declaration
+## 4.1 Data Class Delcaration
 ```kotlin
-enum class LivingPlace {
-    Land,
-    Sea,
-    Sky,
-    Tree,
-    Cave
-}
+data class Food(val name: String, val energy: Double)
 ```
 ```kotlin
-val land: LivingPlace = LivingPlace.Land
+val food: Food = Food("Meat", 100.0)
 ```
 
 <br />
 
-## 4.2 Enum Class Properties and Methods
-```kotlin
-enum class LivingPlace(val elevation: Double) {
-    Land(0.0),
-    Sea(-10.0),
-    Sky(10.0),
-    Tree(2.0),
-    Cave(-1.0);
-
-    fun printElevation() {
-        println("Elevation: $elevation")
-    }
-}
-```
-```kotlin
-val land: LivingPlace = LivingPlace.Land
-```
-
-### Accessing Enum Class Properties
-```kotlin
-println(land.elevation)
-```
-
-### Calling Enum Class Methods
-```kotlin
-land.printElevation()
-```
-
-<br />
-
-## 4.3 Enum Class Default Methods
+## 4.2 Data Class Default Methods
 ### Using toString Method
 ```kotlin
-val land: LivingPlace = LivingPlace.Land
-println(land.toString())        // Land
+println(food.toString())        // Food(name=Meat, energy=100.0)
 ```
 
 ### Using equals Method
 ```kotlin
-val land1: LivingPlace = LivingPlace.Land
-val land2: LivingPlace = LivingPlace.Land
-
-println(land1.equals(land2))    // true
+println(food1.equals(food2))    // true
 ```
 
 ### Using hashCode Method
 ```kotlin
-val land: LivingPlace = LivingPlace.Land
-println(land.hashCode())        // 455896770
+println(food.hashCode())        // 1153791349
+```
+
+### Using copy Method
+```kotlin
+val food1: Food = Food("Meat", 100.0)
+val food2: Food = food1.copy()
+
+println(food1.equals(food2))        // true
+```
+```kotlin
+val food1: Food = Food("Meat", 100.0)
+val food2: Food = food1.copy(name = "Apple")
+
+println(food1.equals(food2))        // false
+```
+
+<br />
+
+## 4.3 Destructing Data Class
+```kotlin
+val (name, energy) = Food("Meat", 100.0)
+
+println(name)       // Meat
+println(energy)     // 100.0
 ```
 
 <br />

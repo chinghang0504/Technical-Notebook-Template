@@ -1,79 +1,71 @@
-# [Kotlin Note](../../README.md) - Chapter 2 Built-In Data Types
+# [Kotlin Note](../../README.md) - Chapter 2 Basic Types
 | Chapter | Title |
 | :-: | :- |
 | 2.1 | [Numbers](#21-numbers) |
-|  | [Signed Integers](#signed-integers) |
-|  | [Unsigned Integers](#unsigned-integers) |
-|  | [Floating Point Numbers](#floating-point-numbers) |
+|  | [Integer Types](#integer-types) |
+|  | [Unsigned Integer Types](#unsigned-integer-types) |
+|  | [Floating-Point Types](#floating-point-types) |
 | 2.2 | [Booleans](#22-booleans) |
 | 2.3 | [Characters](#23-characters) |
 | 2.4 | [Strings](#24-strings) |
-| 2.5 | [Collections](#25-collections) |
-|  | [Mutable Collections](#mutable-collections) |
-|  | [Immutable Collections](#immutable-collections) |
+| 2.5 | [Arrays](#25-arrays) |
 
 <br />
 
-## 2.1 Numbers
-### Signed Integers
-| Type | Description | Bytes | Example |
+## 2.1 [Numbers](https://kotlinlang.org/docs/numbers.html)
+### [Integer Types](https://kotlinlang.org/docs/numbers.html#integer-types)
+| Type | Size (bits) | Min Value | Max Value |
 | :-- | :-- | :-- | :-- |
-| Byte | Signed integer | 1 | 100 |
-| Short | Signed integer | 2 | 100 |
-| Int | Signed integer | 4 | 100 |
-| Long | Signed integer | 8 | 100 |
+| Byte | 8 | -128 | 127 |
+| Short | 16 | -32768 | 32767 |
+| Int | 32 | -2,147,483,648 (-2^31) | 2,147,483,647 (2^31 - 1) |
+| Long | 64 | -9,223,372,036,854,775,808 (-2^63) | 9,223,372,036,854,775,807 (2^63 - 1) |
 
-### Unsigned Integers
-| Type | Description | Bytes | Example |
+### [Unsigned Integer Types](https://kotlinlang.org/docs/unsigned-integer-types.html)
+| Type | Size (bits) | Min Value | Max Value |
 | :-- | :-- | :-- | :-- |
-| UByte | Unsigned integer | 1 | 100u |
-| UShort | Unsigned integer | 2 | 100u |
-| UInt | Unsigned integer | 4 | 100u |
-| ULong | Unsigned integer | 8 | 100u |
+| UByte | 8 | 0 | 255 |
+| UShort | 16 | 0 | 65535 |
+| UInt | 32 | 0 | 2^32 - 1 |
+| ULong | 64 | 0 | 2^64 - 1 |
 
-### Floating Point Numbers
-| Type | Description | Bytes | Example |
-| :-- | :-- | :-- | :-- |
-| Float | Floating point number | 4 | 100.0F |
-| Double | Floating point number | 8 | 100.0 |
-
-<br />
-
-## 2.2 Booleans
-| Type | Description | Example |
-| :-- | :-- | :-- |
-| Boolean | Boolean Value | true |
-|  |  | false |
+### [Floating-Point Types](https://kotlinlang.org/docs/numbers.html#floating-point-types)
+| Type | Size (bits) | Significant Bits | Exponent Bits | Decimal Digits |
+| :-- | :-- | :-- | :-- | :-- |
+| Float | 32 | 24 | 8 | 6-7 |
+| Double | 64 | 53 | 11 | 15-16 |
 
 <br />
 
-## 2.3 Characters
-| Type | Description | Example |
-| :-- | :-- | :-- |
-| Char | Character | 'A' |
+## 2.2 [Booleans](https://kotlinlang.org/docs/booleans.html)
+- Boolean
+```kotlin
+val tureValue: Boolean = true
+val falseValue: Boolean = false
+```
 
 <br />
 
-## 2.4 Strings
-| Type | Description | Example |
-| :-- | :-- | :-- |
-| String | Sequence of characters | "Hello World" |
+## 2.3 [Characters](https://kotlinlang.org/docs/characters.html)
+- Char
+```kotlin
+val ch: Char = 'A'
+```
 
 <br />
 
-## 2.5 Collections
-### Mutable Collections
-| Type | Description | Change Size | Change Element though Index/Key | Example |
-| :-- | :-- | :--: | :--: | :-- |
-| MutableList\<Int> | Mutable list | Y | Y | mutableListOf(1, 2, 3) |
-| MutableSet\<Int> | Mutable Set | Y | - | mutableSetOf(1, 2, 3) |
-| MutableMap\<Int, Char> | Mutable Map | Y | Y | mutableMapOf(1 to 'A', 2 to 'B', 3 to 'C') |
+## 2.4 [Strings](https://kotlinlang.org/docs/strings.html)
+- String
+```kotlin
+val str: String = "Hello World"
+```
 
-### Immutable Collections
-| Type | Description | Change Size | Change Element though Index/Key | Example |
-| :-- | :-- | :--: | :--: | :-- |
-| List\<Int> | Immutable list | N | N | listOf(1, 2, 3) |
-| Set\<Int> | Immutable Set | N | - | setOf(1, 2, 3) |
-| Map\<Int, Char> | Immutable Map | N | N | mapOf(1 to 'A', 2 to 'B', 3 to 'C') |
+<br />
+
+## 2.5 [Arrays](https://kotlinlang.org/docs/arrays.html)
+- Array<T>
+```kotlin
+val array: Array<Int> = arrayOf(1, 2, 3)
+```
 
 <br />

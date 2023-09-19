@@ -8,6 +8,7 @@
 | Name | Version | Last Modified |
 | :-- | :--: | :--: |
 | [Kotlin Note](./Kotlin%20Note/README.md) |  |  |
+| Kotlin Concurrency Note |  |  |
 | [Android Note](./Android%20Note/README.md) |  |  |
 | Swift |  |  |
 | iOS |  |  |

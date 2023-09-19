@@ -5,9 +5,12 @@
 |  | [Single-line Comments](#single-line-comments) |
 |  | [Multi-line Comments](#multi-line-comments) |
 | 1.2 | [main Function](#12-main-function) |
-| 1.3 | [Reading Console Input](#13-reading-console-input) |
-|  | [Using readLine Method](#using-readline-method) |
-|  | [Using readln Method](#using-readln-method) |
+| 1.3 | [Keywords and Operators](#13-keywords-and-operators) |
+|  | [Hard Keywords](#hard-keywords) |
+|  | [Soft Keywords](#soft-keywords) |
+|  | [Modifier Keywords](#modifier-keywords) |
+|  | [Special Identifiers](#special-identifiers) |
+|  | [Operators and Special Symbols](#operators-and-special-symbols) |
 
 <br />
 
@@ -35,15 +38,76 @@ fun main(args: Array<String>) {
 
 <br />
 
-## 1.3 Reading Console Input
-### Using readLine Method
-```kotlin
-val str: String? = readLine()
-```
+## 1.3 [Keywords and Operators](https://kotlinlang.org/docs/keyword-reference.html)
+### [Hard Keywords](https://kotlinlang.org/docs/keyword-reference.html#hard-keywords)
+- The following tokens are always interpreted as keywords and cannot be used as identifiers:
 
-### Using readln Method
-```kotlin
-val str: String = readln()
-```
+|  |  |  |  |  |
+| :-- | :-- | :-- | :-- | :-- |
+| as | as? | break | class | continue |
+| do | else | false | for | fun |
+| if | in | !in | interface | is |
+| !is | null | object | package | return |
+| super | this | throw | true | try |
+| typealias | typeof | val | var | when |
+| while |  |  |  |  |
+
+### [Soft Keywords](https://kotlinlang.org/docs/keyword-reference.html#soft-keywords)
+- The following tokens act as keywords in the context in which they are applicable, and they can be used as identifiers in other contexts:
+
+|  |  |  |  |  |
+| :-- | :-- | :-- | :-- | :-- |
+| by | catch | constructor | delegate | dynamic |
+| field | file | finally | get | import |
+| init | param | property | receiver | set |
+| setparam | value | where |  |  |
+
+### [Modifier Keywords](https://kotlinlang.org/docs/keyword-reference.html#modifier-keywords)
+- The following tokens act as keywords in modifier lists of declarations, and they can be used as identifiers in other contexts:
+
+|  |  |  |  |  |
+| :-- | :-- | :-- | :-- | :-- |
+| abstract | actual | annotation | companion | const |
+| crossinline | data | enum | expect | external |
+| final | infix | inline | inner | internal |
+| lateinit | noinline | open | operator | out |
+| override | private | protected | public | reified |
+| sealed | suspend | tailrec | vararg |  |
+
+### [Special Identifiers](https://kotlinlang.org/docs/keyword-reference.html#special-identifiers)
+- The following identifiers are defined by the compiler in specific contexts, and they can be used as regular identifiers in other contexts:
+
+|  |  |  |  |  |
+| :-- | :-- | :-- | :-- | :-- |
+| field | it |  |  |  |
+
+
+### [Operators and Special Symbols](https://kotlinlang.org/docs/keyword-reference.html#operators-and-special-symbols)
+- Kotlin supports the following operators and special symbols:
+
+|  |  |  |  |  |
+| :-- | :-- | :-- | :-- | :-- |
+| + | - | * | / | % |
+| = |  |  |  |  |
+| += | -= | *= | /= | %= |
+| ++ | -- |  |  |  |
+| && | \|\| | ! |  |  |
+| == | != |  |  |  |
+| === | !== |  |  |  |
+| < | > | <= | >= |  |
+| [ | ] |  |  |  |
+| !! |  |  |  |  |
+| ?. |  |  |  |  |
+| ?: |  |  |  |  |
+| :: |  |  |  |  |
+| .. | ..< |  |  |  |
+| : |  |  |  |  |
+| ? |  |  |  |  |
+| -> |  |  |  |  |
+| @ |  |  |  |  |
+| ; |  |  |  |  |
+| $ |  |  |  |  |
+| _ |  |  |  |  |
+
 
 <br />

@@ -1,173 +1,183 @@
-# [Kotlin Note](../../README.md) - Chapter 2 Sets
+# [Kotlin Note](../../README.md) - Chapter 2 Initialization
 | Chapter | Title |
 | :-: | :- |
-| 2.1 | [Set Data Types](#21-set-data-types) |
-| 2.2 | [Creating a Set](#22-creating-a-set) |
-|  | [Creating an Empty Mutable Set](#creating-an-empty-mutable-set) |
-|  | [Creating a Non-Empty Mutable Set](#creating-a-non-empty-mutable-set) |
-|  | [Creating an Empty Immutable Set](#creating-an-empty-immutable-set) |
-|  | [Creating a Non-Empty Immutable Set](#creating-a-non-empty-immutable-set) |
-| 2.3 | [Set Properties](#23-set-properties) |
-|  | [size](#size) |
-| 2.4 | [Adding an Element (MutableSet)](#24-adding-an-element-mutableset) |
-|  | [Using add Method](#using-add-method) |
-|  | [Using addAll Method](#using-addall-method) |
-| 2.5 | [Removing an Element (MutableSet)](#25-removing-an-element-mutableset) |
-|  | [Using remove Method](#using-remove-method) |
-| 2.6 | [Removing Elements (MutableSet)](#26-removing-elements-mutableset) |
-|  | [Using clear Method](#using-clear-method) |
-|  | [Using removeAll Method](#using-removeall-method) |
-| 2.7 | [Checking Elements](#27-checking-elements) |
-|  | [Using in Operator or contains Method](#using-in-operator-or-contains-method) |
-|  | [Using containsAll Method](#using-containsall-method) |
-| 2.8 | [Iterating over a Set](#28-iterating-over-a-set) |
-|  | [Using forEach Method](#using-foreach-method) |
-|  | [Using forEachIndexed Function](#using-foreachindexed-function) |
-| 2.9 | [Converting between Collections](#29-converting-between-collections) |
-|  | [Using toMutableList Method](#using-tomutablelist-method) |
-|  | [Using toList Method](#using-tolist-method) |
-|  | [Using toMutableSet Method](#using-tomutableset-method) |
-|  | [Using toSet Method](#using-toset-method) |
+| 2.1 | [Constructors](#21-constructors) |
+|  | [Empty Constructor](#empty-constructor) |
+|  | [Primary Constructor without Defining Properties](#primary-constructor-without-defining-properties) |
+|  | [Primary Constructor with Defining Properties](#primary-constructor-with-defining-properties) |
+|  | [Secondary Constructor without Calling a Primary Constructor](#secondary-constructor-without-calling-a-primary-constructor) |
+|  | [Secondary Constructor with Calling a Primary Constructor](#secondary-constructor-with-calling-a-primary-constructor) |
+|  | [Secondary Constructor with Calling a Secondary Constructor](#secondary-constructor-with-calling-a-secondary-constructor) |
+| 2.2 | [Initializer Blocks](#22-initializer-blocks) |
+|  | [Initializer Block with Assigning Properties](#initializer-block-with-assigning-properties) |
+|  | [Initializer Block with Precondition Functions](#initializer-block-with-precondition-functions) |
+| 2.3 | [Initialization Order](#23-initialization-order) |
+| 2.4 | [Late Initialization](#24-late-initialization) |
+| 2.5 | [Lazy Initialization](#25-lazy-initialization) |
 
 <br />
 
-## 2.1 Set Data Types
-| Type | Description | Change Size | Change Element though Index/Key | Example |
-| :-- | :-- | :--: | :--: | :-- |
-| MutableSet\<Int> | Mutable Set | Y | - | mutableSetOf(1, 2, 3) |
-| Set\<Int> | Immutable Set | N | - | setOf(1, 2, 3) |
-
-<br />
-
-## 2.2 Creating a Set
-### Creating an Empty Mutable Set
+## 2.1 Constructors
+### Empty Constructor
 ```kotlin
-val set: MutableSet<Int> = mutableSetOf()
-```
-
-### Creating a Non-Empty Mutable Set
-```kotlin
-val set: MutableSet<Int> = mutableSetOf(1, 2, 3)
-```
-
-### Creating an Empty Immutable Set
-```kotlin
-val set: Set<Int> = setOf()
-```
-
-### Creating a Non-Empty Immutable Set
-```kotlin
-val set: Set<Int> = setOf(1, 2, 3)
-```
-
-<br />
-
-## 2.3 Set Properties
-### size
-- Returns the size of the collection.
-
-```kotlin
-val num: Int = set.size
-```
-
-<br />
-
-## 2.4 Adding an Element (MutableSet)
-### Using add Method
-- Adds the specified element to the set.
-```kotlin
-set.add(100)
-```
-
-### Using addAll Method
-- Adds all of the elements of the specified collection to this collection.
-```kotlin
-set.addAll(listOf(4, 5, 6))
-```
-
-<br />
-
-## 2.5 Removing an Element (MutableSet)
-### Using remove Method
-- Removes a single instance of the specified element from this collection, if it is present.
-```kotlin
-set.remove(1)
-```
-
-<br />
-
-## 2.6 Removing Elements (MutableSet)
-### Using clear Method
-- Removes all elements from this collection.
-```kotlin
-set.clear()
-```
-
-### Using removeAll Method
-- Removes all of this collection's elements that are also contained in the specified collection.
-```kotlin
-set.removeAll(listOf(1, 2, 3))
-```
-<br />
-
-## 2.7 Checking Elements
-### Using in Operator or contains Method
-- Returns true if element is found in the collection.
-```kotlin
-val answer: Boolean = 1 in set
-```
-```kotlin
-val answer: Boolean = set.contains(1)
-```
-
-### Using containsAll Method
-- Checks if all elements in the specified collection are contained in this collection.
-```kotlin
-val answer: Boolean = set.containsAll(listOf(1, 2, 3))
-```
-
-<br />
-
-## 2.8 Iterating over a Set
-### Using forEach Method
-```kotlin
-set.forEach {
-    println(it)
+class Animal {
 }
 ```
-
-### Using forEachIndexed Function
 ```kotlin
-set.forEachIndexed { index, i ->
-    println(i)
+val animal: Animal = Animal()
+```
+
+### Primary Constructor without Defining Properties
+```kotlin
+class Animal(initialMovingSpeed: Double) {
+
+    var movingSpeed: Double = initialMovingSpeed
 }
+```
+```kotlin
+val animal: Animal = Animal(100.0)
+```
+
+### Primary Constructor with Defining Properties
+```kotlin
+class Animal(var movingSpeed: Double) {
+}
+```
+```kotlin
+val animal: Animal = Animal(100.0)
+```
+
+### Secondary Constructor without Calling a Primary Constructor
+```kotlin
+class Animal {
+
+    var movingSpeed: Double
+
+    constructor(initialMovingSpeed: Double) {
+        movingSpeed = initialMovingSpeed
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal(100.0)
+```
+
+### Secondary Constructor with Calling a Primary Constructor
+```kotlin
+class Animal(initialMovingSpeed: Double, val name: String) {
+
+    var movingSpeed: Double = initialMovingSpeed
+
+    constructor(name: String) : this(0.0, name) {
+        println("Calling a secondary constructor")
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal("Dog")
+```
+
+### Secondary Constructor with Calling a Secondary Constructor
+```kotlin
+class Animal(initialMovingSpeed: Double, val name: String) {
+
+    var movingSpeed: Double = initialMovingSpeed
+
+    constructor(name: String) : this(0.0, name)
+
+    constructor() : this(0.0, "Unknown")
+}
+```
+```kotlin
+val animal: Animal = Animal()
 ```
 
 <br />
 
-## 2.9 Converting between Collections
-### Using toMutableList Method
+## 2.2 Initializer Blocks
+### Initializer Block with Assigning Properties
 ```kotlin
-val mutableSet: MutableSet<Int> = mutableSetOf(1, 2, 3)
-val mutableList: MutableList<Int> = mutableSet.toMutableList()
+class Animal() {
+
+    var movingSpeed: Double
+
+    init {
+        movingSpeed = 0.0
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal()
 ```
 
-### Using toList Method
+### Initializer Block with Precondition Functions
 ```kotlin
-val mutableSet: MutableSet<Int> = mutableSetOf(1, 2, 3)
-val immMutableList: List<Int> = mutableSet.toList()
+class Animal(initialMovingSpeed: Double) {
+
+    var movingSpeed: Double = initialMovingSpeed
+
+    init {
+        require(movingSpeed >= 0.0)
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal(-1.0)
 ```
 
-### Using toMutableSet Method
+<br />
+
+## 2.3 Initialization Order
+### Using Empty Constructor
+1. Assigning properties in the class
+2. Executing an initializer block
+
+### Using Primary Constructor
+1. Assigning properties in the primary constructor
+2. Assigning properties in the class
+3. Executing an initializer block
+
+### Using Secondary Constructor
+1. Calling a primary constructor
+2. Assigning properties in the primary constructor
+3. Assigning properties in the class
+4. Executing an initializer block
+5. Executing a secondary constructor block
+
+<br />
+
+## 2.4 Late Initialization
+- The limitations of late initialization
+    1. can only be used with var properties
+    2. cannot define a custom getter or setter
+    3. cannot be the primitive types
+
 ```kotlin
-val immutableSet: Set<Int> = setOf(1, 2, 3)
-val mutableSet: MutableSet<Int> = immutableSet.toMutableSet()
+class Animal() {
+
+    lateinit var name: String
+}
+```
+```kotlin
+val animal: Animal = Animal()
 ```
 
-### Using toSet Method
+<br />
+
+## 2.5 Lazy Initialization
 ```kotlin
-val mutableSet: MutableSet<Int> = mutableSetOf(1, 2, 3)
-val immutableSet: Set<Int> = mutableSet.toSet()
+class Animal() {
+
+    val name: String by lazy {
+        println("Calling a lazy initialization")
+        "Unknown"
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal()
+animal.name
+animal.name
 ```
 
 <br />

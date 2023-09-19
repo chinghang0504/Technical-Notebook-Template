@@ -1,118 +1,79 @@
-# [Kotlin Note](../../README.md) - Chapter 1 Objects
+# [Kotlin Note](../../README.md) - Chapter 1 IO
 | Chapter | Title |
 | :-: | :- |
-| 1.1 | [Object Declaration](#11-object-declaration) |
-| 1.2 | [Object Properties and Methods](#12-object-properties-and-methods) |
-|  | [Accessing Object Properties](#accessing-object-properties) |
-|  | [Calling Object Methods](#calling-object-methods) |
-| 1.3 | [Object Initialize Block](#13-object-initialize-block) |
-| 1.4 | [Object Expression Declaration](#14-object-expression-declaration) |
-| 1.5 | [Object Expression Methods](#15-object-expression-methods) |
-|  | [Calling Object Expression Methods](#calling-object-expression-methods) |
-| 1.6 | [Companion Objects](#16-companion-objects) |
-|  | [Accessing Componion Object Properties](#accessing-componion-object-properties) |
-|  | [Calling Componion Object Methods](#calling-componion-object-methods) |
+| 1.1 | [Console Output](#11-console-output) |
+|  | [Function: print](#function-print) |
+|  | [Function: println](#function-println) |
+| 1.2 | [Console Input](#12-console-input) |
+|  | [Function: readLine](#function-readline) |
+|  | [Function: readln](#function-readln) |
+|  | [Function: readlnOrNull](#function-readlnornull) |
 
 <br />
 
-## 1.1 Object Declaration
+## 1.1 Console Output
+### [Function: print](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/print.html)
+- Prints the given message to the standard output stream.
 ```kotlin
-object Earth {
-}
+fun print(message: Any?)
 ```
 
-<br />
-
-## 1.2 Object Properties and Methods
+- Prints the given message to the standard output stream.
 ```kotlin
-object Earth {
-
-    val animalList: MutableList<Animal> = mutableListOf()
-
-    fun printAnimalNumber() {
-        println("Number of animals: ${animalList.size}")
-    }
-}
+fun print(message: Int)
+fun print(message: Long)
+fun print(message: Byte)
+fun print(message: Short)
+fun print(message: Char)
+fun print(message: Boolean)
+fun print(message: Float)
+fun print(message: Double)
+fun print(message: CharArray)
 ```
 
-### Accessing Object Properties
+### [Function: println](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
+- Prints the line separator to the standard output stream.
 ```kotlin
-val fish: Fish = Fish()
-Earth.animalList.add(fish)
+fun println()
 ```
 
-### Calling Object Methods
+- Prints the given message and the line separator to the standard output stream.
 ```kotlin
-Earth.printAnimalNumber()
+fun println(message: Any?)
 ```
 
-<br />
-
-## 1.3 Object Initialize Block
+- Prints the given message and the line separator to the standard output stream.
 ```kotlin
-object Earth {
-
-    val animalList: MutableList<Animal>
-
-    init {
-        animalList = mutableListOf(Fish(), Fish(), Fish())
-    }
-
-    fun printAnimalNumber() {
-        println("Number of animals: ${animalList.size}")
-    }
-}
+fun println(message: Int)
+fun println(message: Long)
+fun println(message: Byte)
+fun println(message: Short)
+fun println(message: Char)
+fun println(message: Boolean)
+fun println(message: Float)
+fun println(message: Double)
+fun println(message: CharArray)
 ```
 
 <br />
 
-## 1.4 Object Expression Declaration
+## 1.2 Console Input
+### [Function: readLine](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/read-line.html)
+- Reads a line of input from the standard input stream.
 ```kotlin
-val panda = object : Animal() {
-}
+fun readLine(): String?
 ```
 
-<br />
-
-## 1.5 Object Expression Methods
+### [Function: readln](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/readln.html)
+- Reads a line of input from the standard input stream and returns it, or throws a RuntimeException if EOF has already been reached when readln is called.
 ```kotlin
-val panda = object : Animal() {
-
-    override fun move() {
-        println("I am running")
-    }
-}
+fun readln(): String
 ```
 
-### Calling Object Expression Methods
+### [Function: readlnOrNull](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/readln-or-null.html)
+- Reads a line of input from the standard input stream and returns it, or return null if EOF has already been reached when readlnOrNull is called.
 ```kotlin
-panda.move()
-```
-
-<br />
-
-## 1.6 Companion Objects
-```kotlin
-class Fish : Animal() {
-
-    companion object {
-        var livingPlace: String = "sea"
-
-        fun printLivingPlace() {
-            println("I am living in the $livingPlace")
-        }
-    }
-}
-```
-
-### Accessing Componion Object Properties
-```kotlin
-println(Fish.livingPlace)
-```
-
-### Calling Componion Object Methods
-```kotlin
-Fish.printLivingPlace()
+fun readlnOrNull(): String?
 ```
 
 <br />
