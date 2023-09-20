@@ -1,134 +1,70 @@
-# [Kotlin Note](../../README.md) - Chapter 11 Exceptions
+# [Kotlin Note](../../README.md) - Chapter 10 Null Safety
 | Chapter | Title |
 | :-: | :- |
-| 10.1 | [Throwing an Exception](#101-throwing-an-exception) |
-|  | [Using throw Keyword](#using-throw-keyword) |
-| 10.2 | [Catching an Exception](#102-catching-an-exception) |
-|  | [Using try-catch Statement](#using-try-catch-statement) |
-|  | [Using try-catch Expression](#using-try-catch-expression) |
-| 10.3 | [Precondition Functions](#103-precondition-functions) |
-|  | [Using check Function](#using-check-function) |
-|  | [Using checkNotNull Function](#using-checknotnull-function) |
-|  | [Using require Function](#using-require-function) |
-|  | [Using requireNotNull Function](#using-requirenotnull-function) |
-|  | [Using error Function](#using-error-function) |
-| 10.4 | [Custom Exception](#104-custom-exception) |
+| 10.1 | [Nullable Data Types](#101-nullable-data-types) |
+| 10.2 | [Checking Null Value](#102-checking-null-value) |
+|  | [Using if Statement](#using-if-statement) |
+|  | [Using Safe Call Operator](#using-safe-call-operator) |
+|  | [Using Safe Call Operator and let Scope Function](#using-safe-call-operator-and-let-scope-function) |
+| 10.3 | [Assigning Default Value for Null Value](#103-assigning-default-value-for-null-value) |
+|  | [Using Null Coalesing Operator](#using-null-coalesing-operator) |
+| 10.4 | [Forcibly Removing Null Safety](#104-forcibly-removing-null-safety) |
+|  | [Using Non-Null Assertion Operator to Call a Function](#using-non-null-assertion-operator-to-call-a-function) |
+|  | [Using Non-Null Assertion Operator to Become a Non-Nullable Value](#using-non-null-assertion-operator-to-become-a-non-nullable-value) |
 
 <br />
 
-## 10.1 Throwing an Exception
-### Using throw Keyword
+## 10.1 Nullable Data Types
 ```kotlin
+val num: Int? = null
 val str: String? = null
-if (str == null) {
-    throw NullPointerException()
-}
 ```
 
 <br />
 
-## 10.2 Catching an Exception
-### Using try-catch Statement
+## 10.2 Checking Null Value
+### Using if Statement
 ```kotlin
 val str: String? = null
-
-try {
-    if (str == null) {
-        throw NullPointerException()
-    }
-} catch (e: NullPointerException) {
-    println("The exception is caught")
+if (str != null) {
+    str.uppercase()
 }
 ```
 
-### Using try-catch Expression
+### Using Safe Call Operator
 ```kotlin
 val str: String? = null
+str?.uppercase()
+```
 
-val message: String = try {
-    if (str == null) {
-        throw NullPointerException()
-    }
-    "Normal"
-} catch (e: NullPointerException) {
-    "Error"
+### Using Safe Call Operator and let Scope Function
+```kotlin
+val str: String? = null
+str?.let {
+    it.uppercase()
 }
+```
+
+## 10.3 Assigning Default Value for Null Value
+### Using Null Coalesing Operator
+```kotlin
+val str: String? = null
+val message: String = str ?: "Unknown"
 ```
 
 <br />
 
-## 10.3 Precondition Functions
-- Procondition functions check the condidtion and throw an exception with a custom message if the codition is false.
-
-| Function | Description |
-| :-- | :-- |
-| check | Throws an IllegalStateException if argument is false. |
-| checkNotNull | Throws an IllegalStateException if argument is null. Otherwise returns the nonnull value. |
-| require | Throws an IllegalArgumentException if argument is false. |
-| requireNotNull | Throws an IllegalArgumentException if argument is null. Otherwise returns the non-null value. |
-| error | Throws an IllegalStateException with a provided message. |
-
-### Using check Function
+## 10.4 Forcibly Removing Null Safety
+### Using Non-Null Assertion Operator to Call a Function
 ```kotlin
-val str: String? = null
-check(str != null)
-```
-```kotlin
-val str: String? = null
-check(str != null) {
-    "Null Value"
-}
+val str: String? = "Hello World"
+str!!.uppercase()
 ```
 
-### Using checkNotNull Function
+### Using Non-Null Assertion Operator to Become a Non-Nullable Value
 ```kotlin
-val str: String? = null
-val message: String = checkNotNull(str)
-```
-```kotlin
-val str: String? = null
-val message: String = checkNotNull(str) {
-    "Null Value"
-}
-```
-
-### Using require Function
-```kotlin
-val str: String? = null
-require(str != null)
-```
-```kotlin
-val str: String? = null
-require(str != null) {
-    "Null Value"
-}
-```
-
-### Using requireNotNull Function
-```kotlin
-val str: String? = null
-val message: String = requireNotNull(str)
-```
-```kotlin
-val str: String? = null
-val message: String = requireNotNull(str) {
-    "Null Value"
-}
-```
-
-### Using error Function
-```kotlin
-error("Error Message")
-```
-
-<br />
-
-## 10.4 Custom Exception
-```kotlin
-class IllegalValueException(message: String) : RuntimeException(message) {}
-```
-```kotlin
-throw IllegalValueException("Illegal Value")
+val str: String? = "Hello World"
+val message: String = str!!
 ```
 
 <br />

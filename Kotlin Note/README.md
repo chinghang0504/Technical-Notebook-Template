@@ -13,16 +13,17 @@
 | 1 | [Basics](./notes/Part%20I/Chapter_1.md) |
 | 2 | [Basic Types](./notes/Part%20I/Chapter_2.md) |
 | 3 | [Variables and Constants](./notes/Part%20I/Chapter_3.md) |
-| 4 | [Conditions](./notes/Part%20I/Chapter_4.md) |
-| 5 | [Ranges, Progressions, Conditions, and Loops](./notes/Part%20I/Chapter_5.md) |
-| 6 | [Functions](./notes/Part%20I/Chapter_6.md) |
-| 7 | [Numbers](./notes/Part%20I/Chapter_7.md) |
-| 8 | [Strings](./notes/Part%20I/Chapter_8.md) |
-| 9 | [Null Safety](./notes/Part%20I/Chapter_9.md) |
-| 10 | [Exceptions](./notes/Part%20I/Chapter_10.md) |
-| 11 | [Lambda Expressions](./notes/Part%20I/Chapter_11.md) |
-| 12 | [Functional Programming](./notes/Part%20I/Chapter_12.md) |
-| 13 | [Scope Functions](./notes/Part%20I/Chapter_13.md) |
+| 4 | [Ranges and Progressions](./notes/Part%20I/Chapter_4.md) |
+| 5 | [Conditions](./notes/Part%20I/Chapter_5.md) |
+| 6 | [Loops](./notes/Part%20I/Chapter_6.md) |
+| 7 | [Functions](./notes/Part%20I/Chapter_7.md) |
+| 8 | [Numbers](./notes/Part%20I/Chapter_8.md) |
+| 9 | [Strings](./notes/Part%20I/Chapter_9.md) |
+| 10 | [Null Safety](./notes/Part%20I/Chapter_10.md) |
+| 11 | [Exceptions](./notes/Part%20I/Chapter_11.md) |
+| 12 | [Lambda Expressions](./notes/Part%20I/Chapter_12.md) |
+| 13 | [Functional Programming](./notes/Part%20I/Chapter_13.md) |
+| 14 | [Scope Functions](./notes/Part%20I/Chapter_14.md) |
 
 ### Part II: Classes
 | Chapter | Title |

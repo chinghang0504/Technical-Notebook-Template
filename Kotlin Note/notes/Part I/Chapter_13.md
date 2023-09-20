@@ -1,129 +1,97 @@
-# [Kotlin Note](../../README.md) - Chapter 13 Scope Functions
+# [Kotlin Note](../../README.md) - Chapter 13 Functional Programming
 | Chapter | Title |
 | :-: | :- |
-| 13.1 | [Scope Function Summary](#131-scope-function-summary) |
-| 13.2 | [apply Scope Function](#132-apply-scope-function) |
-| 13.3 | [run Scope Function](#133-run-scope-function) |
-| 13.4 | [with Scope Function](#134-with-scope-function) |
-| 13.5 | [also Scope Function](#135-also-scope-function) |
-| 13.6 | [let Scope Function](#136-let-scope-function) |
-| 13.7 | [takeIf Scope Function](#137-takeif-scope-function) |
-| 13.8 | [takeUnless Scope Function](#138-takeunless-scope-function) |
+| 13.1 | [Transforming Data](#131-transforming-data) |
+|  | [Using map Method](#using-map-method) |
+|  | [Using associate Method](#using-associate-method) |
+|  | [Using flatMap Method](#using-flatmap-method) |
+| 13.2 | [Filtering Data](#132-filtering-data) |
+|  | [Using filter Method](#using-filter-method) |
+| 13.3 | [Combining Data](#133-combining-data) |
+|  | [Using zip Method](#using-zip-method) |
+| 13.4 | [Aggregating Data](#134-aggregating-data) |
+|  | [Using reduce Method](#using-reduce-method) |
+|  | [Using fold Method](#using-fold-method) |
+|  | [Using sumBy Method](#using-sumby-method) |
 
 <br />
 
-## 13.1 Scope Function Summary
-| Scope Function | Receiver | Return Value | Argument |
-| :-- | :-- | :-- | :-- |
-| apply | this | receiver | N |
-| run | this | result | N |
-| with | this | result | Y |
-| also | it | receiver | N |
-| let | it | result | N |
-| takeIf | it | receiver/null | N |
-| takeUnless | it | null/receiver | N |
-
-<br />
-
-## 13.2 apply Scope Function
-- Passes **this** as a receiver
-- Returns the receiver
-
+## 13.1 Transforming Data
+### Using map Method
 ```kotlin
-val list: MutableList<Int> = mutableListOf(1, 2, 3).apply {
-    add(4)
-    add(5)
-    add(6)
+val intList: List<Int> = listOf(1, 2, 3)
+val stringList: List<String> = intList.map {
+    it.toString()
+}
+```
+
+### Using associate Method
+```kotlin
+val intList: List<Int> = listOf(1, 2, 3)
+val map: Map<Int, String> = intList.associate {
+    it to it.toString()
+}
+```
+
+### Using flatMap Method
+```kotlin
+val nestedList: List<List<Int>> = listOf(
+    listOf(1, 2, 3),
+    listOf(4, 5, 6),
+    listOf(7, 8, 9)
+)
+val intList: List<Int> = nestedList.flatMap {
+    it
 }
 ```
 
 <br />
 
-## 13.3 run Scope Function
-- Passes **this** as a receiver
-- Returns the result
-
+## 13.2 Filtering Data
+### Using filter Method
 ```kotlin
-val num: Int = mutableListOf(1, 2, 3).run {
-    add(4)
-    add(5)
-    add(6)
-    last()
+val intList: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+val oddList: List<Int> = intList.filter {
+    it % 2 == 1
 }
 ```
 
 <br />
 
-## 13.4 with Scope Function
-- Passes **this** as an argument
-- Returns the result
-
+## 13.3 Combining Data
+### Using zip Method
 ```kotlin
-val list: MutableList<Int> = mutableListOf(1, 2, 3)
-val num: Int = with(list) {
-    add(4)
-    add(5)
-    add(6)
-    last()
+val intList: List<Int> = listOf(1, 2, 3)
+val charList: List<Char> = listOf('A', 'B', 'C')
+val stringList: List<String> = intList.zip(charList) { a: Int, b: Char ->
+    "$a and $b"
 }
 ```
 
 <br />
 
-## 13.5 also Scope Function
-- Passes **it** as a receiver
-- Returns the receiver
-
+## 13.4 Aggregating Data
+### Using reduce Method
 ```kotlin
-val list: MutableList<Int> = mutableListOf(1, 2, 3).also {
-    it.add(4)
-    it.add(5)
-    it.add(6)
+val intList: List<Int> = listOf(1, 2, 3)
+val num: Int = intList.reduce { acc, i ->
+    acc + i
 }
 ```
 
-<br />
-
-## 13.6 let Scope Function
-- Passes **it** as a receiver
-- Returns the result
-
+### Using fold Method
 ```kotlin
-val num: Int = mutableListOf(1, 2, 3).let {
-    it.add(4)
-    it.add(5)
-    it.add(6)
-    it.last()
+val intList: List<Int> = listOf(1, 2, 3)
+val num: Int = intList.reduce { acc: Int, i: Int ->
+    acc + i
 }
 ```
 
-<br />
-
-## 13.7 takeIf Scope Function
-- Passes **it** as a receiver
-- Returns the receiver if the last expression is true, otherwise returns null
-
+### Using sumBy Method
 ```kotlin
-val list: MutableList<Int>? = mutableListOf(1, 2, 3).takeIf {
-    it.add(4)
-    it.add(5)
-    it.add(6)
-    it.size == 6
-}
-```
-
-<br />
-
-## 13.8 takeUnless Scope Function
-- Passes **it** as a receiver
-- Returns a receiver if the last expression is false, otherwise returns null
-
-```kotlin
-val list: MutableList<Int>? = mutableListOf(1, 2, 3).takeUnless {
-    it.add(4)
-    it.add(5)
-    it.add(6)
-    it.size == 6
+val intList: List<Int> = listOf(1, 2, 3)
+val num: Int = intList.sumBy {
+    it
 }
 ```
 

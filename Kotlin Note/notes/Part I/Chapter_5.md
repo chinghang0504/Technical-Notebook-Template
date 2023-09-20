@@ -1,95 +1,130 @@
-# [Kotlin Note](../../README.md) - Chapter 5 Ranges, Progressions, Conditions, and Loops
+# [Kotlin Note](../../README.md) - Chapter 5 Conditions
 | Chapter | Title |
 | :-: | :- |
-| 5.1 | [Ranges](#51-ranges) |
-|  | [.. Operator or rangeTo Function](#operator-or-rangeto-function) |
-|  | [..< Operator or rangeUntil Function](#operator-or-rangeuntil-function) |
-|  | [until Function](#until-function) |
-|  | [IntRange: toList](#intrange-tolist) |
-| 5.2 | [Progressions](#52-progressions) |
-|  | [downTo Function](#downto-function) |
-|  | [step Function](#step-function) |
-|  | [IntProgression: toList](#intprogression-tolist) |
-| 5.3 | [Conditions with Ranges](#53-conditions-with-ranges) |
+| 5.1 | [Comparsion Operators](#51-comparsion-operators) |
+| 5.2 | [Equality Operators](#52-equality-operators) |
+| 5.3 | [Referential Equality Operators](#53-referential-equality-operators) |
+| 5.4 | [Logical Operators](#54-logical-operators) |
+| 5.5 | [Operator Precedence](#55-operator-precedence) |
+| 5.6 | [if Statments](#56-if-statments) |
+|  | [if-else Statements](#if-else-statements) |
+|  | [if-else if Statements](#if-else-if-statements) |
+|  | [Nested if Statements](#nested-if-statements) |
+| 5.7 | [if Statements with Ranges and Progressions](#57-if-statements-with-ranges-and-progressions) |
 |  | [if Statements with Ranges and in Keyword](#if-statements-with-ranges-and-in-keyword) |
 |  | [if Statements with Ranges and !in Keyword](#if-statements-with-ranges-and-in-keyword-1) |
-|  | [when Statements with Ranges and in Keyword](#when-statements-with-ranges-and-in-keyword) |
-|  | [when Statements with Ranges and !in Keyword](#when-statements-with-ranges-and-in-keyword-1) |
-| 5.4 | [Conditions with Progressions](#54-conditions-with-progressions) |
 |  | [if Statements with Progressions and in Keyword](#if-statements-with-progressions-and-in-keyword) |
 |  | [if Statements with Progressions and !in Keyword](#if-statements-with-progressions-and-in-keyword-1) |
+| 5.8 | [if Expressions](#58-if-expressions) |
+|  | [if-else Expressions](#if-else-expressions) |
+|  | [if-else if-else Expressions](#if-else-if-else-expressions) |
+| 5.9 | [when Statements](#59-when-statements) |
+|  | [Multiple Cases for the Same Statements](#multiple-cases-for-the-same-statements) |
+| 5.10 | [when Statements with Ranges and Progressions](#510-when-statements-with-ranges-and-progressions) |
+|  | [when Statements with Ranges and in Keyword](#when-statements-with-ranges-and-in-keyword) |
+|  | [when Statements with Ranges and !in Keyword](#when-statements-with-ranges-and-in-keyword-1) |
 |  | [when Statements with Progressions and in Keyword](#when-statements-with-progressions-and-in-keyword) |
 |  | [when Statements with Progressions and !in Keyword](#when-statements-with-progressions-and-in-keyword-1) |
-| 5.5 | [Loops](#55-loops) |
-|  | [for Loop](#for-loop) |
-|  | [while Loop](#while-loop) |
-|  | [do-while Loop](#do-while-loop) |
-| 5.6 | [Jump Statements](#56-jump-statements) |
-|  | [break Statement](#break-statement) |
-|  | [break Statment with Label](#break-statment-with-label) |
-|  | [continue Statement](#continue-statement) |
+| 5.11 | [when Expressions](#511-when-expressions) |
+|  | [when Expressions without Arguments](#when-expressions-without-arguments) |
 
 <br />
 
-## 5.1 Ranges
-### .. Operator or rangeTo Function
+## 5.1 Comparsion Operators
+| Operator | Target | Description |
+| :--: | :-- | :-- |
+| < | Value | Less than |
+| <= | Value | Less than or equal to |
+| > | Value | Greater than |
+| >= | Value | Greater than or equal to |
+
+<br />
+
+## 5.2 Equality Operators
+| Operator | Target | Description |
+| :--: | :-- | :-- |
+| == | Value | Equal to |
+| != | Value | Not equal to |
+
+<br />
+
+## 5.3 Referential Equality Operators
+| Operator | Target | Description |
+| :--: | :-- | :-- |
+| === | Reference | Equal to |
+| !== | Reference | Not equal to |
+
+<br />
+
+## 5.4 Logical Operators
+| Operator | Description |
+| :--: | :-- |
+| && | Logical and |
+| \|\| | Logical or |
+| ! | Logical not |
+
+<br />
+
+## 5.5 [Operator Precedence](https://kotlinlang.org/docs/reference/grammar.html#expressions)
+| Precedence | Title | Symbols |
+| :--: | :-- | :-- |
+| Highest | Prefix | ! |
+|  | Comparison | <, >, <=, >= |
+|  | Equality | ==, !=, ===, !== |
+|  | Conjunction | && |
+| Lowest | Disjunction | \|\| |
+
+<br />
+
+## 5.6 if Statments
 ```kotlin
-val intRange: IntRange = 1 .. 3             // 1, 2, 3
-```
-```kotlin
-val intRange: IntRange = 1.rangeTo(3)       // 1, 2, 3
+if (num == 100) {
+    println("Is 100")
+}
 ```
 
-### ..< Operator or rangeUntil Function
+- Kotlin allows if statements to omit braces, but only the first expression is evaluated.
 ```kotlin
-val intRange: IntRange = 1 ..< 3            // 1, 2
-```
-```kotlin
-val intRange: IntRange = 1.rangeUntil(3)    // 1, 2
+if (num == 100)
+    println("Is 100")
 ```
 
-### until Function
+### if-else Statements
 ```kotlin
-val intRange: IntRange = 1 until 3          // 1, 2
-```
-```kotlin
-val intRange: IntRange = 1.until(3)         // 1, 2
+if (num == 100) {
+    println("Is 100")
+} else {
+    println("Is not 100")
+}
 ```
 
-### IntRange: toList
+### if-else if Statements
 ```kotlin
-val intRange: IntRange = 1 .. 3
-println(intRange.toList())                  // [1, 2, 3]
+if (num == 100) {
+    println("Is 100")
+} else if (num == 200) {
+    println("Is 200")
+} else {
+    println("Is not 100 or 200")
+}
+```
+
+### Nested if Statements
+```kotlin
+if (num >= 100) {
+    if (num == 100) {
+        println("Is 100")
+    } else {
+        println("Greater than 100")
+    }
+} else {
+    println("Less than 100")
+}
 ```
 
 <br />
 
-## 5.2 Progressions
-### downTo Function
-```kotlin
-val intProgression: IntProgression = 3 downTo 1         // 3, 2, 1
-```
-```kotlin
-val intProgression: IntProgression = 3.downTo(1)        // 3, 2, 1
-```
-
-### step Function
-```kotlin
-val intProgression: IntProgression = 1 .. 10 step 3     // 1, 4, 7, 10
-```
-```kotlin
-val intProgression: IntProgression = (1 .. 10).step(3)  // 1, 4, 7, 10
-```
-
-### IntProgression: toList
-```kotlin
-val intProgression: IntProgression = 3 downTo 1
-println(intProgression.toList())                        // [3, 2, 1]
-```
-
-<br />
-
-## 5.3 Conditions with Ranges
+## 5.7 if Statements with Ranges and Progressions
 ### if Statements with Ranges and in Keyword
 ```kotlin
 if (num in 1 .. 3) {
@@ -108,25 +143,6 @@ if (num !in 1 .. 3) {
 }
 ```
 
-### when Statements with Ranges and in Keyword
-```kotlin
-when (num) {
-    in 1 .. 3 -> println("In the range")
-    else -> println("Not in the range")
-}
-```
-
-### when Statements with Ranges and !in Keyword
-```kotlin
-when (num) {
-    !in 1 .. 3 -> println("Not in the range")
-    else -> println("In the range")
-}
-```
-
-<br />
-
-## 5.4 Conditions with Progressions
 ### if Statements with Progressions and in Keyword
 ```kotlin
 if (num in 3 downTo 1) {
@@ -144,6 +160,85 @@ if (num !in 3 downTo 1) {
     println("In the range")
 }
 ```
+
+<br />
+
+## 5.8 if Expressions
+### if-else Expressions
+```kotlin
+val value = if (num == 100) {
+    100
+} else {
+    0
+}
+```
+```kotlin
+val value = if (num == 100) 100 else 0
+```
+
+### if-else if-else Expressions
+```kotlin
+val value = if (num == 100) {
+    100
+} else if (num == 200){
+    200
+} else {
+    0
+}
+```
+
+<br />
+
+## 5.9 when Statements
+```kotlin
+when (num) {
+    100 -> println("Is 100")
+    200 -> println("Is 200")
+    else -> println("Is not 100 or 200")
+}
+```
+```kotlin
+when (num) {
+    100 -> {
+        println("Is 100")
+    }
+    200 -> {
+        println("Is 200")
+    }
+    else -> {
+        println("Is not 100 or 200")
+    }
+}
+```
+
+### Multiple Cases for the Same Statements
+```kotlin
+when (num) {
+    100, 200 -> println("Is 100 or 200")
+    else -> println("Is not 100 or 200")
+}
+```
+
+<br />
+
+## 5.10 when Statements with Ranges and Progressions
+### when Statements with Ranges and in Keyword
+```kotlin
+when (num) {
+    in 1 .. 3 -> println("In the range")
+    else -> println("Not in the range")
+}
+```
+
+### when Statements with Ranges and !in Keyword
+```kotlin
+when (num) {
+    !in 1 .. 3 -> println("Not in the range")
+    else -> println("In the range")
+}
+```
+
+<br />
 
 ### when Statements with Progressions and in Keyword
 ```kotlin
@@ -163,64 +258,37 @@ when (num) {
 
 <br />
 
-## 5.5 Loops
-### for Loop
+## 5.11 when Expressions
 ```kotlin
-for (i in 1 .. 3) {
-    println(i)
+val value = when (num) {
+    100 -> 100
+    200 -> 200
+    else -> 0
 }
 ```
-
-### while Loop
 ```kotlin
-var i = 1
-while (i <= 3) {
-    println(i)
-    i++
-}
-```
-
-### do-while Loop
-```kotlin
-var i = 1
-do {
-    println(i)
-    i++
-} while (i <= 3)
-```
-
-<br />
-
-## 5.6 Jump Statements
-### break Statement
-```kotlin
-for (i in 1 .. 3) {
-    if (i == 2) {
-        break
+val value = when (num) {
+    100 -> {
+        println("Is 100")
+        100
     }
-    println(i)
-}
-```
-
-### break Statment with Label
-```kotlin
-loop@ for (i in 1 .. 3) {
-    for (j in 1 .. 3) {
-        if (i == 2 && j == 2) {
-            break@loop
-        }
-        println("i: $i, j: $j")
+    200 -> {
+        println("Is 200")
+        200
+    }
+    else -> {
+        println("Is not 100 or 200")
+        0
     }
 }
 ```
 
-### continue Statement
+### when Expressions without Arguments
 ```kotlin
-for (i in 1 .. 3) {
-    if (i == 2) {
-        continue
-    }
-    println(i)
+val value = when {
+    num >= 100 && num < 200 -> 100
+    num >= 200 && num < 299 -> 200
+    else -> 0
 }
 ```
 

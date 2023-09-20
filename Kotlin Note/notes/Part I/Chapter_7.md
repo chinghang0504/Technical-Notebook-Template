@@ -1,277 +1,223 @@
-# [Kotlin Note](../../README.md) - Chapter 7 Numbers
+# [Kotlin Note](../../README.md) - Chapter 7 Fucntions
 | Chapter | Title |
 | :-: | :- |
-| 7.1 | [Number Data Types](#71-number-data-types) |
-|  | [Signed Integer Data Types](#signed-integer-data-types) |
-|  | [Unsigned Integer Data Types](#unsigned-integer-data-types) |
-|  | [Floating Point Number Data Types](#floating-point-number-data-types) |
-| 7.2 | [Number Literals](#72-number-literals) |
-|  | [Decimals](#decimals) |
-|  | [Long Integers](#long-integers) |
-|  | [Hexadecimals](#hexadecimals) |
-|  | [Binaries](#binaries) |
-|  | [Unsigned Integers](#unsigned-integers) |
-|  | [Float Numbers](#float-numbers) |
-|  | [Double Numbers](#double-numbers) |
-| 7.3 | [Number Operators and Operations](#73-number-operators-and-operations) |
-|  | [Integer Operators](#integer-operators) |
-|  | [Floating Point Operators](#floating-point-operators) |
-|  | [Bitwise Operations](#bitwise-operations) |
-| 7.4 | [Coverting Between Numeric Types](#74-coverting-between-numeric-types) |
-|  | [Coverting Byte to Other Numeric Types](#coverting-byte-to-other-numeric-types) |
-|  | [Coverting Short to Other Numeric Types](#coverting-short-to-other-numeric-types) |
-|  | [Coverting Int to Other Numeric Types](#coverting-int-to-other-numeric-types) |
-|  | [Coverting Long to Other Numeric Types](#coverting-long-to-other-numeric-types) |
-|  | [Coverting Float to Other Numeric Types](#coverting-float-to-other-numeric-types) |
-|  | [Coverting Double to Other Numeric Types](#coverting-double-to-other-numeric-types) |
-| 7.5 | [Rounding Between Numeric Types](#75-rounding-between-numeric-types) |
-|  | [Rounding Float to Other Numeric Types](#rounding-float-to-other-numeric-types) |
-|  | [Rounding Double to Other Numeric Types](#rounding-double-to-other-numeric-types) |
-| 7.6 | [Numbers to Strings](#76-numbers-to-strings) |
+| 7.1 | [Function Parameters](#71-function-parameters) |
+|  | [Empty Parameter](#empty-parameter) |
+|  | [Single Pararmeter](#single-pararmeter) |
+|  | [Multiple Parameters](#multiple-parameters) |
+| 7.2 | [Function Return Values](#72-function-return-values) |
+|  | [Single Return Value](#single-return-value) |
+|  | [Double Return Values (Using Pair)](#double-return-values-using-pair) |
+|  | [Triple Return Values (Using Triple)](#triple-return-values-using-triple) |
+| 7.3 | [Default Arguments](#73-default-arguments) |
+| 7.4 | [Single-Expression Functions](#74-single-expression-functions) |
+| 7.5 | [Unit Functions](#75-unit-functions) |
+| 7.6 | [Named Function Arguments](#76-named-function-arguments) |
+| 7.7 | [Function Overloading](#77-function-overloading) |
+| 7.8 | [TODO Function](#78-todo-function) |
+| 7.9 | [Function Names in Backticks](#79-function-names-in-backticks) |
+| 7.10 | [Function Visibility Modifiers](#710-function-visibility-modifiers) |
 
 <br />
 
-## 7.1 Number Data Types
-### Signed Integer Data Types
-| Type | Bytes |
-| :-- | :-- |
-| Byte | 1 |
-| Short | 2 |
-| Int | 4 |
-| Long | 8 |
-
-### Unsigned Integer Data Types
-| Type | Bytes |
-| :-- | :-- |
-| UByte | 1 |
-| UShort | 2 |
-| UInt | 4 |
-| ULong | 8 |
-
-### Floating Point Number Data Types
-| Type | Bytes |
-| :-- | :-- |
-| Float | 4 |
-| Double | 8 |
-
-<br />
-
-## 7.2 Number Literals
-### Decimals
+## 7.1 Function Parameters
+### Empty Parameter
 ```kotlin
-val num: Int = 100
-```
-
-### Long Integers
-```kotlin
-val num: Long = 100L
-```
-
-### Hexadecimals
-```kotlin
-val num: Int = 0x64
+fun printWarningMessage() {
+    println("Warning")
+}
 ```
 ```kotlin
-val num: Int = 0X64
+printWarningMessage()
 ```
 
-### Binaries
+### Single Pararmeter
 ```kotlin
-val num: Int = 0b1100100
+fun printWarningMessage(message: String) {
+    println("Warning: $message")
+}
 ```
 ```kotlin
-val num: Int = 0B1100100
-```
-
-### Unsigned Integers
-```kotlin
-val num: UInt = 100u
+printWarningMessage("System Failed")
 ```
 
-### Float Numbers
+### Multiple Parameters
 ```kotlin
-val num: Float = 100.0f
+fun printWarningMessage(message: String, localDateTime: LocalDateTime) {
+    println("Warning: $message [$localDateTime]")
+}
 ```
 ```kotlin
-val num: Float = 100.0F
-```
-
-### Double Numbers
-```kotlin
-val num: Double = 100.0
+printWarningMessage("System Failed", LocalDateTime.now())
 ```
 
 <br />
 
-## 7.3 Number Operators and Operations
-### Integer Operators
-| Operator | Description |
-| :-- | :-- |
-| + | Addition |
-| - | Subtraction |
-| * | Multiplication |
-| / | Division |
-| % | Remainder |
-
+## 7.2 Function Return Values
+### Single Return Value
 ```kotlin
-println(5 + 3)      // 8
-println(5 - 3)      // 2
-println(5 * 3)      // 15
-println(5 / 3)      // 1
-println(5 % 3)      // 2
+fun getWarningMessage(message: String): String {
+    return "Warning: $message"
+}
+```
+```kotlin
+val warningMessage = getWarningMessage("System Failed")
 ```
 
-### Floating Point Operators
-| Operator | Description |
-| :-- | :-- |
-| + | Addition |
-| - | Subtraction |
-| * | Multiplication |
-| / | Division |
-| % | Remainder |
-
+### Double Return Values (Using Pair)
 ```kotlin
-println(5.2 + 3.1)      // 8.3
-println(5.2 - 3.1)      // 2.1
-println(5.2 * 3.1)      // 16.12
-println(5.2 / 3.1)      // 1.6774193548387097
-println(5.2 % 3.1)      // 2.1
+fun getWarningMessage(message: String): Pair<String, Int> {
+    return Pair("Warning: $message", -1)
+}
+```
+```kotlin
+val warningMessage = getWarningMessage("System Failed")
 ```
 
-### Bitwise Operations
-| Function | Description |
-| :-- | :-- |
-| or | Bitwise or |
-| and | Bitwise and |
-| xor | Bitwise xor |
-| inv | Inverts bits |
-| shl | Left shift |
-| shr | Right shift |
-| ushr | Unsigned right shift |
-
+### Triple Return Values (Using Triple)
 ```kotlin
-println(Integer.toBinaryString(0b1100 or 0b0011))       // 1111
-println(Integer.toBinaryString(0b1100.or(0b0011)))      // 1111
-
-println(Integer.toBinaryString(0b1100 and 0b0011))      // 0
-println(Integer.toBinaryString(0b1100.and(0b0011)))     // 0
-
-println(Integer.toBinaryString(0b1100 xor 0b0011))      // 1111
-println(Integer.toBinaryString(0b1100.xor(0b0011)))     // 1111
-
-println(Integer.toBinaryString(0b1100.inv()))           // 11111111111111111111111111110011
-
-println(Integer.toBinaryString(0b1100 shl 1))           // 11000
-println(Integer.toBinaryString(0b1100.shl(1)))          // 11000
-
-println(Integer.toBinaryString(0b1100 shr 1))           // 110
-println(Integer.toBinaryString(0b1100.shr(1)))          // 110
-
-println(Integer.toBinaryString(0b1100 ushr 1))          // 110
-println(Integer.toBinaryString(0b1100.ushr(1)))         // 110
+fun getWarningMessage(message: String): Triple<String, Int, Int> {
+    return Triple("Warning: $message", -1, -1)
+}
+```
+```kotlin
+val warningMessage = getWarningMessage("System Failed")
 ```
 
 <br />
 
-## 7.4 Coverting Between Numeric Types
-### Coverting Byte to Other Numeric Types
+## 7.3 Default Arguments
 ```kotlin
-val num: Byte = 100
-val short: Short = num.toShort()
-val int: Int = num.toInt()
-val long: Long = num.toLong()
-val float: Float = num.toFloat()
-val double: Double = num.toDouble()
+fun printWarningMessage(message: String, localDateTime: LocalDateTime = LocalDateTime.now()) {
+    println("Warning: $message [$localDateTime]")
+}
 ```
-
-### Coverting Short to Other Numeric Types
 ```kotlin
-val num: Short = 100
-val byte: Byte = num.toByte()
-val int: Int = num.toInt()
-val long: Long = num.toLong()
-val float: Float = num.toFloat()
-val double: Double = num.toDouble()
-```
-
-### Coverting Int to Other Numeric Types
-```kotlin
-val num: Int = 100
-val byte: Byte = num.toByte()
-val short: Short = num.toShort()
-val long: Long = num.toLong()
-val float: Float = num.toFloat()
-val double: Double = num.toDouble()
-```
-
-### Coverting Long to Other Numeric Types
-```kotlin
-val num: Long = 100
-val byte: Byte = num.toByte()
-val short: Short = num.toShort()
-val int: Int = num.toInt()
-val float: Float = num.toFloat()
-val double: Double = num.toDouble()
-```
-
-### Coverting Float to Other Numeric Types
-```kotlin
-val num: Float = 100.0F
-val int: Int = num.toInt()
-val long: Long = num.toLong()
-val double: Double = num.toDouble()
-```
-
-### Coverting Double to Other Numeric Types
-```kotlin
-val num: Double = 100.0
-val int: Int = num.toInt()
-val long: Long = num.toLong()
-val float: Float = num.toFloat()
+printWarningMessage("System Failed")
+printWarningMessage("System Failed", LocalDateTime.now())
 ```
 
 <br />
 
-## 7.5 Rounding Between Numeric Types
-### Rounding Float to Other Numeric Types
-```kotlin
-val double1: Float = 9.1F
-val int1: Int = double1.roundToInt()        // 9
-val long1: Long = double1.roundToLong()     // 9
+## 7.4 Single-Expression Functions
+- A function that can omit the return type, curly braces, and return keyword.
 
-val double2: Float = 9.9F
-val int2: Int = double2.roundToInt()        // 10
-val long2: Long = double2.roundToLong()     // 10
+```kotlin
+fun getWarningMessage(message: String) = "Warning: $message"
 ```
-
-### Rounding Double to Other Numeric Types
 ```kotlin
-val double1: Double = 9.1
-val int1: Int = double1.roundToInt()        // 9
-val long1: Long = double1.roundToLong()     // 9
-
-val double2: Double = 9.9
-val int2: Int = double2.roundToInt()        // 10
-val long2: Long = double2.roundToLong()     // 10
+val warningMessage = getWarningMessage("System Failed")
 ```
 
 <br />
 
-## 7.6 Numbers to Strings
-```kotlin
-val byte: Byte = 100
-val short: Short = 100
-val int: Int = 100
-val long: Long = 100
-val float: Float = 100F
-val double: Double = 100.0
+## 7.5 Unit Functions
+- All the functions that do not have return values are Unit Functions.
+- Kotlin automatically returns a Unit type value to these functions.
 
-println(byte.toString())
-println(short.toString())
-println(int.toString())
-println(long.toString())
-println(float.toString())
-println(double.toString())
+```kotlin
+fun printWarningMessage() {
+    println("Warning")
+}
+```
+```kotlin
+fun printWarningMessage(): Unit {
+    println("Warning")
+}
+```
+- Both are the same.
+
+<br />
+
+## 7.6 Named Function Arguments
+```kotlin
+fun printWarningMessage(message: String, localDateTime: LocalDateTime) {
+    println("Warning: $message [$localDateTime]")
+}
+```
+```kotlin
+printWarningMessage(
+    message = "System Failed",
+    localDateTime = LocalDateTime.now()
+)
+```
+
+<br />
+
+## 7.7 Function Overloading
+```kotlin
+fun printWarningMessage() {
+    println("Warning")
+}
+
+fun printWarningMessage(message: String) {
+    println("Warning: $message")
+}
+
+fun printWarningMessage(message: String, localDateTime: LocalDateTime) {
+    println("Warning: $message [$localDateTime]")
+}
+```
+```kotlin
+printWarningMessage()
+printWarningMessage("System Failed")
+printWarningMessage("System Failed", LocalDateTime.now())
+```
+
+<br />
+
+## 7.8 TODO Function
+- TODO function throws a NotImplementedError exception.
+```kotlin
+fun printWarningMessage() {
+    TODO()
+}
+```
+```kotlin
+fun printWarningMessage() {
+    TODO("Not Implemented Yet")
+}
+```
+
+<br />
+
+## 7.9 Function Names in Backticks
+```kotlin
+fun `@@@ Print Warning Message @@@`() {
+    println("Warning")
+}
+```
+```kotlin
+`@@@ Print Warning Message @@@`()
+```
+
+<br />
+
+## 7.10 Function Visibility Modifiers
+- The default visibility modifier of functions is public.
+
+| Visibility Modifier | Description |
+| :-- | :-- |
+| public | The function will be accessible by code outside the file. |
+| private | The function will be accessible only within the same file. |
+| internal | The function will be accessible within the same module. |
+
+```kotlin
+fun printWarningMessage1() {
+    println("Warning")
+}
+
+public fun printWarningMessage2() {
+    println("Warning")
+}
+
+private fun printWarningMessage3() {
+    println("Warning")
+}
+
+internal fun printWarningMessage4() {
+    println("Warning")
+}
 ```
 
 <br />
