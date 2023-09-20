@@ -1,70 +1,70 @@
 # [Kotlin Note](../../README.md) - Chapter 10 Null Safety
 | Chapter | Title |
 | :-: | :- |
-| 10.1 | [Nullable Data Types](#101-nullable-data-types) |
-| 10.2 | [Checking Null Value](#102-checking-null-value) |
+| 10.1 | [Checking for Null](#101-checking-for-null) |
 |  | [Using if Statement](#using-if-statement) |
-|  | [Using Safe Call Operator](#using-safe-call-operator) |
-|  | [Using Safe Call Operator and let Scope Function](#using-safe-call-operator-and-let-scope-function) |
-| 10.3 | [Assigning Default Value for Null Value](#103-assigning-default-value-for-null-value) |
-|  | [Using Null Coalesing Operator](#using-null-coalesing-operator) |
-| 10.4 | [Forcibly Removing Null Safety](#104-forcibly-removing-null-safety) |
-|  | [Using Non-Null Assertion Operator to Call a Function](#using-non-null-assertion-operator-to-call-a-function) |
-|  | [Using Non-Null Assertion Operator to Become a Non-Nullable Value](#using-non-null-assertion-operator-to-become-a-non-nullable-value) |
+|  | [Using Safe Call Operator ?.](#using-safe-call-operator) |
+|  | [Using Safe Call Operator ?. and let Scope Function](#using-safe-call-operator--and-let-scope-function) |
+| 10.2 | [Assigning Default Value for Null Value](#102-assigning-default-value-for-null-value) |
+|  | [Using if Statement](#using-if-statement-1) |
+|  | [Using Elvis Operator ?:](#using-elvis-operator) |
+| 10.3 | [Ignoring Null Safety](#103-ignoring-null-safety) |
+|  | [Using Not-Null Assertion Operator !! to Call a Function](#using-not-null-assertion-operator--to-call-a-function) |
+|  | [Using Not-Null Assertion Operator !! to Convert to a Non-Nullable Type](#using-not-null-assertion-operator--to-convert-to-a-non-nullable-type) |
 
 <br />
 
-## 10.1 Nullable Data Types
-```kotlin
-val num: Int? = null
-val str: String? = null
-```
-
-<br />
-
-## 10.2 Checking Null Value
+## 10.1 Checking for Null
 ### Using if Statement
 ```kotlin
-val str: String? = null
-if (str != null) {
-    str.uppercase()
+val string: String? = null
+if (string != null) {
+    string.uppercase()
 }
 ```
 
-### Using Safe Call Operator
+### Using Safe Call Operator ?.
 ```kotlin
-val str: String? = null
-str?.uppercase()
+val string: String? = null
+string?.uppercase()
 ```
 
-### Using Safe Call Operator and let Scope Function
+### Using Safe Call Operator ?. and let Scope Function
 ```kotlin
-val str: String? = null
-str?.let {
+val string: String? = null
+string?.let {
     it.uppercase()
 }
 ```
 
-## 10.3 Assigning Default Value for Null Value
-### Using Null Coalesing Operator
+<br />
+
+## 10.2 Assigning Default Value for Null Value
+### Using if Statement
 ```kotlin
-val str: String? = null
-val message: String = str ?: "Unknown"
+val string: String? = null
+val message: String = if (string != null) string else "Unknown"
+```
+
+### Using Elvis Operator ?:
+```kotlin
+val string: String? = null
+val message: String = string ?: "Unknown"
 ```
 
 <br />
 
-## 10.4 Forcibly Removing Null Safety
-### Using Non-Null Assertion Operator to Call a Function
+## 10.3 Ignoring Null Safety
+### Using Not-Null Assertion Operator !! to Call a Function
 ```kotlin
-val str: String? = "Hello World"
-str!!.uppercase()
+val string: String? = "Hello World"
+string!!.uppercase()
 ```
 
-### Using Non-Null Assertion Operator to Become a Non-Nullable Value
+### Using Not-Null Assertion Operator !! to Convert to a Non-Nullable Type
 ```kotlin
-val str: String? = "Hello World"
-val message: String = str!!
+val string: String? = "Hello World"
+val message: String = string!!
 ```
 
 <br />

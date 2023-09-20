@@ -6,7 +6,7 @@
 |  | [Multiline Strings](#multiline-strings) |
 | 9.2 | [Escape Characters](#92-escape-characters) |
 | 9.3 | [Unicode](#93-unicode) |
-| 9.4 | [Raw Strings](#94-raw-strings) |
+| 9.4 | [Multiline Strings](#94-multiline-strings) |
 |  | [String: trimIndent](#string-trimindent) |
 |  | [String: trimMargin](#string-trimmargin) |
 | 9.5 | [String Concatenation](#95-string-concatenation) |
@@ -79,7 +79,7 @@ val string: String = "\u0041\u0042\u0043"
 
 <br />
 
-## 9.4 Raw Strings
+## 9.4 Multiline Strings
 ### [String: trimIndent](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/trim-indent.html) 
 - Detects a common minimal indent of all the input lines, removes it from every line and also removes the first and the last lines if they are blank (notice difference blank vs empty).
 ```kotlin
