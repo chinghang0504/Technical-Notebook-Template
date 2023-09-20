@@ -177,10 +177,6 @@ printWarningMessage("System Failed", LocalDateTime.now())
 - Always throws NotImplementedError stating that operation is not implemented.
 ```kotlin
 fun TODO(): Nothing
-```
-
-- Always throws NotImplementedError stating that operation is not implemented.
-```kotlin
 fun TODO(reason: String): Nothing
 ```
 
