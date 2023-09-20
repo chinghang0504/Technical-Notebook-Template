@@ -27,21 +27,21 @@
 ### Part II: Classes
 | Chapter | Title |
 | :-: | :- |
-| 1 | [Classes](./notes/Part%20III/Chapter_1.md) |
-| 2 | [Initialization](./notes/Part%20III/Chapter_2.md) |
-| 3 | [Inheritance](./notes/Part%20III/Chapter_3.md) |
-| 4 | [Operator Overloading](./notes/Part%20III/Chapter_4.md) |
-| 5 | [Interfaces](./notes/Part%20III/Chapter_5.md) |
-| 6 | [Abstract Classes](./notes/Part%20III/Chapter_6.md) |
-| 7 | [Generics](./notes/Part%20III/Chapter_7.md) |
-| 8 | [Extensions](./notes/Part%20III/Chapter_8.md) |
+| 1 | [Classes](./notes/Part%20II/Chapter_1.md) |
+| 2 | [Initialization](./notes/Part%20II/Chapter_2.md) |
+| 3 | [Inheritance](./notes/Part%20II/Chapter_3.md) |
+| 4 | [Operator Overloading](./notes/Part%20II/Chapter_4.md) |
+| 5 | [Interfaces](./notes/Part%20II/Chapter_5.md) |
+| 6 | [Abstract Classes](./notes/Part%20II/Chapter_6.md) |
+| 7 | [Generics](./notes/Part%20II/Chapter_7.md) |
+| 8 | [Extensions](./notes/Part%20II/Chapter_8.md) |
 
 ### Part III: Collections
 | Chapter | Title |
 | :-: | :- |
-| 1 | [Lists](./notes/Part%20II/Chapter_1.md) |
-| 2 | [Sets](./notes/Part%20II/Chapter_2.md) |
-| 3 | [Maps](./notes/Part%20II/Chapter_3.md) |
+| 1 | [Lists](./notes/Part%20III/Chapter_1.md) |
+| 2 | [Sets](./notes/Part%20III/Chapter_2.md) |
+| 3 | [Maps](./notes/Part%20III/Chapter_3.md) |
 
 ### Part IV: Special Topics
 | Chapter | Title |
