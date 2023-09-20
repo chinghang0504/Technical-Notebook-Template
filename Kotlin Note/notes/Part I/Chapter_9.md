@@ -43,13 +43,13 @@
 ### Escaped Strings
 - Escaped strings can contain escaped characters.
 ```kotlin
-val string: String = "Hello World\n"
+val str: String = "Hello World\n"
 ```
 
 ### Multiline Strings
 - Multiline strings can contain newlines and arbitrary text. It is delimited by a triple quote ("""), contains no escaping and can contain newlines and any other characters:
 ```kotlin
-val string: String = """
+val str: String = """
     Hello
     World
 """
@@ -74,7 +74,7 @@ val string: String = """
 
 ## 9.3 Unicode
 ```kotlin
-val string: String = "\u0041\u0042\u0043"
+val str: String = "\u0041\u0042\u0043"
 ```
 
 <br />
@@ -87,7 +87,7 @@ fun String.trimIndent(): String
 ```
 
 ```kotlin
-val string: String = """
+val str: String = """
     Hello
     World
 """.trimIndent()
@@ -100,7 +100,7 @@ fun String.trimMargin(marginPrefix: String = "|"): String
 ```
 
 ```kotlin
-val string: String = """
+val str: String = """
     |Hello
     |World
 """.trimMargin()
@@ -111,7 +111,7 @@ val string: String = """
 ## 9.5 String Concatenation
 ### Using Plus Operator +
 ```kotlin
-val string: String = "Hello" + " World"
+val str: String = "Hello" + " World"
 ```
 
 <br />
@@ -120,12 +120,12 @@ val string: String = "Hello" + " World"
 ### Interpolating Variables
 ```kotlin
 val world: String = "World"
-val string: String = "Hello $world"
+val str: String = "Hello $world"
 ```
 
 ### Interpolating Expressions
 ```kotlin
-val string: String = "Hello ${"world".uppercase()}"
+val str: String = "Hello ${"world".uppercase()}"
 ```
 
 <br />
@@ -257,8 +257,8 @@ infix fun CharSequence.matches(regex: Regex): Boolean
 ```
 
 ```kotlin
-val string: String = "100"
-val isInteger: Boolean = string.matches("""\d+""".toRegex())
+val str: String = "100"
+val isInteger: Boolean = str.matches("""\d+""".toRegex())
 ```
 
 <br />

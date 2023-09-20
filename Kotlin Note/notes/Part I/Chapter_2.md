@@ -40,8 +40,8 @@
 ## 2.2 [Booleans](https://kotlinlang.org/docs/booleans.html)
 - Type: Boolean
 ```kotlin
-val trueBoolean: Boolean = true
-val falseBoolean: Boolean = false
+val trueBool: Boolean = true
+val falseBool: Boolean = false
 ```
 
 <br />
@@ -49,7 +49,7 @@ val falseBoolean: Boolean = false
 ## 2.3 [Characters](https://kotlinlang.org/docs/characters.html)
 - Type: Char
 ```kotlin
-val char: Char = 'A'
+val ch: Char = 'A'
 ```
 
 <br />
@@ -57,7 +57,7 @@ val char: Char = 'A'
 ## 2.4 [Strings](https://kotlinlang.org/docs/strings.html)
 - Type: String
 ```kotlin
-val string: String = "Hello World"
+val str: String = "Hello World"
 ```
 
 <br />
@@ -65,7 +65,7 @@ val string: String = "Hello World"
 ## 2.5 [Arrays](https://kotlinlang.org/docs/arrays.html)
 - Type: Array\<T>
 ```kotlin
-val array: Array<Int> = arrayOf(1, 2, 3)
+val arr: Array<Int> = arrayOf(1, 2, 3)
 ```
 
 <br />

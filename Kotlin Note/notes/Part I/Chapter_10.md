@@ -17,22 +17,22 @@
 ## 10.1 Checking for Null
 ### Using if Statement
 ```kotlin
-val string: String? = null
-if (string != null) {
-    string.uppercase()
+val str: String? = null
+if (str != null) {
+    str.uppercase()
 }
 ```
 
 ### Using Safe Call Operator ?.
 ```kotlin
-val string: String? = null
-string?.uppercase()
+val str: String? = null
+str?.uppercase()
 ```
 
 ### Using Safe Call Operator ?. and let Scope Function
 ```kotlin
-val string: String? = null
-string?.let {
+val str: String? = null
+str?.let {
     it.uppercase()
 }
 ```
@@ -42,14 +42,14 @@ string?.let {
 ## 10.2 Assigning Default Value for Null Value
 ### Using if Statement
 ```kotlin
-val string: String? = null
-val message: String = if (string != null) string else "Unknown"
+val str: String? = null
+val message: String = if (str != null) str else "Unknown"
 ```
 
 ### Using Elvis Operator ?:
 ```kotlin
-val string: String? = null
-val message: String = string ?: "Unknown"
+val str: String? = null
+val message: String = str ?: "Unknown"
 ```
 
 <br />
@@ -57,14 +57,14 @@ val message: String = string ?: "Unknown"
 ## 10.3 Ignoring Null Safety
 ### Using Not-Null Assertion Operator !! to Call a Function
 ```kotlin
-val string: String? = "Hello World"
-string!!.uppercase()
+val str: String? = "Hello World"
+str!!.uppercase()
 ```
 
 ### Using Not-Null Assertion Operator !! to Convert to a Non-Nullable Type
 ```kotlin
-val string: String? = "Hello World"
-val message: String = string!!
+val str: String? = "Hello World"
+val message: String = str!!
 ```
 
 <br />

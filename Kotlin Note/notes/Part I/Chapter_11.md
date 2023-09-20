@@ -23,14 +23,14 @@
 ## 11.1 Throwing Exceptions
 ### Using throw Keyword
 ```kotlin
-val string: String? = null
-if (string == null) {
+val str: String? = null
+if (str == null) {
     throw NullPointerException()
 }
 ```
 ```kotlin
-val string: String? = null
-string ?: throw NullPointerException()
+val str: String? = null
+str ?: throw NullPointerException()
 ```
 
 <br />
@@ -38,9 +38,9 @@ string ?: throw NullPointerException()
 ## 11.2 Catching Exceptions
 ### Using try-catch Statements
 ```kotlin
-val string: String? = null
+val str: String? = null
 try {
-    string ?: throw NullPointerException()
+    str ?: throw NullPointerException()
 } catch (e: NullPointerException) {
     println("Exception Block")
 }
@@ -48,9 +48,9 @@ try {
 
 ### Using try-catch-finally Statments
 ```kotlin
-val string: String? = null
+val str: String? = null
 try {
-    string ?: throw NullPointerException()
+    str ?: throw NullPointerException()
 } catch (e: NullPointerException) {
     println("Exception Block")
 } finally {
@@ -60,9 +60,9 @@ try {
 
 ### Using try-catch Expressions
 ```kotlin
-val string: String? = null
+val str: String? = null
 val message: String = try {
-    string ?: throw NullPointerException()
+    str ?: throw NullPointerException()
     "Normal"
 } catch (e: NullPointerException) {
     println("Exception Block")
@@ -72,9 +72,9 @@ val message: String = try {
 
 ### Using try-catch-finally Expressions
 ```kotlin
-val string: String? = null
+val str: String? = null
 val message: String = try {
-    string ?: throw NullPointerException()
+    str ?: throw NullPointerException()
     "Normal"
 } catch (e: NullPointerException) {
     println("Exception Block")
