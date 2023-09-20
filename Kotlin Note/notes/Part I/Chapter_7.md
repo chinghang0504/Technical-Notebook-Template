@@ -17,6 +17,10 @@
 | 7.8 | [TODO Function](#78-todo-function) |
 | 7.9 | [Function Names in Backticks](#79-function-names-in-backticks) |
 | 7.10 | [Function Visibility Modifiers](#710-function-visibility-modifiers) |
+|  | [Default Visibility Modifier](#default-visibility-modifier) |
+|  | [Public Visibility Modifier](#public-visibility-modifier) |
+|  | [Private Visibility Modifier](#private-visibility-modifier) |
+|  | [Internal Visibility Modifier](#internal-visibility-modifier) |
 
 <br />
 
@@ -100,13 +104,16 @@ printWarningMessage("System Failed", LocalDateTime.now())
 <br />
 
 ## 7.4 Single-Expression Functions
-- A function that can omit the return type, curly braces, and return keyword.
-
 ```kotlin
-fun getWarningMessage(message: String) = "Warning: $message"
+fun getWarningMessage(message: String): String = "Warning: $message"
 ```
 ```kotlin
 val warningMessage = getWarningMessage("System Failed")
+```
+
+- A function that can omit the return type, curly braces, and return keyword.
+```kotlin
+fun getWarningMessage(message: String) = "Warning: $message"
 ```
 
 <br />
@@ -202,19 +209,29 @@ fun `@@@ Print Warning Message @@@`() {
 | private | The function will be accessible only within the same file. |
 | internal | The function will be accessible within the same module. |
 
+### Default Visibility Modifier
 ```kotlin
 fun printWarningMessage1() {
     println("Warning")
 }
+```
 
+### Public Visibility Modifier
+```kotlin
 public fun printWarningMessage2() {
     println("Warning")
 }
+```
 
+### Private Visibility Modifier
+```kotlin
 private fun printWarningMessage3() {
     println("Warning")
 }
+```
 
+### Internal Visibility Modifier
+```kotlin
 internal fun printWarningMessage4() {
     println("Warning")
 }
