@@ -25,8 +25,10 @@
 |  | [Number: toFloat](#number-tofloat) |
 |  | [Number: toDouble](#number-todouble) |
 | 8.5 | [Rounding Between Numeric Types](#85-rounding-between-numeric-types) |
-|  | [Rounding Float to Other Numeric Types](#rounding-float-to-other-numeric-types) |
-|  | [Rounding Double to Other Numeric Types](#rounding-double-to-other-numeric-types) |
+|  | [Double: roundToInt](#double-roundtoint) |
+|  | [Float: roundToInt](#float-roundtoint) |
+|  | [Double: roundToLong](#double-roundtolong) |
+|  | [Float: roundToLong](#float-roundtolong) |
 | 8.6 | [Numbers to Strings](#86-numbers-to-strings) |
 |  | [Byte: toString](#byte-tostring) |
 |  | [Short: toString](#short-tostring) |
@@ -219,28 +221,28 @@ abstract fun toDouble(): Double
 <br />
 
 ## 8.5 Rounding Between Numeric Types
-### Rounding Float to Other Numeric Types
+### [Double: roundToInt](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-int.html)
+- Rounds this Double value to the nearest integer and converts the result to Int. Ties are rounded towards positive infinity.
 ```kotlin
-val float: Float = 9.1F
-val int: Int = float.roundToInt()       // 9
-val long: Long = float.roundToLong()    // 9
-```
-```kotlin
-val float: Float = 9.9F
-val int: Int = float.roundToInt()       // 10
-val long: Long = float.roundToLong()    // 10
+fun Double.roundToInt(): Int
 ```
 
-### Rounding Double to Other Numeric Types
+### [Float: roundToInt](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-int.html)
+- Rounds this Float value to the nearest integer and converts the result to Int. Ties are rounded towards positive infinity.
 ```kotlin
-val double: Double = 9.1
-val int: Int = double.roundToInt()      // 9
-val long: Long = double.roundToLong()   // 9
+fun Float.roundToInt(): Int
 ```
+
+### [Double: roundToLong](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-long.html)
+- Rounds this Double value to the nearest integer and converts the result to Long. Ties are rounded towards positive infinity.
 ```kotlin
-val double: Double = 9.9
-val int: Int = double.roundToInt()      // 10
-val long: Long = double.roundToLong()   // 10
+fun Double.roundToLong(): Long
+```
+
+### [Float: roundToLong](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-long.html)
+- Rounds this Float value to the nearest integer and converts the result to Long. Ties are rounded towards positive infinity.
+```kotlin
+fun Float.roundToLong(): Long
 ```
 
 <br />

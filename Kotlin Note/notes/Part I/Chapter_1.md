@@ -11,6 +11,7 @@
 |  | [Modifier Keywords](#modifier-keywords) |
 |  | [Special Identifiers](#special-identifiers) |
 |  | [Operators and Special Symbols](#operators-and-special-symbols) |
+| 1.4 | [Operator Precedence](#14-operator-precedence) |
 
 <br />
 
@@ -109,5 +110,25 @@ fun main(args: Array<String>) {
 | $ |  |  |  |  |
 | _ |  |  |  |  |
 
+<br />
+
+## 1.4 [Operator Precedence](https://kotlinlang.org/docs/reference/grammar.html#expressions)
+| Precedence | Title | Symbols |
+| :-- | :-- | :-- |
+| Highest | Postfix | ++, --, ., ?., ? |
+|  | Prefix | -, +, ++, --, !, label |
+|  | Type RHS | :, as, as? |
+|  | Multiplicative | *, /, % |
+|  | Additive | +, - |
+|  | Range | .. |
+|  | Infix function | simpleIdentifier |
+|  | Elvis | ?: |
+|  | Named checks | in, !in, is, !is |
+|  | Comparison | <, >, <=, >= |
+|  | Equality | ==, !=, ===, !== |
+|  | Conjunction | && |
+|  | Disjunction | \|\| |
+|  | Spread operator | * |
+| Lowest | Assignment | =, +=, -=, *=, /=, %= |
 
 <br />

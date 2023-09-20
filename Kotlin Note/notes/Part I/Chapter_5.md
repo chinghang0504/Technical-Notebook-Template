@@ -5,7 +5,7 @@
 | 5.2 | [Equality Operators](#52-equality-operators) |
 | 5.3 | [Referential Equality Operators](#53-referential-equality-operators) |
 | 5.4 | [Logical Operators](#54-logical-operators) |
-| 5.5 | [Operator Precedence](#55-operator-precedence) |
+| 5.5 | [Operator Precedence (Conditions)](#55-operator-precedence-conditions) |
 | 5.6 | [if Statments](#56-if-statments) |
 |  | [if-else Statements](#if-else-statements) |
 |  | [if-else if Statements](#if-else-if-statements) |
@@ -65,7 +65,7 @@
 
 <br />
 
-## 5.5 [Operator Precedence](https://kotlinlang.org/docs/reference/grammar.html#expressions)
+## 5.5 [Operator Precedence (Conditions)](https://kotlinlang.org/docs/reference/grammar.html#expressions)
 | Precedence | Title | Symbols |
 | :--: | :-- | :-- |
 | Highest | Prefix | ! |
