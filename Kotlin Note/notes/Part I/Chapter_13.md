@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 13 Functional Programming
+# [Kotlin Note](../../README.md) - Chapter 13 Collection Functions
 | Chapter | Title |
 | :-: | :- |
 | 13.1 | [Transforming Data](#131-transforming-data) |

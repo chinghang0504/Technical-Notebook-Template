@@ -22,7 +22,7 @@
 | 10 | [Null Safety](./notes/Part%20I/Chapter_10.md) |
 | 11 | [Exceptions](./notes/Part%20I/Chapter_11.md) |
 | 12 | [Lambda Expressions](./notes/Part%20I/Chapter_12.md) |
-| 13 | [Functional Programming](./notes/Part%20I/Chapter_13.md) |
+| 13 | [Collection Functions](./notes/Part%20I/Chapter_13.md) |
 | 14 | [Scope Functions](./notes/Part%20I/Chapter_14.md) |
 
 ### Part II: Classes
