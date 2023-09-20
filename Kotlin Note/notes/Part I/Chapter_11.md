@@ -15,6 +15,7 @@
 |  | [Function: require](#function-require) |
 |  | [Function: requireNotNull](#function-requirenotnull) |
 |  | [Function: error](#function-error) |
+|  | [Function: assert](#function-assert) |
 | 11.5 | [Custom Exceptions](#115-custom-exceptions) |
 
 <br />
@@ -151,6 +152,17 @@ inline fun <T : Any> requireNotNull(
 - Throws an IllegalStateException with the given message.
 ```kotlin
 fun error(message: Any): Nothing
+```
+
+### [Function: assert](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/assert.html)
+- Throws an AssertionError if the value is false and runtime assertions have been enabled on the JVM using the -ea JVM option.
+```kotlin
+fun assert(value: Boolean)
+```
+
+- Throws an AssertionError calculated by lazyMessage if the value is false and runtime assertions have been enabled on the JVM using the -ea JVM option.
+```kotlin
+inline fun assert(value: Boolean, lazyMessage: () -> Any)
 ```
 
 <br />
