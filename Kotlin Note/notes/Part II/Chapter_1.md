@@ -3,11 +3,12 @@
 | :-: | :- |
 | 1.1 | [Class Declaration](#11-class-declaration) |
 | 1.2 | [Creating an Instance of a Class](#12-creating-an-instance-of-a-class) |
-| 1.3 | [Class Visibility](#13-class-visibility) |
-| 1.4 | [Class Methods](#14-class-methods) |
+| 1.3 | [Class Visibility Modifiers](#13-class-visibility-modifiers) |
+| 1.4 | [Class Functions](#14-class-functions) |
+|  | [Calling a Class Function](#calling-a-class-function) |
 | 1.5 | [Class Properties](#15-class-properties) |
-|  | [Get a Class Property](#get-a-class-property) |
-|  | [Set a Class Property](#set-a-class-property) |
+|  | [Geting a Class Property](#geting-a-class-property) |
+|  | [Setting a Class Property](#setting-a-class-property) |
 | 1.6 | [Custom Getters and Setters](#16-custom-getters-and-setters) |
 |  | [Custom Getters](#custom-getters) |
 |  | [Custom Setters](#custom-setters) |
@@ -31,10 +32,10 @@ val animal: Animal = Animal()
 
 <br />
 
-## 1.3 Class Visibility
-- The defaul modifier is public.
+## 1.3 Class Visibility Modifiers
+- The defaul visibility modifier of classes is public.
 
-| Modifier | Description |
+| Visibility Modifier | Description |
 | :-- | :-- |
 | public | The function or property can be accessible outside the class. |
 | private | The function or property can be accessible only within the same class. |
@@ -43,7 +44,7 @@ val animal: Animal = Animal()
 
 <br />
 
-## 1.4 Class Methods
+## 1.4 Class Functions
 ```kotlin
 class Animal {
 
@@ -52,6 +53,11 @@ class Animal {
     }
 }
 ```
+```kotlin
+val animal: Animal = Animal()
+```
+
+### Calling a Class Function
 ```kotlin
 animal.move()
 ```
@@ -62,22 +68,21 @@ animal.move()
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
-
-    fun move() {
-        println("I am moving")
-    }
+    var name: String = ""
 }
 ```
-
-### Get a Class Property
 ```kotlin
-val movingSpeed: Double = animal.movingSpeed
+val animal: Animal = Animal()
 ```
 
-### Set a Class Property
+### Geting a Class Property
 ```kotlin
-animal.movingSpeed = 20.0
+val name: String = animal.name
+```
+
+### Setting a Class Property
+```kotlin
+animal.name = "Animal"
 ```
 
 <br />
@@ -87,25 +92,17 @@ animal.movingSpeed = 20.0
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
-        get() = field * 0.621371
-
-    fun move() {
-        println("I am moving")
-    }
+    var name: String = ""
+        get() = field.uppercase()
 }
 ```
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
+    var name: String = ""
         get() {
-            return field * 0.621371
+            return field.uppercase()
         }
-    
-    fun move() {
-        println("I am moving")
-    }
 }
 ```
 
@@ -113,14 +110,10 @@ class Animal {
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
+    var name: String = ""
         set(value) {
-            field = value / 0.621371
+            field = value.lowercase()
         }
-
-    fun move() {
-        println("I am moving")
-    }
 }
 ```
 
@@ -128,27 +121,17 @@ class Animal {
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
-        get() = field * 0.621371
+    var name: String = ""
         private set(value) {
-            field = value / 0.621371
+            field = value.lowercase()
         }
-
-    fun move() {
-        println("I am moving")
-    }
 }
 ```
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
-        get() = field * 0.621371
+    var name: String = ""
         private set
-
-    fun move() {
-        println("I am moving")
-    }
 }
 ```
 
@@ -158,18 +141,8 @@ class Animal {
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double = 0.0
-        get() = field * 0.621371
-        set(value) {
-            field = value / 0.621371
-        }
-
-    val attackDamage: Double
-        get() = 10.0 + movingSpeed * 100
-
-    fun move() {
-        println("I am moving")
-    }
+    val name: String
+        get() = Random.nextLong().toString()
 }
 ```
 
