@@ -14,7 +14,7 @@
 | 2 | [Basic Types](./notes/Part%20I/Chapter_2.md) |
 | 3 | [Variables and Constants](./notes/Part%20I/Chapter_3.md) |
 | 4 | [Conditions](./notes/Part%20I/Chapter_4.md) |
-| 5 | [Loops, Ranges, and Progressions](./notes/Part%20I/Chapter_5.md) |
+| 5 | [Ranges, Progressions, Conditions, and Loops](./notes/Part%20I/Chapter_5.md) |
 | 6 | [Functions](./notes/Part%20I/Chapter_6.md) |
 | 7 | [Numbers](./notes/Part%20I/Chapter_7.md) |
 | 8 | [Strings](./notes/Part%20I/Chapter_8.md) |
