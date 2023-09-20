@@ -2,36 +2,51 @@
 | Chapter | Title |
 | :-: | :- |
 | 4.1 | [Comparsion Operators](#41-comparsion-operators) |
-| 4.2 | [Logical Operators](#42-logical-operators) |
-| 4.3 | [Operator Precedence](#43-operator-precedence) |
-| 4.4 | [if Statments](#44-if-statments) |
+| 4.2 | [Equality Operators](#42-equality-operators) |
+| 4.3 | [Referential Equality Operators](#43-referential-equality-operators) |
+| 4.4 | [Logical Operators](#44-logical-operators) |
+| 4.5 | [Operator Precedence](#45-operator-precedence) |
+| 4.6 | [if Statments](#46-if-statments) |
 |  | [if-else Statements](#if-else-statements) |
 |  | [if-else if Statements](#if-else-if-statements) |
 |  | [Nested if Statements](#nested-if-statements) |
-| 4.5 | [if Expressions](#45-if-expressions) |
+| 4.7 | [if Expressions](#47-if-expressions) |
 |  | [if-else Expressions](#if-else-expressions) |
 |  | [if-else if-else Expressions](#if-else-if-else-expressions) |
-| 4.6 | [when Statements](#46-when-statements) |
+| 4.8 | [when Statements](#48-when-statements) |
 |  | [Multiple Cases for the Same Statements](#multiple-cases-for-the-same-statements) |
-| 4.7 | [when Expressions](#47-when-expressions) |
+| 4.9 | [when Expressions](#49-when-expressions) |
 |  | [when Expressions without Arguments](#when-expressions-without-arguments) |
 
 <br />
 
 ## 4.1 Comparsion Operators
-| Operator | Description |
-| :--: | :-- |
-| < | (Value) Less than |
-| <= | (Value) Less than or equal to |
-| > | (Value) Greater than |
-| >= | (Value) Greater than or equal to |
-| == | (Value) Equal to |
-| != | (Value) Not equal to |
-| === | (Reference) Equal to |
-| !== | (Reference) Not equal to |
+| Operator | Target | Description |
+| :--: | :-- | :-- |
+| < | Value | Less than |
+| <= | Value | Less than or equal to |
+| > | Value | Greater than |
+| >= | Value | Greater than or equal to |
+
 <br />
 
-## 4.2 Logical Operators
+## 4.2 Equality Operators
+| Operator | Target | Description |
+| :--: | :-- | :-- |
+| == | Value | Equal to |
+| != | Value | Not equal to |
+
+<br />
+
+## 4.3 Referential Equality Operators
+| Operator | Target | Description |
+| :--: | :-- | :-- |
+| === | Reference | Equal to |
+| !== | Reference | Not equal to |
+
+<br />
+
+## 4.4 Logical Operators
 | Operator | Description |
 | :--: | :-- |
 | && | Logical and |
@@ -40,7 +55,7 @@
 
 <br />
 
-## 4.3 Operator Precedence
+## 4.5 [Operator Precedence](https://kotlinlang.org/docs/reference/grammar.html#expressions)
 | Precedence | Title | Symbols |
 | :--: | :-- | :-- |
 | Highest | Prefix | ! |
@@ -51,7 +66,7 @@
 
 <br />
 
-## 4.4 if Statments
+## 4.6 if Statments
 ```kotlin
 if (num == 100) {
     println("Is 100")
@@ -59,7 +74,6 @@ if (num == 100) {
 ```
 
 - Kotlin allows if statements to omit braces, but only the first expression is evaluated.
-
 ```kotlin
 if (num == 100)
     println("Is 100")
@@ -100,22 +114,25 @@ if (num >= 100) {
 
 <br />
 
-## 4.5 if Expressions
+## 4.7 if Expressions
 ### if-else Expressions
 ```kotlin
 val value = if (num == 100) {
-    1000
+    100
 } else {
     0
 }
+```
+```kotlin
+val value = if (num == 100) 100 else 0
 ```
 
 ### if-else if-else Expressions
 ```kotlin
 val value = if (num == 100) {
-    1000
+    100
 } else if (num == 200){
-    2000
+    200
 } else {
     0
 }
@@ -123,7 +140,7 @@ val value = if (num == 100) {
 
 <br />
 
-## 4.6 when Statements
+## 4.8 when Statements
 ```kotlin
 when (num) {
     100 -> println("Is 100")
@@ -135,14 +152,11 @@ when (num) {
 when (num) {
     100 -> {
         println("Is 100")
-        println("Is 100")
     }
     200 -> {
         println("Is 200")
-        println("Is 200")
     }
     else -> {
-        println("Is not 100 or 200")
         println("Is not 100 or 200")
     }
 }
@@ -158,11 +172,11 @@ when (num) {
 
 <br />
 
-## 4.7 when Expressions
+## 4.9 when Expressions
 ```kotlin
 val value = when (num) {
-    100 -> 1000
-    200 -> 2000
+    100 -> 100
+    200 -> 200
     else -> 0
 }
 ```
@@ -170,11 +184,11 @@ val value = when (num) {
 val value = when (num) {
     100 -> {
         println("Is 100")
-        1000
+        100
     }
     200 -> {
         println("Is 200")
-        2000
+        200
     }
     else -> {
         println("Is not 100 or 200")
@@ -186,8 +200,8 @@ val value = when (num) {
 ### when Expressions without Arguments
 ```kotlin
 val value = when {
-    num >= 100 && num < 200 -> 1000
-    num >= 200 && num < 299 -> 2000
+    num >= 100 && num < 200 -> 100
+    num >= 200 && num < 299 -> 200
     else -> 0
 }
 ```
