@@ -49,7 +49,7 @@
 | :-: | :- |
 | 1 | [IO](./notes/Part%20IV/Chapter_1.md) |
 | 2 | [Objects](./notes/Part%20IV/Chapter_2.md) |
-| 3 | [Nested Classes](./notes/Part%20IV/Chapter_3.md) |
+| 3 | [Nested and Inner Classes](./notes/Part%20IV/Chapter_3.md) |
 | 4 | [Data Classes](./notes/Part%20IV/Chapter_4.md) |
 | 5 | [Enum Classes](./notes/Part%20IV/Chapter_5.md) |
 

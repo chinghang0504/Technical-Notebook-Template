@@ -1,10 +1,14 @@
-# [Kotlin Note](../../README.md) - Chapter 3 Nested Classes
+# [Kotlin Note](../../README.md) - Chapter 3 Nested and Inner Classes
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [Nested Class Declaration](#31-nested-class-declaration) |
-| 3.2 | [Nested Class Properties and Methods](#32-nested-class-properties-and-methods) |
-|  | [Accessing Nested Class Properties](#accessing-nested-class-properties) |
-|  | [Calling Nested Class Methods](#calling-nested-class-methods) |
+| 3.2 | [Nested Class Properties and Functions](#32-nested-class-properties-and-functions) |
+|  | [Nested Class Properties](#nested-class-properties) |
+|  | [Nested Class Functions](#nested-class-functions) |
+| 3.3 | [Inner Class Declaration](#33-inner-class-declaration) |
+| 3.4 | [Inner Class Properties and Functions](#34-inner-class-properties-and-functions) |
+|  | [Inner Class Properties](#inner-class-properties) |
+|  | [Inner Class Functions](#inner-class-functions) |
 
 <br />
 
@@ -20,34 +24,93 @@ class Animal {
 val animalBody: Animal.Body = Animal.Body()
 ```
 
-## 3.2 Nested Class Properties and Methods
+<br />
+
+## 3.2 Nested Class Properties and Functions
+### Nested Class Properties
+```kotlin
+class Animal {
+    
+    class Body {
+
+        var health: Int = 0
+    }
+}
+```
+```kotlin
+val animalBody: Animal.Body = Animal.Body()
+val health: Int = animalBody.health
+```
+
+### Nested Class Functions
 ```kotlin
 class Animal {
 
     class Body {
 
-        var health: Double = 0.0
-
-        fun printlnHealth() {
-            println("Health: $health")
+        fun sayHello() {
+            println("Hello")
         }
     }
+}
+```
+```kotlin
+val animalBody: Animal.Body = Animal.Body()
+animalBody.sayHello()
+```
 
-    var body: Body = Body()
+<br />
+
+## 3.3 Inner Class Declaration
+```kotlin
+class Animal {
+
+    inner class Body {
+    }
 }
 ```
 ```kotlin
 val animal: Animal = Animal()
+val animalBody: Animal.Body = animal.Body()
 ```
 
-### Accessing Nested Class Properties
+<br />
+
+## 3.4 Inner Class Properties and Functions
+### Inner Class Properties
 ```kotlin
-animal.body.health = 100.0
+class Animal {
+
+    inner class Body {
+
+        var health: Int = 0
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal()
+val animalBody: Animal.Body = animal.Body()
+val health: Int = animalBody.health
 ```
 
-### Calling Nested Class Methods
+### Inner Class Functions
 ```kotlin
-animal.body.printlnHealth()
+class Animal {
+
+    var name: String = "Animal"
+
+    inner class Body {
+
+        fun printName() {
+            println("Name: $name")
+        }
+    }
+}
+```
+```kotlin
+val animal: Animal = Animal()
+val animalBody: Animal.Body = animal.Body()
+animalBody.printName()
 ```
 
 <br />
