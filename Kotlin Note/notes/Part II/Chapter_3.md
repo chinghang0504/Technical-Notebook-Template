@@ -17,7 +17,7 @@
 |  | [Using is Keyword](#using-is-keyword) |
 | 3.7 | [Type Casting](#37-type-casting) |
 |  | [Using as Keyword](#using-as-keyword) |
-|  | [Using as Keyword and Safe Call Operator ?](#using-as-keyword-and-safe-call-operator) |
+|  | [Using as? Keyword](#using-as-keyword-1) |
 | 3.8 | [Smart Casting](#38-smart-casting) |
 
 <br />
@@ -213,7 +213,7 @@ val animal: Animal = Fish()
 (animal as Fish).swim()
 ```
 
-### Using as Keyword and Safe Call Operator ?
+### Using as? Keyword
 ```kotlin
 val animal: Animal = Fish()
 (animal as? Fish)?.swim()
