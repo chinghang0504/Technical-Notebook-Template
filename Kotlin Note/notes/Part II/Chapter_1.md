@@ -2,18 +2,17 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Class Declaration](#11-class-declaration) |
-| 1.2 | [Creating an Instance of a Class](#12-creating-an-instance-of-a-class) |
-| 1.3 | [Class Visibility Modifiers](#13-class-visibility-modifiers) |
-| 1.4 | [Class Functions](#14-class-functions) |
+| 1.2 | [Class Visibility Modifiers](#12-class-visibility-modifiers) |
+| 1.3 | [Class Functions](#13-class-functions) |
 |  | [Calling a Class Function](#calling-a-class-function) |
-| 1.5 | [Class Properties](#15-class-properties) |
+| 1.4 | [Class Properties](#14-class-properties) |
 |  | [Geting a Class Property](#geting-a-class-property) |
 |  | [Setting a Class Property](#setting-a-class-property) |
-| 1.6 | [Custom Getters and Setters](#16-custom-getters-and-setters) |
+| 1.5 | [Custom Getters and Setters](#15-custom-getters-and-setters) |
 |  | [Custom Getters](#custom-getters) |
 |  | [Custom Setters](#custom-setters) |
 |  | [Private Custom Setters](#private-custom-setters) |
-| 1.7 | [Computed Properties](#17-computed-properties) |
+| 1.6 | [Computed Properties](#16-computed-properties) |
 
 <br />
 
@@ -22,17 +21,13 @@
 class Animal {
 }
 ```
-
-<br />
-
-## 1.2 Creating an Instance of a Class
 ```kotlin
 val animal: Animal = Animal()
 ```
 
 <br />
 
-## 1.3 Class Visibility Modifiers
+## 1.2 Class Visibility Modifiers
 - The defaul visibility modifier of classes is public.
 
 | Visibility Modifier | Description |
@@ -44,7 +39,7 @@ val animal: Animal = Animal()
 
 <br />
 
-## 1.4 Class Functions
+## 1.3 Class Functions
 ```kotlin
 class Animal {
 
@@ -64,7 +59,7 @@ animal.move()
 
 <br />
 
-## 1.5 Class Properties
+## 1.4 Class Properties
 ```kotlin
 class Animal {
 
@@ -87,7 +82,7 @@ animal.name = "Animal"
 
 <br />
 
-## 1.6 Custom Getters and Setters
+## 1.5 Custom Getters and Setters
 ### Custom Getters
 ```kotlin
 class Animal {
@@ -137,7 +132,7 @@ class Animal {
 
 <br />
 
-## 1.7 Computed Properties
+## 1.6 Computed Properties
 ```kotlin
 class Animal {
 

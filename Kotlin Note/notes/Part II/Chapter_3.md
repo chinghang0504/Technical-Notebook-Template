@@ -2,9 +2,9 @@
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [Subclass Declaration](#31-subclass-declaration) |
-| 3.2 | [Inheritance Superclass Properties and Functions](#32-inheritance-superclass-properties-and-functions) |
-|  | [Inheritance Superclass Properties](#inheritance-superclass-properties) |
-|  | [Inheritance Superclass Functions](#inheritance-superclass-functions) |
+| 3.2 | [Inheriting Superclass Properties and Functions](#32-inheriting-superclass-properties-and-functions) |
+|  | [Inheriting Superclass Properties](#inheriting-superclass-properties) |
+|  | [Inheriting Superclass Functions](#inheriting-superclass-functions) |
 | 3.3 | [Overriding Superclass Properties and Functions](#33-overriding-superclass-properties-and-functions) |
 |  | [Overriding Superclass Properties](#overriding-superclass-properties) |
 |  | [Overriding Superclass Functions](#overriding-superclass-functions) |
@@ -36,8 +36,8 @@ val fish: Fish = Fish()
 
 <br />
 
-## 3.2 Inheritance Superclass Properties and Functions
-### Inheritance Superclass Properties
+## 3.2 Inheriting Superclass Properties and Functions
+### Inheriting Superclass Properties
 ```kotlin
 open class Animal {
 
@@ -52,7 +52,7 @@ val fish: Fish = Fish()
 val name: String = fish.name
 ```
 
-### Inheritance Superclass Functions
+### Inheriting Superclass Functions
 ```kotlin
 open class Animal {
 

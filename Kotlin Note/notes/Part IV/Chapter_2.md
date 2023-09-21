@@ -2,16 +2,18 @@
 | Chapter | Title |
 | :-: | :- |
 | 2.1 | [Object Declaration](#21-object-declaration) |
-| 2.2 | [Object Properties and Methods](#22-object-properties-and-methods) |
-|  | [Accessing Object Properties](#accessing-object-properties) |
-|  | [Calling Object Methods](#calling-object-methods) |
+| 2.2 | [Object Properties and Functions](#22-object-properties-and-functions) |
+|  | [Object Properties](#object-properties) |
+|  | [Object Functions](#object-functions) |
 | 2.3 | [Object Initialize Block](#23-object-initialize-block) |
 | 2.4 | [Object Expression Declaration](#24-object-expression-declaration) |
-| 2.5 | [Object Expression Methods](#25-object-expression-methods) |
-|  | [Calling Object Expression Methods](#calling-object-expression-methods) |
-| 2.6 | [Companion Objects](#26-companion-objects) |
-|  | [Accessing Componion Object Properties](#accessing-componion-object-properties) |
-|  | [Calling Componion Object Methods](#calling-componion-object-methods) |
+| 2.5 | [Object Expression Properties and Functions](#25-object-expression-properties-and-functions) |
+|  | [Object Expression Properties](#object-expression-properties) |
+|  | [Object Expression Functions](#object-expression-functions) |
+| 2.6 | [Companion Objects Declaration](#26-companion-objects-declaration) |
+| 2.7 | [Companion Objects Properties and Functions](#27-companion-objects-properties-and-functions) |
+|  | [Companion Objects Properties](#companion-objects-properties) |
+|  | [Companion Objects Functions](#companion-objects-functions) |
 
 <br />
 
@@ -23,27 +25,29 @@ object Earth {
 
 <br />
 
-## 2.2 Object Properties and Methods
+## 2.2 Object Properties and Functions
+### Object Properties
 ```kotlin
 object Earth {
 
-    val animalList: MutableList<Animal> = mutableListOf()
+    val animalList: List<Animal> = mutableListOf()
+}
+```
+```kotlin
+Earth.animalList.add(Animal())
+```
 
-    fun printAnimalNumber() {
-        println("Number of animals: ${animalList.size}")
+### Object Functions
+```kotlin
+object Earth {
+
+    fun printMessage() {
+        println("Hello World")
     }
 }
 ```
-
-### Accessing Object Properties
 ```kotlin
-val fish: Fish = Fish()
-Earth.animalList.add(fish)
-```
-
-### Calling Object Methods
-```kotlin
-Earth.printAnimalNumber()
+Earth.printMessage()
 ```
 
 <br />
@@ -55,11 +59,8 @@ object Earth {
     val animalList: MutableList<Animal>
 
     init {
-        animalList = mutableListOf(Fish(), Fish(), Fish())
-    }
-
-    fun printAnimalNumber() {
-        println("Number of animals: ${animalList.size}")
+        println("Executing an initialize block")
+        animalList = mutableListOf(Animal(), Animal(), Animal())
     }
 }
 ```
@@ -68,51 +69,86 @@ object Earth {
 
 ## 2.4 Object Expression Declaration
 ```kotlin
-val panda = object : Animal() {
+val bear = object: Animal() {
 }
 ```
 
 <br />
 
-## 2.5 Object Expression Methods
+## 2.5 Object Expression Properties and Functions
 ```kotlin
-val panda = object : Animal() {
+open class Animal {
 
-    override fun move() {
-        println("I am running")
+    open fun move() {
+        println("I am moving")
     }
 }
 ```
 
-### Calling Object Expression Methods
+### Object Expression Properties
 ```kotlin
-panda.move()
+val bear = object: Animal() {
+    
+    var hungry: Int = 100
+}
+    
+val hungry: Int = bear.hungry
+```
+
+### Object Expression Functions
+```kotlin
+val bear = object: Animal() {
+
+    override fun move() {
+        println("I am catching fish")
+    }
+}
+
+bear.move()
 ```
 
 <br />
 
-## 2.6 Companion Objects
+## 2.6 Companion Objects Declaration
 ```kotlin
-class Fish : Animal() {
+class Animal {
 
     companion object {
-        var livingPlace: String = "sea"
+    }
+}
+```
 
-        fun printLivingPlace() {
-            println("I am living in the $livingPlace")
+<br />
+
+## 2.7 Companion Objects Properties and Functions
+### Companion Objects Properties
+```kotlin
+class Animal {
+
+    companion object {
+
+        var animalSize: Int = 0
+    }
+}
+```
+```kotlin
+val animalSize: Int = Animal.animalSize
+```
+
+### Companion Objects Functions
+```kotlin
+class Animal {
+
+    companion object {
+
+        fun sayHello() {
+            println("Hello")
         }
     }
 }
 ```
-
-### Accessing Componion Object Properties
 ```kotlin
-println(Fish.livingPlace)
-```
-
-### Calling Componion Object Methods
-```kotlin
-Fish.printLivingPlace()
+Animal.sayHello()
 ```
 
 <br />
