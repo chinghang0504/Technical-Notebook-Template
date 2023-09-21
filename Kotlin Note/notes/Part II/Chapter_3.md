@@ -18,6 +18,7 @@
 | 3.7 | [Type Casting](#37-type-casting) |
 |  | [Using as Keyword](#using-as-keyword) |
 |  | [Using as Keyword and Safe Call Operator ?](#using-as-keyword-and-safe-call-operator) |
+| 3.8 | [Smart Casting](#38-smart-casting) |
 
 <br />
 
@@ -216,6 +217,27 @@ val animal: Animal = Fish()
 ```kotlin
 val animal: Animal = Fish()
 (animal as? Fish)?.swim()
+```
+
+<br />
+
+## 3.8 Smart Casting
+```kotlin
+open class Animal {
+}
+
+class Fish : Animal() {
+
+    fun swim() {
+        println("I am swimming")
+    }
+}
+```
+```kotlin
+val animal: Animal = Fish()
+if (animal is Fish) {
+    animal.swim()
+}
 ```
 
 <br />
