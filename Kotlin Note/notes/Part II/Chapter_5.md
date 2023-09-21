@@ -2,20 +2,19 @@
 | Chapter | Title |
 | :-: | :- |
 | 5.1 | [Interface Declaration](#51-interface-declaration) |
-| 5.2 | [Interface Properties and Methods](#52-interface-properties-and-methods) |
-|  | [Accessing Interface Properties](#accessing-interface-properties) |
-|  | [Calling Interface Methods](#calling-interface-methods) |
-| 5.3 | [Default Interface Methods](#53-default-interface-methods) |
-|  | [Calling Default Interface Methods](#calling-default-interface-methods) |
+| 5.2 | [Interface Property and Function Prototypes](#52-interface-property-and-function-prototypes) |
+|  | [Interface Property Prototypes](#interface-property-prototypes) |
+|  | [Interface Function Prototypes](#interface-function-prototypes) |
+| 5.3 | [Default Interface Functions](#53-default-interface-functions) |
 
 <br />
 
 ## 5.1 Interface Declaration
 ```kotlin
-interface AttackAbility {
+interface Attackable {
 }
 
-class Animal : AttackAbility {
+class Animal : Attackable {
 }
 ```
 ```kotlin
@@ -24,58 +23,59 @@ val animal: Animal = Animal()
 
 <br />
 
-## 5.2 Interface Properties and Methods
+## 5.2 Interface Property and Function Prototypes
+### Interface Property Prototypes
 ```kotlin
-interface AttackAbility {
+interface Attackable {
+    
+    var attack: Int
+}
 
-    var damage: Int
+class Animal : Attackable {
+    
+    override var attack: Int = 0
+}
+```
+```kotlin
+val animal: Animal = Animal()
+animal.attack = 100
+```
+
+### Interface Function Prototypes
+```kotlin
+interface Attackable {
 
     fun attack()
 }
 
-class Animal : AttackAbility {
+class Animal : Attackable {
     
-    override var damage: Int = 0
-
     override fun attack() {
-        println("I am attacking with damage $damage")
+        println("I am attacking")
     }
 }
 ```
 ```kotlin
 val animal: Animal = Animal()
-```
-
-### Accessing Interface Properties
-```kotlin
-animal.damage = 100
-```
-
-### Calling Interface Methods
-```kotlin
 animal.attack()
 ```
 
 <br />
 
-## 5.3 Default Interface Methods
+## 5.3 Default Interface Functions
 ```kotlin
-interface AttackAbility {
+interface Attackable {
 
     fun attack() {
-        println("I am attacking with no damage")
+        println("I can't attack")
     }
 }
 
-class Animal : AttackAbility {
+class Animal : Attackable {
 }
 ```
 ```kotlin
 val animal: Animal = Animal()
-```
-
-### Calling Default Interface Methods
-```kotlin
 animal.attack()
 ```
 
