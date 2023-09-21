@@ -2,63 +2,102 @@
 | Chapter | Title |
 | :-: | :- |
 | 4.1 | [Data Class Delcaration](#41-data-class-delcaration) |
-| 4.2 | [Data Class Default Methods](#42-data-class-default-methods) |
-|  | [Using toString Method](#using-tostring-method) |
-|  | [Using equals Method](#using-equals-method) |
-|  | [Using hashCode Method](#using-hashcode-method) |
-|  | [Using copy Method](#using-copy-method) |
-| 4.3 | [Destructing Data Class](#43-destructing-data-class) |
+| 4.2 | [Provided Data Class Functions](#42-provided-data-class-functions) |
+|  | [Provided Function: equals](#provided-function-equals) |
+|  | [Provided Function: hashCode](#provided-function-hashcode) |
+|  | [Provided Function: toString](#provided-function-tostring) |
+|  | [Provided Function: componentN](#provided-function-componentn) |
+|  | [Provided Function: copy](#provided-function-copy) |
+| 4.3 | [Data Class Functions](#43-data-class-functions) |
+| 4.4 | [Destructing Data Class](#44-destructing-data-class) |
 
 <br />
 
 ## 4.1 Data Class Delcaration
 ```kotlin
-data class Food(val name: String, val energy: Double)
+data class Food(var type: String, var energy: Int)
 ```
 ```kotlin
-val food: Food = Food("Meat", 100.0)
+val food: Food = Food("Meat", 100)
 ```
 
 <br />
 
-## 4.2 Data Class Default Methods
-### Using toString Method
+## 4.2 [Provided Data Class Functions](https://kotlinlang.org/docs/data-classes.html)
+### Provided Function: equals
 ```kotlin
-println(food.toString())        // Food(name=Meat, energy=100.0)
+val food1: Food = Food("Meat", 100)
+val food2: Food = Food("Meat", 100)
+println(food1.equals(food2))
 ```
 
-### Using equals Method
+### Provided Function: hashCode
 ```kotlin
-println(food1.equals(food2))    // true
+val food: Food = Food("Meat", 100)
+println(food.hashCode())
 ```
 
-### Using hashCode Method
+### Provided Function: toString
 ```kotlin
-println(food.hashCode())        // 1153791349
+val food: Food = Food("Meat", 100)
+println(food)                           // Food(type=Meat, energy=100)
 ```
 
-### Using copy Method
+### Provided Function: componentN
 ```kotlin
-val food1: Food = Food("Meat", 100.0)
+val food: Food = Food("Meat", 100)
+val type: String = food.component1()
+```
+```kotlin
+val food: Food = Food("Meat", 100)
+val energy: Int = food.component2()
+```
+
+### Provided Function: copy
+```kotlin
+val food1: Food = Food("Meat", 100)
 val food2: Food = food1.copy()
-
-println(food1.equals(food2))        // true
+println(food2)
 ```
 ```kotlin
-val food1: Food = Food("Meat", 100.0)
-val food2: Food = food1.copy(name = "Apple")
-
-println(food1.equals(food2))        // false
+val food1: Food = Food("Meat", 100)
+val food2: Food = food1.copy(energy = 1000)
+println(food2)
 ```
 
 <br />
 
-## 4.3 Destructing Data Class
+## 4.3 Data Class Functions
 ```kotlin
-val (name, energy) = Food("Meat", 100.0)
+data class Food(var type: String, var energy: Int) {
 
-println(name)       // Meat
-println(energy)     // 100.0
+    fun eaten() {
+        energy = 0
+    }
+}
+```
+```kotlin
+val food: Food = Food("Meat", 100)
+food.eaten()
+```
+
+<br />
+
+## 4.4 Destructing Data Class
+```kotlin
+data class Food(var type: String, var energy: Int)
+```
+```kotlin
+val food: Food = Food("Meat", 100)
+val (type: String, energy: Int) = food
+
+println("Type: $type, Energy: $energy")
+```
+```kotlin
+val food: Food = Food("Meat", 100)
+val (type, energy) = food
+
+println("Type: $type, Energy: $energy")
 ```
 
 <br />
