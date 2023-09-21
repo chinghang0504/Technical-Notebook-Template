@@ -12,6 +12,10 @@
 |  | [Initializer Block with Assigning Properties](#initializer-block-with-assigning-properties) |
 |  | [Initializer Block with Precondition Functions](#initializer-block-with-precondition-functions) |
 | 2.3 | [Initialization Order](#23-initialization-order) |
+|  | [Using Empty Constructor](#using-empty-constructor) |
+|  | [Using Primary Constructor](#using-primary-constructor) |
+|  | [Using Secondary Constructor without Calling a Primary Constructor](#using-secondary-constructor-without-calling-a-primary-constructor) |
+|  | [Using Secondary Constructor with Calling a Primary Constructor](#using-secondary-constructor-with-calling-a-primary-constructor) |
 | 2.4 | [Late Initialization](#24-late-initialization) |
 | 2.5 | [Lazy Initialization](#25-lazy-initialization) |
 
@@ -29,67 +33,77 @@ val animal: Animal = Animal()
 
 ### Primary Constructor without Defining Properties
 ```kotlin
-class Animal(initialMovingSpeed: Double) {
-
-    var movingSpeed: Double = initialMovingSpeed
+class Animal(name: String) {
 }
 ```
 ```kotlin
-val animal: Animal = Animal(100.0)
+val animal: Animal = Animal("Animal")
 ```
 
 ### Primary Constructor with Defining Properties
 ```kotlin
-class Animal(var movingSpeed: Double) {
+class Animal(var name: String) {
 }
 ```
 ```kotlin
-val animal: Animal = Animal(100.0)
+val animal: Animal = Animal("Animal")
+val name: String = animal.name
 ```
 
 ### Secondary Constructor without Calling a Primary Constructor
 ```kotlin
 class Animal {
 
-    var movingSpeed: Double
+    var name: String
+    var age: Int
 
-    constructor(initialMovingSpeed: Double) {
-        movingSpeed = initialMovingSpeed
+    constructor(name: String, age: Int) {
+        this.name = name
+        this.age = age
     }
 }
 ```
 ```kotlin
-val animal: Animal = Animal(100.0)
+val animal: Animal = Animal("Animal", 10)
+val name: String = animal.name
+val age: Int = animal.age
 ```
 
 ### Secondary Constructor with Calling a Primary Constructor
 ```kotlin
-class Animal(initialMovingSpeed: Double, val name: String) {
+class Animal(var name: String) {
 
-    var movingSpeed: Double = initialMovingSpeed
+    var age: Int = 0
 
-    constructor(name: String) : this(0.0, name) {
-        println("Calling a secondary constructor")
+    constructor(name: String, age: Int): this(name) {
+        this.age = age
     }
 }
 ```
 ```kotlin
-val animal: Animal = Animal("Dog")
+val animal: Animal = Animal("Animal", 10)
+val name: String = animal.name
+val age: Int = animal.age
 ```
 
 ### Secondary Constructor with Calling a Secondary Constructor
 ```kotlin
-class Animal(initialMovingSpeed: Double, val name: String) {
+class Animal(var name: String) {
 
-    var movingSpeed: Double = initialMovingSpeed
+    var age: Int = 0
 
-    constructor(name: String) : this(0.0, name)
+    constructor(name: String, age: Int): this(name) {
+        this.age = age
+    }
 
-    constructor() : this(0.0, "Unknown")
+    constructor(): this("Animal", 0) {
+    }
 }
 ```
 ```kotlin
 val animal: Animal = Animal()
+val name: String = animal.name
+val age: Int = animal.age
 ```
 
 <br />
@@ -97,32 +111,32 @@ val animal: Animal = Animal()
 ## 2.2 Initializer Blocks
 ### Initializer Block with Assigning Properties
 ```kotlin
-class Animal() {
+class Animal {
 
-    var movingSpeed: Double
+    var name: String
 
     init {
-        movingSpeed = 0.0
+        name = "Animal"
     }
 }
 ```
 ```kotlin
 val animal: Animal = Animal()
+val name: String = animal.name
 ```
 
 ### Initializer Block with Precondition Functions
 ```kotlin
-class Animal(initialMovingSpeed: Double) {
-
-    var movingSpeed: Double = initialMovingSpeed
+class Animal(var age: Int) {
 
     init {
-        require(movingSpeed >= 0.0)
+        require(age >= 0)
     }
 }
 ```
 ```kotlin
-val animal: Animal = Animal(-1.0)
+val animal: Animal = Animal(-1)
+val age: Int = animal.age
 ```
 
 <br />
@@ -137,7 +151,12 @@ val animal: Animal = Animal(-1.0)
 2. Assigning properties in the class
 3. Executing an initializer block
 
-### Using Secondary Constructor
+### Using Secondary Constructor without Calling a Primary Constructor
+1. Assigning properties in the class
+2. Executing an initializer block
+3. Executing a secondary constructor block
+
+### Using Secondary Constructor with Calling a Primary Constructor
 1. Calling a primary constructor
 2. Assigning properties in the primary constructor
 3. Assigning properties in the class
@@ -148,12 +167,12 @@ val animal: Animal = Animal(-1.0)
 
 ## 2.4 Late Initialization
 - The limitations of late initialization
-    1. can only be used with var properties
-    2. cannot define a custom getter or setter
-    3. cannot be the primitive types
+    1. Can only be used with var properties
+    2. Cannot define a custom getter or setter
+    3. Cannot be the primitive types
 
 ```kotlin
-class Animal() {
+class Animal {
 
     lateinit var name: String
 }
@@ -166,18 +185,17 @@ val animal: Animal = Animal()
 
 ## 2.5 Lazy Initialization
 ```kotlin
-class Animal() {
+class Animal {
 
     val name: String by lazy {
         println("Calling a lazy initialization")
-        "Unknown"
+        Random.nextLong().toString()
     }
 }
 ```
 ```kotlin
 val animal: Animal = Animal()
-animal.name
-animal.name
+val name: String = animal.name
 ```
 
 <br />
