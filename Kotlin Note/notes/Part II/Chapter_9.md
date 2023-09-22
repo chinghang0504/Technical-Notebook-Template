@@ -10,10 +10,10 @@
 | 9.5 | [Object Expression Properties and Functions](#95-object-expression-properties-and-functions) |
 |  | [Object Expression Properties](#object-expression-properties) |
 |  | [Object Expression Functions](#object-expression-functions) |
-| 9.6 | [Companion Objects Declaration](#96-companion-objects-declaration) |
-| 9.7 | [Companion Objects Properties and Functions](#97-companion-objects-properties-and-functions) |
-|  | [Companion Objects Properties](#companion-objects-properties) |
-|  | [Companion Objects Functions](#companion-objects-functions) |
+| 9.6 | [Companion Object Declaration](#96-companion-object-declaration) |
+| 9.7 | [Companion Object Properties and Functions](#97-companion-object-properties-and-functions) |
+|  | [Companion Object Properties](#companion-object-properties) |
+|  | [Companion Object Functions](#companion-object-functions) |
 
 <br />
 
@@ -111,7 +111,7 @@ bear.move()
 
 <br />
 
-## 9.6 Companion Objects Declaration
+## 9.6 Companion Object Declaration
 ```kotlin
 class Animal {
 
@@ -122,8 +122,8 @@ class Animal {
 
 <br />
 
-## 9.7 Companion Objects Properties and Functions
-### Companion Objects Properties
+## 9.7 Companion Object Properties and Functions
+### Companion Object Properties
 ```kotlin
 class Animal {
 
@@ -137,7 +137,7 @@ class Animal {
 val num: Int = Animal.num
 ```
 
-### Companion Objects Functions
+### Companion Object Functions
 ```kotlin
 class Animal {
 
