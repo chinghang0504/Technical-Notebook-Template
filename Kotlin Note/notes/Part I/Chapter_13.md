@@ -1,171 +1,143 @@
-# [Kotlin Note](../../README.md) - Chapter 13 Collection Manipulation Functions
+# [Kotlin Note](../../README.md) - Chapter 13 Scope Functions
 | Chapter | Title |
 | :-: | :- |
-| 13.1 | [Transforming Data](#131-transforming-data) |
-|  | [Iterable: map()](#iterable-map) |
-|  | [Iterable: associate()](#iterable-associate) |
-|  | [Iterable: flatMap()](#iterable-flatmap) |
-| 13.2 | [Filtering Data](#132-filtering-data) |
-|  | [Iterable: filter()](#iterable-filter) |
-| 13.3 | [Combining Data](#133-combining-data) |
-|  | [Iterable: zip()](#iterable-zip) |
-| 13.4 | [Aggregating Data](#134-aggregating-data) |
-|  | [Iterable: reduce()](#iterable-reduce) |
-|  | [Iterable: fold()](#iterable-fold) |
-|  | [Iterable: sumOf()](#iterable-sumof) |
+| 13.1 | [Scope Function Summary](#131-scope-function-summary) |
+|  | [Short Guide for Choosing Scope Functions](#short-guide-for-choosing-scope-functions) |
+| 13.2 | [Any: let()](#132-any-let) |
+| 13.3 | [Global: with()](#133-global-with) |
+| 13.4 | [Any: run()](#134-any-run) |
+| 13.5 | [Any: apply()](#135-any-apply) |
+| 13.6 | [Any: also()](#136-any-also) |
+| 13.7 | [Any: takeIf()](#137-any-takeif) |
+| 13.8 | [Any: takeUnless()](#138-any-takeunless) |
 
 <br />
 
-## 13.1 Transforming Data
-### [Iterable: map()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/map.html)
-- Returns a list containing the results of applying the given transform function to each element in the original collection.
-```kotlin
-inline fun <T, R> Iterable<T>.map(
-    transform: (T) -> R
-): List<R>
-```
+## 13.1 [Scope Function Summary](https://kotlinlang.org/docs/scope-functions.html#function-selection)
+| Scope Function | Context Object | Return Value |
+| :-- | :-- | :-- |
+| let | Lambda argument (it) | Lambda result |
+| with | Lambda receiver (this) | Lambda result |
+| run | Lambda receiver (this) | Lambda result |
+| apply | Lambda receiver (this) | Context object |
+| also | Lambda argument (it) | Context object |
+| takeIf | Lambda argument (it) | Context object / null |
+| takeUnless | Lambda argument (it) | null / Context object |
+
+### Short Guide for Choosing Scope Functions
+1. Executing a lambda on non-nullable objects: let
+2. Introducing an expression as a variable in local scope: let
+3. Object configuration: apply
+4. Object configuration and computing the result: run
+5. Running statements where an expression is required: non-extension run
+6. Additional effects: also
+7. Grouping function calls on an object: with
 
 <br />
 
-```kotlin
-val intList: List<Int> = listOf(1, 2, 3)
-val stringList: List<String> = intList.map {
-    it.toString()
-}
-```
-
-### [Iterable: associate()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate.html)
-- Returns a Map containing key-value pairs provided by transform function applied to elements of the given collection.
-```kotlin
-inline fun <T, K, V> Iterable<T>.associate(
-    transform: (T) -> Pair<K, V>
-): Map<K, V>
-```
-
-<br />
+## 13.2 [Any: let()](https://kotlinlang.org/docs/scope-functions.html#let)
+- Context Object: Lambda argument (it)
+- Return Value: Lambda result
 
 ```kotlin
-val intList: List<Int> = listOf(1, 2, 3)
-val map: Map<Int, String> = intList.associate {
-    it to it.toString()
-}
-```
-
-### [Iterable: flatMap()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/flat-map.html)
-- Returns a single list of all elements yielded from results of transform function being invoked on each element of original collection.
-```kotlin
-inline fun <T, R> Iterable<T>.flatMap(
-    transform: (T) -> Iterable<R>
-): List<R>
-```
-
-<br />
-
-```kotlin
-val nestedList: List<List<Int>> = listOf(
-    listOf(1, 2, 3),
-    listOf(4, 5, 6),
-    listOf(7, 8, 9)
-)
-val intList: List<Int> = nestedList.flatMap {
-    it
+val num: Int = mutableListOf(1, 2, 3).let {
+    it.add(4)
+    it.add(5)
+    it.add(6)
+    it.last()
 }
 ```
 
 <br />
 
-## 13.2 Filtering Data
-### [Iterable: filter()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html)
-- Returns a list containing only elements matching the given predicate.
-```kotlin
-inline fun <T> Iterable<T>.filter(
-    predicate: (T) -> Boolean
-): List<T>
-```
-
-<br />
+## 13.3 [Global: with()](https://kotlinlang.org/docs/scope-functions.html#with)
+- Context Object: Lambda receiver (this)
+- Return Value: Lambda result
 
 ```kotlin
-val intList: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-val oddList: List<Int> = intList.filter {
-    it % 2 == 1
+val list: MutableList<Int> = mutableListOf(1, 2, 3)
+val num: Int = with(list) {
+    add(4)
+    add(5)
+    add(6)
+    last()
 }
 ```
 
 <br />
 
-## 13.3 Combining Data
-### [Iterable: zip()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/zip.html)
-- Returns a list of values built from the elements of this collection and the other collection with the same index using the provided transform function applied to each pair of elements. The returned list has length of the shortest collection.
-```kotlin
-inline fun <T, R, V> Iterable<T>.zip(
-    other: Iterable<R>,
-    transform: (a: T, b: R) -> V
-): List<V>
-```
-
-<br />
+## 13.4 [Any: run()](https://kotlinlang.org/docs/scope-functions.html#run)
+- Context Object: Lambda receiver (this)
+- Return Value: Lambda result
 
 ```kotlin
-val intList: List<Int> = listOf(1, 2, 3)
-val charList: List<Char> = listOf('A', 'B', 'C')
-val stringList: List<String> = intList.zip(charList) { a: Int, b: Char ->
-    "$a and $b"
+val num: Int = mutableListOf(1, 2, 3).run {
+    add(4)
+    add(5)
+    add(6)
+    last()
 }
 ```
 
 <br />
 
-## 13.4 Aggregating Data
-### [Iterable: reduce()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/reduce.html)
-- Accumulates value starting with the first element and applying operation from left to right to current accumulator value and each element.
-```kotlin
-inline fun <S, T : S> Iterable<T>.reduce(
-    operation: (acc: S, T) -> S
-): S
-```
-
-<br />
+## 13.5 [Any: apply()](https://kotlinlang.org/docs/scope-functions.html#apply)
+- Context Object: Lambda receiver (this)
+- Return Value: Context object
 
 ```kotlin
-val intList: List<Int> = listOf(1, 2, 3)
-val num: Int = intList.reduce { acc, i ->
-    acc + i
+val list: MutableList<Int> = mutableListOf(1, 2, 3).apply {
+    add(4)
+    add(5)
+    add(6)
 }
 ```
 
-### [Iterable: fold()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/fold.html)
-- Accumulates value starting with initial value and applying operation from left to right to current accumulator value and each element.
-```kotlin
-inline fun <T, R> Iterable<T>.fold(
-    initial: R,
-    operation: (acc: R, T) -> R
-): R
-```
-
 <br />
 
+## 13.6 [Any: also()](https://kotlinlang.org/docs/scope-functions.html#also)
+- Context Object: Lambda argument (it)
+- Return Value: Context object
+
 ```kotlin
-val intList: List<Int> = listOf(1, 2, 3)
-val num: Int = intList.reduce { acc: Int, i: Int ->
-    acc + i
+val list: MutableList<Int> = mutableListOf(1, 2, 3).also {
+    it.add(4)
+    it.add(5)
+    it.add(6)
 }
 ```
 
-### [Iterable: sumOf()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sum-of.html)
-- Returns the sum of all values produced by selector function applied to each element in the collection.
+<br />
+
+## 13.7 [Any: takeIf()](https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless)
+- Context Object: Lambda argument (it)
+- Return Value: 
+    - Context object if the condition is true
+    - null if the condition is false
+
 ```kotlin
-@JvmName("sumOfInt") inline fun <T> Iterable<T>.sumOf(
-    selector: (T) -> Int
-): Int
+val list: MutableList<Int>? = mutableListOf(1, 2, 3).takeIf {
+    it.add(4)
+    it.add(5)
+    it.add(6)
+    it.size == 6
+}
 ```
 
 <br />
 
+## 13.8 [Any: takeUnless()](https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless)
+- Context Object: Lambda argument (it)
+- Return Value: 
+    - null if the condition is true
+    - Context object if the condition is false
+
 ```kotlin
-val intList: List<Int> = listOf(1, 2, 3)
-val num: Int = intList.sumOf {
-    it
+val list: MutableList<Int>? = mutableListOf(1, 2, 3).takeUnless {
+    it.add(4)
+    it.add(5)
+    it.add(6)
+    it.size == 6
 }
 ```
 

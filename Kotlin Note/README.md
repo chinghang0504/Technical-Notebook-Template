@@ -22,8 +22,7 @@
 | 10 | [Null Safety](./notes/Part%20I/Chapter_10.md) |
 | 11 | [Exceptions](./notes/Part%20I/Chapter_11.md) |
 | 12 | [Lambda Expressions](./notes/Part%20I/Chapter_12.md) |
-| 13 | [Collection Manipulation Functions](./notes/Part%20I/Chapter_13.md) |
-| 14 | [Scope Functions](./notes/Part%20I/Chapter_14.md) |
+| 13 | [Scope Functions](./notes/Part%20I/Chapter_13.md) |
 
 ### Part II: Object-Oriented Programming 
 | Chapter | Title |
@@ -45,6 +44,7 @@
 | 1 | [Lists](./notes/Part%20III/Chapter_1.md) |
 | 2 | [Sets](./notes/Part%20III/Chapter_2.md) |
 | 3 | [Maps](./notes/Part%20III/Chapter_3.md) |
+| 4 | [Collection Manipulation](./notes/Part%20III/Chapter_4.md) |
 
 ### Part IV: Special Topics
 | Chapter | Title |
