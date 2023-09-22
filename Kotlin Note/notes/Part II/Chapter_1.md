@@ -2,8 +2,8 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Class Declaration](#11-class-declaration) |
-| 1.2 | [Class Functions](#12-class-functions) |
-| 1.3 | [Class Properties](#13-class-properties) |
+| 1.2 | [Class Properties](#12-class-properties) |
+| 1.3 | [Class Functions](#13-class-functions) |
 | 1.4 | [Custom Getters and Setters](#14-custom-getters-and-setters) |
 |  | [Custom Getters](#custom-getters) |
 |  | [Custom Setters](#custom-setters) |
@@ -25,7 +25,21 @@ val animal: Animal = Animal()
 
 <br />
 
-## 1.2 Class Functions
+## 1.2 Class Properties
+```kotlin
+class Animal {
+
+    var name: String = ""
+}
+```
+```kotlin
+val animal: Animal = Animal()
+val name: String = animal.name
+```
+
+<br />
+
+## 1.3 Class Functions
 ```kotlin
 class Animal {
 
@@ -37,20 +51,6 @@ class Animal {
 ```kotlin
 val animal: Animal = Animal()
 animal.move()
-```
-
-<br />
-
-## 1.3 Class Properties
-```kotlin
-class Animal {
-
-    var name: String = ""
-}
-```
-```kotlin
-val animal: Animal = Animal()
-val name: String = animal.name
 ```
 
 <br />

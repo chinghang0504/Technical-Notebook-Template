@@ -9,8 +9,8 @@
 |  | [Secondary Constructor with Calling a Primary Constructor](#secondary-constructor-with-calling-a-primary-constructor) |
 |  | [Secondary Constructor with Calling a Secondary Constructor](#secondary-constructor-with-calling-a-secondary-constructor) |
 | 2.2 | [Initializer Blocks](#22-initializer-blocks) |
-|  | [Initializer Block with Assigning Properties](#initializer-block-with-assigning-properties) |
-|  | [Initializer Block with Precondition Functions](#initializer-block-with-precondition-functions) |
+|  | [Assigning Properties in the Initializer Block](#assigning-properties-in-the-initializer-block) |
+|  | [Calling Precondition Functions in the Initializer Block](#calling-precondition-functions-in-the-initializer-block) |
 | 2.3 | [Initialization Order](#23-initialization-order) |
 |  | [Using Empty Constructor](#using-empty-constructor) |
 |  | [Using Primary Constructor](#using-primary-constructor) |
@@ -109,7 +109,7 @@ val age: Int = animal.age
 <br />
 
 ## 2.2 Initializer Blocks
-### Initializer Block with Assigning Properties
+### Assigning Properties in the Initializer Block
 ```kotlin
 class Animal {
 
@@ -125,7 +125,7 @@ val animal: Animal = Animal()
 val name: String = animal.name
 ```
 
-### Initializer Block with Precondition Functions
+### Calling Precondition Functions in the Initializer Block
 ```kotlin
 class Animal(var age: Int) {
 
@@ -136,7 +136,6 @@ class Animal(var age: Int) {
 ```
 ```kotlin
 val animal: Animal = Animal(-1)
-val age: Int = animal.age
 ```
 
 <br />
