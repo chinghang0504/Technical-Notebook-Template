@@ -2,17 +2,17 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Console Output](#11-console-output) |
-|  | [Function: print](#function-print) |
-|  | [Function: println](#function-println) |
+|  | [Kotlin: print()](#kotlin-print) |
+|  | [Kotlin: println()](#kotlin-println) |
 | 1.2 | [Console Input](#12-console-input) |
-|  | [Function: readLine](#function-readline) |
-|  | [Function: readln](#function-readln) |
-|  | [Function: readlnOrNull](#function-readlnornull) |
+|  | [Kotlin: readLine()](#kotlin-readline) |
+|  | [Kotlin: readln()](#kotlin-readln) |
+|  | [Kotlin: readlnOrNull()](#kotlin-readlnornull) |
 
 <br />
 
 ## 1.1 Console Output
-### [Function: print](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/print.html)
+### [Kotlin: print()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/print.html)
 - Prints the given message to the standard output stream.
 ```kotlin
 fun print(message: Any?)
@@ -31,7 +31,7 @@ fun print(message: Double)
 fun print(message: CharArray)
 ```
 
-### [Function: println](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
+### [Kotlin: println()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
 - Prints the line separator to the standard output stream.
 ```kotlin
 fun println()
@@ -58,19 +58,19 @@ fun println(message: CharArray)
 <br />
 
 ## 1.2 Console Input
-### [Function: readLine](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/read-line.html)
+### [Kotlin: readLine()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/read-line.html)
 - Reads a line of input from the standard input stream.
 ```kotlin
 fun readLine(): String?
 ```
 
-### [Function: readln](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/readln.html)
+### [Kotlin: readln()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/readln.html)
 - Reads a line of input from the standard input stream and returns it, or throws a RuntimeException if EOF has already been reached when readln is called.
 ```kotlin
 fun readln(): String
 ```
 
-### [Function: readlnOrNull](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/readln-or-null.html)
+### [Kotlin: readlnOrNull()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/readln-or-null.html)
 - Reads a line of input from the standard input stream and returns it, or return null if EOF has already been reached when readlnOrNull is called.
 ```kotlin
 fun readlnOrNull(): String?

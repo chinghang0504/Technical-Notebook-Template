@@ -3,13 +3,13 @@
 | :-: | :- |
 | 14.1 | [Scope Function Summary](#141-scope-function-summary) |
 |  | [Short Guide for Choosing Scope Functions](#short-guide-for-choosing-scope-functions) |
-| 14.2 | [let Scope Function](#142-let-scope-function) |
-| 14.3 | [with Scope Function](#143-with-scope-function) |
-| 14.4 | [run Scope Function](#144-run-scope-function) |
-| 14.5 | [apply Scope Function](#145-apply-scope-function) |
-| 14.6 | [also Scope Function](#146-also-scope-function) |
-| 14.7 | [takeIf Scope Function](#147-takeif-scope-function) |
-| 14.8 | [takeUnless Scope Function](#148-takeunless-scope-function) |
+| 14.2 | [Kotlin: let()](#142-kotlin-let) |
+| 14.3 | [Kotlin: with()](#143-kotlin-with) |
+| 14.4 | [Kotlin: run()](#144-kotlin-run) |
+| 14.5 | [Kotlin: apply()](#145-kotlin-apply) |
+| 14.6 | [Kotlin: also()](#146-kotlin-also) |
+| 14.7 | [Kotlin: takeIf()](#147-kotlin-takeif) |
+| 14.8 | [Kotlin: takeUnless()](#148-kotlin-takeunless) |
 
 <br />
 
@@ -35,7 +35,7 @@
 
 <br />
 
-## 14.2 [let Scope Function](https://kotlinlang.org/docs/scope-functions.html#let)
+## 14.2 [Kotlin: let()](https://kotlinlang.org/docs/scope-functions.html#let)
 - Context Object: Lambda argument (it)
 - Return Value: Lambda result
 
@@ -50,7 +50,7 @@ val num: Int = mutableListOf(1, 2, 3).let {
 
 <br />
 
-## 14.3 [with Scope Function](https://kotlinlang.org/docs/scope-functions.html#with)
+## 14.3 [Kotlin: with()](https://kotlinlang.org/docs/scope-functions.html#with)
 - Context Object: Lambda receiver (this)
 - Return Value: Lambda result
 
@@ -66,7 +66,7 @@ val num: Int = with(list) {
 
 <br />
 
-## 14.4 [run Scope Function](https://kotlinlang.org/docs/scope-functions.html#run)
+## 14.4 [Kotlin: run()](https://kotlinlang.org/docs/scope-functions.html#run)
 - Context Object: Lambda receiver (this)
 - Return Value: Lambda result
 
@@ -81,7 +81,7 @@ val num: Int = mutableListOf(1, 2, 3).run {
 
 <br />
 
-## 14.5 [apply Scope Function](https://kotlinlang.org/docs/scope-functions.html#apply)
+## 14.5 [Kotlin: apply()](https://kotlinlang.org/docs/scope-functions.html#apply)
 - Context Object: Lambda receiver (this)
 - Return Value: Context object
 
@@ -95,7 +95,7 @@ val list: MutableList<Int> = mutableListOf(1, 2, 3).apply {
 
 <br />
 
-## 14.6 [also Scope Function](https://kotlinlang.org/docs/scope-functions.html#also)
+## 14.6 [Kotlin: also()](https://kotlinlang.org/docs/scope-functions.html#also)
 - Context Object: Lambda argument (it)
 - Return Value: Context object
 
@@ -109,7 +109,7 @@ val list: MutableList<Int> = mutableListOf(1, 2, 3).also {
 
 <br />
 
-## 14.7 [takeIf Scope Function](https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless)
+## 14.7 [Kotlin: takeIf()](https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless)
 - Context Object: Lambda argument (it)
 - Return Value: 
     - Context object if the condition is true
@@ -126,7 +126,7 @@ val list: MutableList<Int>? = mutableListOf(1, 2, 3).takeIf {
 
 <br />
 
-## 14.8 [takeUnless Scope Function](https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless)
+## 14.8 [Kotlin: takeUnless()](https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless)
 - Context Object: Lambda argument (it)
 - Return Value: 
     - null if the condition is true

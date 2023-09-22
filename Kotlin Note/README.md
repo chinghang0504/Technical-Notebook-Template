@@ -22,10 +22,10 @@
 | 10 | [Null Safety](./notes/Part%20I/Chapter_10.md) |
 | 11 | [Exceptions](./notes/Part%20I/Chapter_11.md) |
 | 12 | [Lambda Expressions](./notes/Part%20I/Chapter_12.md) |
-| 13 | [Collection Functions](./notes/Part%20I/Chapter_13.md) |
+| 13 | [Collection Manipulation Functions](./notes/Part%20I/Chapter_13.md) |
 | 14 | [Scope Functions](./notes/Part%20I/Chapter_14.md) |
 
-### Part II: Classes
+### Part II: Object-Oriented Programming 
 | Chapter | Title |
 | :-: | :- |
 | 1 | [Classes](./notes/Part%20II/Chapter_1.md) |
@@ -36,6 +36,8 @@
 | 6 | [Abstract Classes](./notes/Part%20II/Chapter_6.md) |
 | 7 | [Generics](./notes/Part%20II/Chapter_7.md) |
 | 8 | [Extensions](./notes/Part%20II/Chapter_8.md) |
+| 9 | [Objects](./notes/Part%20II/Chapter_9.md) |
+| 10 | [Nested and Inner Classes](./notes/Part%20II/Chapter_10.md) |
 
 ### Part III: Collections
 | Chapter | Title |
@@ -48,9 +50,7 @@
 | Chapter | Title |
 | :-: | :- |
 | 1 | [IO](./notes/Part%20IV/Chapter_1.md) |
-| 2 | [Objects](./notes/Part%20IV/Chapter_2.md) |
-| 3 | [Nested and Inner Classes](./notes/Part%20IV/Chapter_3.md) |
-| 4 | [Data Classes](./notes/Part%20IV/Chapter_4.md) |
-| 5 | [Enum Classes](./notes/Part%20IV/Chapter_5.md) |
+| 2 | [Data Classes](./notes/Part%20IV/Chapter_2.md) |
+| 3 | [Enum Classes](./notes/Part%20IV/Chapter_3.md) |
 
 <br />

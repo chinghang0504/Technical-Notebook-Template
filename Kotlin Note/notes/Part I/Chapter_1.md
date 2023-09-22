@@ -2,8 +2,8 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Comments](#11-comments) |
-|  | [Single-line Comments](#single-line-comments) |
-|  | [Multi-line Comments](#multi-line-comments) |
+|  | [Single-Line Comments](#single-line-comments) |
+|  | [Multi-Line Comments](#multi-line-comments) |
 | 1.2 | [main Function](#12-main-function) |
 | 1.3 | [Keywords and Operators](#13-keywords-and-operators) |
 |  | [Hard Keywords](#hard-keywords) |
@@ -16,12 +16,12 @@
 <br />
 
 ## 1.1 Comments
-### Single-line Comments
+### Single-Line Comments
 ```kotlin
 // This is a comment
 ```
 
-### Multi-line Comments
+### Multi-Line Comments
 ```kotlin
 /*
     This is a comment

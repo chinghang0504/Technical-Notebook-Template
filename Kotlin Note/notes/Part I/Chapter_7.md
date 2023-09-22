@@ -14,7 +14,7 @@
 | 7.5 | [Unit Functions](#75-unit-functions) |
 | 7.6 | [Named Function Arguments](#76-named-function-arguments) |
 | 7.7 | [Function Overloading](#77-function-overloading) |
-| 7.8 | [Function: TODO](#78-function-todo) |
+| 7.8 | [Kotlin: TODO()](#78-kotlin-todo) |
 | 7.9 | [Function Names in Backticks](#79-function-names-in-backticks) |
 | 7.10 | [Function Visibility Modifiers](#710-function-visibility-modifiers) |
 
@@ -169,7 +169,7 @@ printWarningMessage("System Failed", LocalDateTime.now())
 
 <br />
 
-## 7.8 [Function: TODO](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html)
+## 7.8 [Kotlin: TODO()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html)
 - Always throws NotImplementedError stating that operation is not implemented.
 ```kotlin
 fun TODO(): Nothing

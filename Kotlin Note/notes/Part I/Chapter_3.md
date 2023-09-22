@@ -2,22 +2,22 @@
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [Variables](#31-variables) |
-|  | [Variable Declaration](#variable-declaration) |
+|  | [Variable Declaration without Type Inference](#variable-declaration-without-type-inference) |
 |  | [Variable Declaration with Type Inference](#variable-declaration-with-type-inference) |
 |  | [Variable Declaration without Initializing](#variable-declaration-without-initializing) |
 | 3.2 | [Assigning Value to a Variable](#32-assigning-value-to-a-variable) |
 |  | [Using Assignment Operator =](#using-assignment-operator) |
 | 3.3 | [Constants](#33-constants) |
-|  | [Run-Time Constant Declaration](#run-time-constant-declaration) |
+|  | [Run-Time Constant Declaration without Type Inference](#run-time-constant-declaration-without-type-inference) |
 |  | [Run-Time Constant Declaration with Type Inference](#run-time-constant-declaration-with-type-inference) |
 |  | [Compile-Time Constants](#compile-time-constants) |
-|  | [Compile-Time Constant Declaration](#compile-time-constant-declaration) |
+|  | [Compile-Time Constant Declaration without Type Inference](#compile-time-constant-declaration-without-type-inference) |
 |  | [Compile-Time Constant Declaration with Type Inference](#compile-time-constant-declaration-with-type-inference) |
 
 <br />
 
 ## 3.1 Variables
-### Variable Declaration
+### Variable Declaration without Type Inference
 ```kotlin
 var num: Int = 100
 ```
@@ -47,7 +47,7 @@ num = 100
     1. Run-time constants
     2. Compile-time constants
 
-### Run-Time Constant Declaration
+### Run-Time Constant Declaration without Type Inference
 ```kotlin
 val num: Int = 100
 ```
@@ -67,7 +67,7 @@ val num = 100
 | Int | UInt |  |  |  |  |
 | Long | ULong |  |  |  |  |
 
-### Compile-Time Constant Declaration
+### Compile-Time Constant Declaration without Type Inference
 ```kotlin
 const val num: Int = 100
 ```

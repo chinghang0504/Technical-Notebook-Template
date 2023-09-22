@@ -18,24 +18,24 @@
 |  | [Floating-Point Operators](#floating-point-operators) |
 |  | [Bitwise Operations](#bitwise-operations) |
 | 8.4 | [Coverting Between Numeric Types](#84-coverting-between-numeric-types) |
-|  | [Number: toByte](#number-tobyte) |
-|  | [Number: toShort](#number-toshort) |
-|  | [Number: toInt](#number-toint) |
-|  | [Number: toLong](#number-tolong) |
-|  | [Number: toFloat](#number-tofloat) |
-|  | [Number: toDouble](#number-todouble) |
+|  | [Number: toByte()](#number-tobyte) |
+|  | [Number: toShort()](#number-toshort) |
+|  | [Number: toInt()](#number-toint) |
+|  | [Number: toLong()](#number-tolong) |
+|  | [Number: toFloat()](#number-tofloat) |
+|  | [Number: toDouble()](#number-todouble) |
 | 8.5 | [Rounding Between Numeric Types](#85-rounding-between-numeric-types) |
-|  | [Double: roundToInt](#double-roundtoint) |
-|  | [Float: roundToInt](#float-roundtoint) |
-|  | [Double: roundToLong](#double-roundtolong) |
-|  | [Float: roundToLong](#float-roundtolong) |
+|  | [Double: roundToInt()](#double-roundtoint) |
+|  | [Float: roundToInt()](#float-roundtoint) |
+|  | [Double: roundToLong()](#double-roundtolong) |
+|  | [Float: roundToLong()](#float-roundtolong) |
 | 8.6 | [Numbers to Strings](#86-numbers-to-strings) |
-|  | [Byte: toString](#byte-tostring) |
-|  | [Short: toString](#short-tostring) |
-|  | [Int: toString](#int-tostring) |
-|  | [Long: toString](#long-tostring) |
-|  | [Float: toString](#float-tostring) |
-|  | [Double: toString](#double-tostring) |
+|  | [Byte: toString()](#byte-tostring) |
+|  | [Short: toString()](#short-tostring) |
+|  | [Int: toString()](#int-tostring) |
+|  | [Long: toString()](#long-tostring) |
+|  | [Float: toString()](#float-tostring) |
+|  | [Double: toString()](#double-tostring) |
 
 <br />
 
@@ -182,37 +182,37 @@ println(Integer.toBinaryString(0b1100.ushr(1)))         // 110
 <br />
 
 ## 8.4 Coverting Between Numeric Types
-### [Number: toByte](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-byte.html)
+### [Number: toByte()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-byte.html)
 - Returns the value of this number as a Byte, which may involve rounding or truncation.
 ```kotlin
 abstract fun toByte(): Byte
 ```
 
-### [Number: toShort](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-short.html)
+### [Number: toShort()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-short.html)
 - Returns the value of this number as a Short, which may involve rounding or truncation.
 ```kotlin
 abstract fun toShort(): Short
 ```
 
-### [Number: toInt](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-int.html)
+### [Number: toInt()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-int.html)
 - Returns the value of this number as an Int, which may involve rounding or truncation.
 ```kotlin
 abstract fun toInt(): Int
 ```
 
-### [Number: toLong](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-long.html)
+### [Number: toLong()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-long.html)
 - Returns the value of this number as a Long, which may involve rounding or truncation.
 ```kotlin
 abstract fun toLong(): Long
 ```
 
-### [Number: toFloat](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-float.html)
+### [Number: toFloat()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-float.html)
 - Returns the value of this number as a Float, which may involve rounding.
 ```kotlin
 abstract fun toFloat(): Float
 ```
 
-### [Number: toDouble](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-double.html)
+### [Number: toDouble()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/to-double.html)
 - Returns the value of this number as a Double, which may involve rounding.
 ```kotlin
 abstract fun toDouble(): Double
@@ -221,25 +221,25 @@ abstract fun toDouble(): Double
 <br />
 
 ## 8.5 Rounding Between Numeric Types
-### [Double: roundToInt](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-int.html)
+### [Double: roundToInt()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-int.html)
 - Rounds this Double value to the nearest integer and converts the result to Int. Ties are rounded towards positive infinity.
 ```kotlin
 fun Double.roundToInt(): Int
 ```
 
-### [Float: roundToInt](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-int.html)
+### [Float: roundToInt()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-int.html)
 - Rounds this Float value to the nearest integer and converts the result to Int. Ties are rounded towards positive infinity.
 ```kotlin
 fun Float.roundToInt(): Int
 ```
 
-### [Double: roundToLong](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-long.html)
+### [Double: roundToLong()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-long.html)
 - Rounds this Double value to the nearest integer and converts the result to Long. Ties are rounded towards positive infinity.
 ```kotlin
 fun Double.roundToLong(): Long
 ```
 
-### [Float: roundToLong](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-long.html)
+### [Float: roundToLong()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/round-to-long.html)
 - Rounds this Float value to the nearest integer and converts the result to Long. Ties are rounded towards positive infinity.
 ```kotlin
 fun Float.roundToLong(): Long
@@ -248,37 +248,37 @@ fun Float.roundToLong(): Long
 <br />
 
 ## 8.6 Numbers to Strings
-### [Byte: toString](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/to-string.html)
+### [Byte: toString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/to-string.html)
 - Returns a string representation of the object.
 ```kotlin
 fun toString(): String
 ```
 
-### [Short: toString](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/to-string.html)
+### [Short: toString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/to-string.html)
 - Returns a string representation of the object.
 ```kotlin
 fun toString(): String
 ```
 
-### [Int: toString](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/to-string.html)
+### [Int: toString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/to-string.html)
 - Returns a string representation of the object.
 ```kotlin
 fun toString(): String
 ```
 
-### [Long: toString](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/to-string.html)
+### [Long: toString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/to-string.html)
 - Returns a string representation of the object.
 ```kotlin
 fun toString(): String
 ```
 
-### [Float: toString](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/to-string.html)
+### [Float: toString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/to-string.html)
 - Returns a string representation of the object.
 ```kotlin
 fun toString(): String
 ```
 
-### [Double: toString](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/to-string.html)
+### [Double: toString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/to-string.html)
 - Returns a string representation of the object.
 ```kotlin
 fun toString(): String

@@ -1,116 +1,112 @@
-# [Kotlin Note](../../README.md) - Chapter 3 Nested and Inner Classes
+# [Kotlin Note](../../README.md) - Chapter 3 Enum Classes
 | Chapter | Title |
 | :-: | :- |
-| 3.1 | [Nested Class Declaration](#31-nested-class-declaration) |
-| 3.2 | [Nested Class Properties and Functions](#32-nested-class-properties-and-functions) |
-|  | [Nested Class Properties](#nested-class-properties) |
-|  | [Nested Class Functions](#nested-class-functions) |
-| 3.3 | [Inner Class Declaration](#33-inner-class-declaration) |
-| 3.4 | [Inner Class Properties and Functions](#34-inner-class-properties-and-functions) |
-|  | [Inner Class Properties](#inner-class-properties) |
-|  | [Inner Class Functions](#inner-class-functions) |
+| 3.1 | [Enum Class Declaration](#31-enum-class-declaration) |
+| 3.2 | [Provided Enum Class Properties and Functions](#32-provided-enum-class-properties-and-functions) |
+|  | [Provided Property: name](#provided-property-name) |
+|  | [Provided Property: ordinal](#provided-property-ordinal) |
+|  | [Provided Function: equals()](#provided-function-equals) |
+|  | [Provided Function: hashCode()](#provided-function-hashcode) |
+|  | [Provided Function: toString()](#provided-function-tostring) |
+|  | [Provided Function: compareTo()](#provided-function-compareto) |
+| 3.3 | [Enum Class Properties and Functions](#33-enum-class-properties-and-functions) |
+|  | [Enum Class Properties](#enum-class-properties) |
+|  | [Enum Class Functions](#enum-class-functions) |
 
 <br />
 
-## 3.1 Nested Class Declaration
+## 3.1 Enum Class Declaration
 ```kotlin
-class Animal {
+enum class FoodType {
 
-    class Body {
-    }
+    Meat,
+    Fruit,
+    Vegetables
 }
 ```
 ```kotlin
-val animalBody: Animal.Body = Animal.Body()
-```
-
-<br />
-
-## 3.2 Nested Class Properties and Functions
-### Nested Class Properties
-```kotlin
-class Animal {
-    
-    class Body {
-
-        var health: Int = 0
-    }
-}
-```
-```kotlin
-val animalBody: Animal.Body = Animal.Body()
-val health: Int = animalBody.health
-```
-
-### Nested Class Functions
-```kotlin
-class Animal {
-
-    class Body {
-
-        fun printHelloWorld() {
-            println("Hello World")
-        }
-    }
-}
-```
-```kotlin
-val animalBody: Animal.Body = Animal.Body()
-animalBody.printHelloWorld()
+val foodType: FoodType = FoodType.Meat
 ```
 
 <br />
 
-## 3.3 Inner Class Declaration
+## 3.2 Provided Enum Class Properties and Functions
 ```kotlin
-class Animal {
+enum class FoodType {
 
-    inner class Body {
-    }
+    Meat,
+    Fruit,
+    Vegetables
 }
 ```
 ```kotlin
-val animal: Animal = Animal()
-val animalBody: Animal.Body = animal.Body()
+val foodType1: FoodType = FoodType.Meat
+val foodType2: FoodType = FoodType.Fruit
+```
+
+### Provided Property: name
+```kotlin
+val name: String = foodType1.name
+```
+
+### Provided Property: ordinal
+```kotlin
+val ordinal: Int = foodType1.ordinal                // 0
+```
+
+### Provided Function: equals()
+```kotlin
+val equal: Boolean = foodType1.equals(foodType2)
+```
+
+### Provided Function: hashCode()
+```kotlin
+val hashCode: Int = foodType1.hashCode()
+```
+
+### Provided Function: toString()
+```kotlin
+val name: String = foodType1.toString()             // Meat
+```
+
+### Provided Function: compareTo()
+```kotlin
+var compare: Boolean = foodType1 < foodType2
 ```
 
 <br />
 
-## 3.4 Inner Class Properties and Functions
-### Inner Class Properties
+## 3.3 Enum Class Properties and Functions
+### Enum Class Properties
 ```kotlin
-class Animal {
+enum class FoodType(val energy: Int) {
 
-    inner class Body {
+    Meat(100),
+    Fruit(30),
+    Vegetables(10)
+}
+```
+```kotlin
+val foodType: FoodType = FoodType.Meat
+val energy: Int = foodType.energy
+```
 
-        var health: Int = 0
+### Enum Class Functions
+```kotlin
+enum class FoodType {
+
+    Meat,
+    Fruit,
+    Vegetables;
+
+    fun printHelloWorld() {
+        println("Hello World")
     }
 }
 ```
 ```kotlin
-val animal: Animal = Animal()
-val animalBody: Animal.Body = animal.Body()
-val health: Int = animalBody.health
-```
-
-### Inner Class Functions
-```kotlin
-class Animal {
-
-    var name: String = "Animal"
-
-    inner class Body {
-
-        fun printName() {
-            println("Name: $name")
-        }
-    }
-}
-```
-```kotlin
-val animal: Animal = Animal()
-val animalBody: Animal.Body = animal.Body()
-animalBody.printName()
+val foodType: FoodType = FoodType.Meat
+foodType.printHelloWorld()
 ```
 
 <br />
