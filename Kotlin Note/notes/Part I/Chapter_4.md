@@ -5,11 +5,11 @@
 |  | [Int: rangeTo() and .. Operator](#int-rangeto-and--operator) |
 |  | [Int: rangeUntil() and ..< Operator](#int-rangeuntil-and--operator) |
 |  | [Int: until()](#int-until) |
-|  | [Iterable: toList()](#iterable-tolist) |
+|  | [IntRange: toList()](#intrange-tolist) |
 | 4.2 | [Progressions](#42-progressions) |
 |  | [Int: downTo()](#int-downto) |
-|  | [IntRange: step()](#intrange-step) |
-|  | [Iterable: toList()](#iterable-tolist-1) |
+|  | [IntRange/IntProgression: step()](#intrangeintprogression-step) |
+|  | [IntProgression: toList()](#intprogression-tolist) |
 
 <br />
 
@@ -59,7 +59,7 @@ val intRange: IntRange = 1 until 3          // 1, 2
 val intRange: IntRange = 1.until(3)         // 1, 2
 ```
 
-### [Iterable: toList()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-list.html)
+### [IntRange: toList()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-list.html)
 - Returns a List containing all elements.
 ```kotlin
 fun <T> Iterable<T>.toList(): List<T>
@@ -90,7 +90,7 @@ val intProgression: IntProgression = 3 downTo 1             // 3, 2, 1
 val intProgression: IntProgression = 3.downTo(1)            // 3, 2, 1
 ```
 
-### [IntRange: step()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/step.html)
+### [IntRange/IntProgression: step()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/step.html)
 - Returns a progression that goes over the same range with the given step.
 ```kotlin
 infix fun IntProgression.step(step: Int): IntProgression
@@ -105,7 +105,7 @@ val intProgression: IntProgression = 1 .. 10 step 3         // 1, 4, 7, 10
 val intProgression: IntProgression = (1 .. 10).step(3)      // 1, 4, 7, 10
 ```
 
-### [Iterable: toList()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-list.html)
+### [IntProgression: toList()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-list.html)
 - Returns a List containing all elements.
 ```kotlin
 fun <T> Iterable<T>.toList(): List<T>
