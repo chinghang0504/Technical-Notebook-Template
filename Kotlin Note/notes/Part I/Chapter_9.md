@@ -36,6 +36,8 @@
 | 9.11 | [String Searching](#911-string-searching) |
 |  | [String: contains() or in Keyword](#string-contains-or-in-keyword) |
 | 9.12 | [String Comparsion](#912-string-comparsion) |
+| 9.13 | [String Properties](#913-string-properties) |
+|  | [String: length](#string-length) |
 
 <br />
 
@@ -328,6 +330,15 @@ println(hello == world)     // false
 println(hello != world)     // true
 println(hello === world)    // false
 println(hello !== world)    // true
+```
+
+<br />
+
+## 9.13 String Properties
+### [String: length](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+- Returns the length of this character sequence.
+```kotlin
+val length: Int
 ```
 
 <br />
