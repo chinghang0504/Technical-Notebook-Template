@@ -161,8 +161,8 @@ open class Animal {
 class Fish : Animal() {
 
     override fun move() {
-        println("Calling move() from Fish")
         super.move()
+        println("I am swimming")
     }
 }
 ```
