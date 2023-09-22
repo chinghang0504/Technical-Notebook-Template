@@ -1,13 +1,13 @@
 # [Kotlin Note](../../README.md) - Chapter 8 Extensions
 | Chapter | Title |
 | :-: | :- |
-| 8.1 | [Extension Functions](#81-extension-functions) |
-| 8.2 | [Operator Extension Functions](#82-operator-extension-functions) |
-| 8.3 | [Companion Operator Extension Functions](#83-companion-operator-extension-functions) |
+| 8.1 | [Class Extension Functions](#81-class-extension-functions) |
+| 8.2 | [Class Operator Extension Functions](#82-class-operator-extension-functions) |
+| 8.3 | [Companion Object Operator Extension Functions](#83-companion-object-operator-extension-functions) |
 
 <br />
 
-## 8.1 Extension Functions
+## 8.1 Class Extension Functions
 ```kotlin
 class Animal {
 }
@@ -23,7 +23,7 @@ animal.move()
 
 <br />
 
-## 8.2 Operator Extension Functions
+## 8.2 Class Operator Extension Functions
 ```kotlin
 class Animal {
 }
@@ -46,7 +46,7 @@ val list: MutableList<Animal> = animal * 3
 
 <br />
 
-## 8.3 Companion Operator Extension Functions
+## 8.3 Companion Object Operator Extension Functions
 ```kotlin
 class Animal {
 

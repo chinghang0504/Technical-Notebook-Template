@@ -6,6 +6,7 @@
 |  | [Interface Property Prototypes](#interface-property-prototypes) |
 |  | [Interface Function Prototypes](#interface-function-prototypes) |
 | 5.3 | [Default Interface Functions](#53-default-interface-functions) |
+| 5.4 | [Overriding Interface Functions](#54-overriding-interface-functions) |
 
 <br />
 
@@ -72,6 +73,29 @@ interface Attackable {
 }
 
 class Animal : Attackable {
+}
+```
+```kotlin
+val animal: Animal = Animal()
+animal.attack()
+```
+
+<br />
+
+## 5.4 Overriding Interface Functions
+```kotlin
+interface Attackable {
+
+    fun attack() {
+        println("I can't attack")
+    }
+}
+
+class Animal : Attackable {
+    
+    override fun attack() {
+        println("I am attacking")
+    }
 }
 ```
 ```kotlin
