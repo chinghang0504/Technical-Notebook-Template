@@ -29,25 +29,25 @@ object Earth {
 ### Object Properties
 ```kotlin
 object Earth {
-
-    val animalList: List<Animal> = mutableListOf()
+    
+    var mass: Int = 0
 }
 ```
 ```kotlin
-Earth.animalList.add(Animal())
+val mass: Int = Earth.mass
 ```
 
 ### Object Functions
 ```kotlin
 object Earth {
 
-    fun printMessage() {
+    fun printHelloWorld() {
         println("Hello World")
     }
 }
 ```
 ```kotlin
-Earth.printMessage()
+Earth.printHelloWorld()
 ```
 
 <br />
@@ -56,20 +56,28 @@ Earth.printMessage()
 ```kotlin
 object Earth {
 
-    val animalList: MutableList<Animal>
-
     init {
         println("Executing an initialize block")
-        animalList = mutableListOf(Animal(), Animal(), Animal())
+    }
+
+    fun printHelloWorld() {
+        println("Hello World")
     }
 }
+```
+```kotlin
+Earth.printHelloWorld()
 ```
 
 <br />
 
 ## 2.4 Object Expression Declaration
 ```kotlin
-val bear = object: Animal() {
+open class Animal {
+}
+```
+```kotlin
+val bear = object : Animal() {
 }
 ```
 
@@ -78,32 +86,26 @@ val bear = object: Animal() {
 ## 2.5 Object Expression Properties and Functions
 ```kotlin
 open class Animal {
-
-    open fun move() {
-        println("I am moving")
-    }
 }
 ```
 
 ### Object Expression Properties
 ```kotlin
-val bear = object: Animal() {
-    
+val bear = object : Animal() {
+
     var hungry: Int = 100
 }
-    
 val hungry: Int = bear.hungry
 ```
 
 ### Object Expression Functions
 ```kotlin
-val bear = object: Animal() {
+val bear = object : Animal() {
 
-    override fun move() {
+    fun move() {
         println("I am catching fish")
     }
 }
-
 bear.move()
 ```
 
@@ -127,12 +129,12 @@ class Animal {
 
     companion object {
 
-        var animalSize: Int = 0
+        var num: Int = 0
     }
 }
 ```
 ```kotlin
-val animalSize: Int = Animal.animalSize
+val num: Int = Animal.num
 ```
 
 ### Companion Objects Functions
@@ -141,14 +143,14 @@ class Animal {
 
     companion object {
 
-        fun sayHello() {
-            println("Hello")
+        fun printHelloWorld() {
+            println("Hello World")
         }
     }
 }
 ```
 ```kotlin
-Animal.sayHello()
+Animal.printHelloWorld()
 ```
 
 <br />

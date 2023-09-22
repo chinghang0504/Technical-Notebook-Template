@@ -3,8 +3,8 @@
 | :-: | :- |
 | 5.1 | [Enum Class Declaration](#51-enum-class-declaration) |
 | 5.2 | [Provided Enum Class Properties and Functions](#52-provided-enum-class-properties-and-functions) |
-|  | [Provided Propertie: name](#provided-propertie-name) |
-|  | [Provided Propertie: ordinal](#provided-propertie-ordinal) |
+|  | [Provided Property: name](#provided-property-name) |
+|  | [Provided Property: ordinal](#provided-property-ordinal) |
 |  | [Provided Function: equals](#provided-function-equals) |
 |  | [Provided Function: hashCode](#provided-function-hashcode) |
 |  | [Provided Function: toString](#provided-function-tostring) |
@@ -39,44 +39,39 @@ enum class FoodType {
     Vegetables
 }
 ```
-
-### Provided Propertie: name
 ```kotlin
-val foodType: FoodType = FoodType.Meat
-val name: String = foodType.name
+val foodType1: FoodType = FoodType.Meat
+val foodType2: FoodType = FoodType.Fruit
 ```
 
-### Provided Propertie: ordinal
+### Provided Property: name
 ```kotlin
-val foodType: FoodType = FoodType.Meat
-val ordinal: Int = foodType.ordinal
-println(ordinal)                            // 0
+val name: String = foodType1.name
+```
+
+### Provided Property: ordinal
+```kotlin
+val ordinal: Int = foodType1.ordinal                // 0
 ```
 
 ### Provided Function: equals
 ```kotlin
-val foodType1: FoodType = FoodType.Meat
-val foodType2: FoodType = FoodType.Fruit
-println(foodType1.equals(foodType2))
+val equal: Boolean = foodType1.equals(foodType2)
 ```
 
 ### Provided Function: hashCode
 ```kotlin
-val foodType: FoodType = FoodType.Meat
-println(foodType.hashCode())
+val hashCode: Int = foodType1.hashCode()
 ```
 
 ### Provided Function: toString
 ```kotlin
-val foodType: FoodType = FoodType.Meat
-println(foodType.toString())                // Meat
+val name: String = foodType1.toString()             // Meat
 ```
 
 ### Provided Function: compareTo
 ```kotlin
-val foodType1: FoodType = FoodType.Meat
-val foodType2: FoodType = FoodType.Fruit
-println(foodType1 < foodType2)
+var compare: Boolean = foodType1 < foodType2
 ```
 
 <br />
@@ -98,20 +93,20 @@ val energy: Int = foodType.energy
 
 ### Enum Class Functions
 ```kotlin
-enum class FoodType(var energy: Int) {
+enum class FoodType {
 
-    Meat(100),
-    Fruit(30),
-    Vegetables(10);
+    Meat,
+    Fruit,
+    Vegetables;
 
-    fun eaten() {
-        energy = 0
+    fun printHelloWorld() {
+        println("Hello World")
     }
 }
 ```
 ```kotlin
 val foodType: FoodType = FoodType.Meat
-foodType.eaten()
+foodType.printHelloWorld()
 ```
 
 <br />

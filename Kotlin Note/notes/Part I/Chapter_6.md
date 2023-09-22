@@ -7,7 +7,7 @@
 |  | [do-while Loop](#do-while-loop) |
 | 6.2 | [Jump Statements](#62-jump-statements) |
 |  | [break Statement](#break-statement) |
-|  | [break Statment with Label](#break-statment-with-label) |
+|  | [break Statment with a Label](#break-statment-with-a-label) |
 |  | [continue Statement](#continue-statement) |
 
 <br />
@@ -51,7 +51,7 @@ for (i in 1 .. 3) {
 }
 ```
 
-### break Statment with Label
+### break Statment with a Label
 ```kotlin
 loop@ for (i in 1 .. 3) {
     for (j in 1 .. 3) {

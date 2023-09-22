@@ -12,6 +12,8 @@
 |  | [Data Class Properties](#data-class-properties) |
 |  | [Data Class Functions](#data-class-functions) |
 | 4.4 | [Destructing Data Class](#44-destructing-data-class) |
+|  | [Destructing Data Class without Type Inference](#destructing-data-class-without-type-inference) |
+|  | [Destructing Data Class with Type Inference](#destructing-data-class-with-type-inference) |
 
 <br />
 
@@ -29,45 +31,40 @@ val food: Food = Food("Meat", 100)
 ```kotlin
 data class Food(var type: String, var energy: Int)
 ```
-### Provided Function: equals
 ```kotlin
 val food1: Food = Food("Meat", 100)
-val food2: Food = Food("Meat", 100)
-println(food1.equals(food2))
+val food2: Food = Food("Fruit", 100)
+```
+
+### Provided Function: equals
+```kotlin
+val equal: Boolean = food1.equals(food2)
 ```
 
 ### Provided Function: hashCode
 ```kotlin
-val food: Food = Food("Meat", 100)
-println(food.hashCode())
+val hashCode: Int = food1.hashCode()
 ```
 
 ### Provided Function: toString
 ```kotlin
-val food: Food = Food("Meat", 100)
-println(food)                           // Food(type=Meat, energy=100)
+val info: String = food1.toString()             // Food(type=Meat, energy=100)
 ```
 
 ### Provided Function: componentN
 ```kotlin
-val food: Food = Food("Meat", 100)
-val type: String = food.component1()
+val type: String = food1.component1()
 ```
 ```kotlin
-val food: Food = Food("Meat", 100)
-val energy: Int = food.component2()
+val energy: Int = food1.component2()
 ```
 
 ### Provided Function: copy
 ```kotlin
-val food1: Food = Food("Meat", 100)
-val food2: Food = food1.copy()
-println(food2)
+val food3: Food = food1.copy()
 ```
 ```kotlin
-val food1: Food = Food("Meat", 100)
-val food2: Food = food1.copy(energy = 1000)
-println(food2)
+val food3: Food = food1.copy(energy = 1000)
 ```
 
 <br />
@@ -105,15 +102,16 @@ data class Food(var type: String, var energy: Int)
 ```
 ```kotlin
 val food: Food = Food("Meat", 100)
-val (type: String, energy: Int) = food
-
-println("Type: $type, Energy: $energy")
 ```
-```kotlin
-val food: Food = Food("Meat", 100)
-val (type, energy) = food
 
-println("Type: $type, Energy: $energy")
+### Destructing Data Class without Type Inference
+```kotlin
+val (type: String, energy: Int) = food
+```
+
+### Destructing Data Class with Type Inference
+```kotlin
+val (type, energy) = food
 ```
 
 <br />

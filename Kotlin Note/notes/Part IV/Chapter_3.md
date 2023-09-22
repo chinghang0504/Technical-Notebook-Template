@@ -48,15 +48,15 @@ class Animal {
 
     class Body {
 
-        fun sayHello() {
-            println("Hello")
+        fun printHelloWorld() {
+            println("Hello World")
         }
     }
 }
 ```
 ```kotlin
 val animalBody: Animal.Body = Animal.Body()
-animalBody.sayHello()
+animalBody.printHelloWorld()
 ```
 
 <br />

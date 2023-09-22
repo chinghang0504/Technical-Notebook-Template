@@ -131,7 +131,6 @@ printModifiedString{ it.lowercase() }
 
 ```kotlin
 inline fun doSomething(makeFunction: (String) -> String) {
-
 }
 ```
 

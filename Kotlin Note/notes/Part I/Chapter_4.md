@@ -46,7 +46,7 @@ fun <T> Iterable<T>.toList(): List<T>
 
 ```kotlin
 val intRange: IntRange = 1 .. 3
-println(intRange.toList())                  // [1, 2, 3]
+val list: List<Int> = intRange.toList()     // [1, 2, 3]
 ```
 
 <br />
@@ -54,18 +54,18 @@ println(intRange.toList())                  // [1, 2, 3]
 ## 4.2 Progressions
 ### downTo Function
 ```kotlin
-val intProgression: IntProgression = 3 downTo 1         // 3, 2, 1
+val intProgression: IntProgression = 3 downTo 1             // 3, 2, 1
 ```
 ```kotlin
-val intProgression: IntProgression = 3.downTo(1)        // 3, 2, 1
+val intProgression: IntProgression = 3.downTo(1)            // 3, 2, 1
 ```
 
 ### step Function
 ```kotlin
-val intProgression: IntProgression = 1 .. 10 step 3     // 1, 4, 7, 10
+val intProgression: IntProgression = 1 .. 10 step 3         // 1, 4, 7, 10
 ```
 ```kotlin
-val intProgression: IntProgression = (1 .. 10).step(3)  // 1, 4, 7, 10
+val intProgression: IntProgression = (1 .. 10).step(3)      // 1, 4, 7, 10
 ```
 
 ### [Iterable: toList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-list.html)
@@ -76,7 +76,7 @@ fun <T> Iterable<T>.toList(): List<T>
 
 ```kotlin
 val intProgression: IntProgression = 3 downTo 1
-println(intProgression.toList())                        // [3, 2, 1]
+val list: List<Int> = intProgression.toList()               // [3, 2, 1]
 ```
 
 <br />
