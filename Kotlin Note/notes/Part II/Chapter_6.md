@@ -7,7 +7,7 @@
 |  | [Calling Abstract Class Methods](#calling-abstract-class-methods) |
 | 6.3 | [Default Abstract Class Properties and Methods](#63-default-abstract-class-properties-and-methods) |
 |  | [Accessing Default Abstract Class Properties](#accessing-default-abstract-class-properties) |
-|  | [Calling Default Abstract Class Methods](#calling-default-abstract-class-methods) |
+|  | [Calling Default Abstract Class Methods](#calling-default-abstract-class-methods)) |
 
 <br />
 

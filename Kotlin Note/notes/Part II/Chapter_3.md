@@ -19,6 +19,7 @@
 |  | [Using as Keyword](#using-as-keyword) |
 |  | [Using as? Keyword](#using-as-keyword-1) |
 | 3.8 | [Smart Casting](#38-smart-casting) |
+| 3.9 | [Preventing Inheritance](#39-preventing-inheritance) |
 
 <br />
 
@@ -237,6 +238,18 @@ class Fish : Animal() {
 val animal: Animal = Fish()
 if (animal is Fish) {
     animal.swim()
+}
+```
+
+<br />
+
+## 3.9 Preventing Inheritance
+```kotlin
+class Animal {
+}
+```
+```kotlin
+final class Animal {
 }
 ```
 

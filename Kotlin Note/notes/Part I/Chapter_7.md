@@ -17,10 +17,6 @@
 | 7.8 | [Function: TODO](#78-function-todo) |
 | 7.9 | [Function Names in Backticks](#79-function-names-in-backticks) |
 | 7.10 | [Function Visibility Modifiers](#710-function-visibility-modifiers) |
-|  | [Default Visibility Modifier](#default-visibility-modifier) |
-|  | [Public Visibility Modifier](#public-visibility-modifier) |
-|  | [Private Visibility Modifier](#private-visibility-modifier) |
-|  | [Internal Visibility Modifier](#internal-visibility-modifier) |
 
 <br />
 
@@ -199,36 +195,8 @@ fun `@@@ Print Warning Message @@@`() {
 
 | Visibility Modifier | Description |
 | :-- | :-- |
-| public | The function will be accessible by code outside the file. |
+| public | The function will be accessible outside the file. |
 | private | The function will be accessible only within the same file. |
 | internal | The function will be accessible within the same module. |
-
-### Default Visibility Modifier
-```kotlin
-fun printWarningMessage1() {
-    println("Warning")
-}
-```
-
-### Public Visibility Modifier
-```kotlin
-public fun printWarningMessage2() {
-    println("Warning")
-}
-```
-
-### Private Visibility Modifier
-```kotlin
-private fun printWarningMessage3() {
-    println("Warning")
-}
-```
-
-### Internal Visibility Modifier
-```kotlin
-internal fun printWarningMessage4() {
-    println("Warning")
-}
-```
 
 <br />

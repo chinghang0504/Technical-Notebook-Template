@@ -2,17 +2,15 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Class Declaration](#11-class-declaration) |
-| 1.2 | [Class Visibility Modifiers](#12-class-visibility-modifiers) |
-| 1.3 | [Class Functions](#13-class-functions) |
-|  | [Calling a Class Function](#calling-a-class-function) |
-| 1.4 | [Class Properties](#14-class-properties) |
-|  | [Geting a Class Property](#geting-a-class-property) |
-|  | [Setting a Class Property](#setting-a-class-property) |
-| 1.5 | [Custom Getters and Setters](#15-custom-getters-and-setters) |
+| 1.2 | [Class Functions](#12-class-functions) |
+| 1.3 | [Class Properties](#13-class-properties) |
+| 1.4 | [Custom Getters and Setters](#14-custom-getters-and-setters) |
 |  | [Custom Getters](#custom-getters) |
 |  | [Custom Setters](#custom-setters) |
 |  | [Private Custom Setters](#private-custom-setters) |
-| 1.6 | [Computed Properties](#16-computed-properties) |
+| 1.5 | [Computed Properties](#15-computed-properties) |
+| 1.6 | [Class Visibility Modifiers](#16-class-visibility-modifiers) |
+| 1.7 | [Class Property and Function Visibility Modifiers](#17-class-property-and-function-visibility-modifiers) |
 
 <br />
 
@@ -27,19 +25,7 @@ val animal: Animal = Animal()
 
 <br />
 
-## 1.2 Class Visibility Modifiers
-- The defaul visibility modifier of classes is public.
-
-| Visibility Modifier | Description |
-| :-- | :-- |
-| public | The function or property can be accessible outside the class. |
-| private | The function or property can be accessible only within the same class. |
-| protected | The function or property can be accessible only within the same class or its subclass. |
-| internal | The function or property can be accessible only within the same module. | 
-
-<br />
-
-## 1.3 Class Functions
+## 1.2 Class Functions
 ```kotlin
 class Animal {
 
@@ -50,16 +36,12 @@ class Animal {
 ```
 ```kotlin
 val animal: Animal = Animal()
-```
-
-### Calling a Class Function
-```kotlin
 animal.move()
 ```
 
 <br />
 
-## 1.4 Class Properties
+## 1.3 Class Properties
 ```kotlin
 class Animal {
 
@@ -68,21 +50,12 @@ class Animal {
 ```
 ```kotlin
 val animal: Animal = Animal()
-```
-
-### Geting a Class Property
-```kotlin
 val name: String = animal.name
-```
-
-### Setting a Class Property
-```kotlin
-animal.name = "Animal"
 ```
 
 <br />
 
-## 1.5 Custom Getters and Setters
+## 1.4 Custom Getters and Setters
 ### Custom Getters
 ```kotlin
 class Animal {
@@ -132,7 +105,7 @@ class Animal {
 
 <br />
 
-## 1.6 Computed Properties
+## 1.5 Computed Properties
 ```kotlin
 class Animal {
 
@@ -140,5 +113,28 @@ class Animal {
         get() = Random.nextLong().toString()
 }
 ```
+
+<br />
+
+## 1.6 Class Visibility Modifiers
+- The defaul visibility modifier of classes is public.
+
+| Visibility Modifier | Description |
+| :-- | :-- |
+| public | The class can be accessible outside the file. |
+| private | The class can be accessible only within the same file. |
+| internal | The class can be accessible only within the same module. |
+
+<br />
+
+## 1.7 Class Property and Function Visibility Modifiers
+- The defaul visibility modifier of class properties and functions is public.
+
+| Visibility Modifier | Description |
+| :-- | :-- |
+| public | The function or property can be accessible outside the class. |
+| private | The function or property can be accessible only within the same class. |
+| protected | The function or property can be accessible only within the same class or its subclass. |
+| internal | The function or property can be accessible only within the same module. |
 
 <br />

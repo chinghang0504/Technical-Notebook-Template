@@ -179,6 +179,7 @@ class Animal {
 ```
 ```kotlin
 val animal: Animal = Animal()
+animal.name = "Animal"
 ```
 
 <br />
