@@ -2,13 +2,13 @@
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [Enum Class Declaration](#31-enum-class-declaration) |
-| 3.2 | [Provided Enum Class Properties and Functions](#32-provided-enum-class-properties-and-functions) |
-|  | [Provided Property: name](#provided-property-name) |
-|  | [Provided Property: ordinal](#provided-property-ordinal) |
-|  | [Provided Function: equals()](#provided-function-equals) |
-|  | [Provided Function: hashCode()](#provided-function-hashcode) |
-|  | [Provided Function: toString()](#provided-function-tostring) |
-|  | [Provided Function: compareTo()](#provided-function-compareto) |
+| 3.2 | [Enum Class Provided Properties and Functions](#32-enum-class-provided-properties-and-functions) |
+|  | [Enum Class Provided: name](#enum-class-provided-name) |
+|  | [Enum Class Provided: ordinal](#enum-class-provided-ordinal) |
+|  | [Enum Class Provided: equals()](#enum-class-provided-equals) |
+|  | [Enum Class Provided: hashCode()](#enum-class-provided-hashcode) |
+|  | [Enum Class Provided: toString()](#enum-class-provided-tostring) |
+|  | [Enum Class Provided: compareTo()](#enum-class-provided-compareto) |
 | 3.3 | [Enum Class Properties and Functions](#33-enum-class-properties-and-functions) |
 |  | [Enum Class Properties](#enum-class-properties) |
 |  | [Enum Class Functions](#enum-class-functions) |
@@ -30,7 +30,7 @@ val foodType: FoodType = FoodType.Meat
 
 <br />
 
-## 3.2 Provided Enum Class Properties and Functions
+## 3.2 Enum Class Provided Properties and Functions
 ```kotlin
 enum class FoodType {
 
@@ -44,34 +44,37 @@ val foodType1: FoodType = FoodType.Meat
 val foodType2: FoodType = FoodType.Fruit
 ```
 
-### Provided Property: name
+### Enum Class Provided: name
 ```kotlin
 val name: String = foodType1.name
 ```
 
-### Provided Property: ordinal
+### Enum Class Provided: ordinal
 ```kotlin
 val ordinal: Int = foodType1.ordinal                // 0
 ```
 
-### Provided Function: equals()
+### Enum Class Provided: equals()
 ```kotlin
 val equal: Boolean = foodType1.equals(foodType2)
 ```
 
-### Provided Function: hashCode()
+### Enum Class Provided: hashCode()
 ```kotlin
 val hashCode: Int = foodType1.hashCode()
 ```
 
-### Provided Function: toString()
+### Enum Class Provided: toString()
 ```kotlin
 val name: String = foodType1.toString()             // Meat
 ```
 
-### Provided Function: compareTo()
+### Enum Class Provided: compareTo()
 ```kotlin
-var compare: Boolean = foodType1 < foodType2
+val compare1: Boolean = foodType1 < foodType2
+val compare2: Boolean = foodType1 > foodType2
+val compare3: Boolean = foodType1 <= foodType2
+val compare4: Boolean = foodType1 >= foodType2
 ```
 
 <br />

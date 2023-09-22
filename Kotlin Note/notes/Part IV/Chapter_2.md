@@ -2,12 +2,12 @@
 | Chapter | Title |
 | :-: | :- |
 | 2.1 | [Data Class Delcaration](#21-data-class-delcaration) |
-| 2.2 | [Provided Data Class Functions](#22-provided-data-class-functions) |
-|  | [Provided Function: equals()](#provided-function-equals) |
-|  | [Provided Function: hashCode()](#provided-function-hashcode) |
-|  | [Provided Function: toString()](#provided-function-tostring) |
-|  | [Provided Function: componentN()](#provided-function-componentn) |
-|  | [Provided Function: copy()](#provided-function-copy) |
+| 2.2 | [Data Class Provided Functions](#22-data-class-provided-functions) |
+|  | [Data Class Provided: equals()](#data-class-provided-equals) |
+|  | [Data Class Provided: hashCode()](#data-class-provided-hashcode) |
+|  | [Data Class Provided: toString()](#data-class-provided-tostring) |
+|  | [Data Class Provided: componentN()](#data-class-provided-componentn) |
+|  | [Data Class Provided: copy()](#data-class-provided-copy) |
 | 2.3 | [Data Class Properties and Functions](#23-data-class-properties-and-functions) |
 |  | [Data Class Properties](#data-class-properties) |
 |  | [Data Class Functions](#data-class-functions) |
@@ -27,7 +27,7 @@ val food: Food = Food("Meat", 100)
 
 <br />
 
-## 2.2 [Provided Data Class Functions](https://kotlinlang.org/docs/data-classes.html)
+## 2.2 [Data Class Provided Functions](https://kotlinlang.org/docs/data-classes.html)
 ```kotlin
 data class Food(var type: String, var energy: Int)
 ```
@@ -36,35 +36,31 @@ val food1: Food = Food("Meat", 100)
 val food2: Food = Food("Fruit", 100)
 ```
 
-### Provided Function: equals()
+### Data Class Provided: equals()
 ```kotlin
 val equal: Boolean = food1.equals(food2)
 ```
 
-### Provided Function: hashCode()
+### Data Class Provided: hashCode()
 ```kotlin
 val hashCode: Int = food1.hashCode()
 ```
 
-### Provided Function: toString()
+### Data Class Provided: toString()
 ```kotlin
 val info: String = food1.toString()             // Food(type=Meat, energy=100)
 ```
 
-### Provided Function: componentN()
+### Data Class Provided: componentN()
 ```kotlin
 val type: String = food1.component1()
-```
-```kotlin
 val energy: Int = food1.component2()
 ```
 
-### Provided Function: copy()
+### Data Class Provided: copy()
 ```kotlin
 val food3: Food = food1.copy()
-```
-```kotlin
-val food3: Food = food1.copy(energy = 1000)
+val food4: Food = food1.copy(energy = 1000)
 ```
 
 <br />
@@ -100,18 +96,15 @@ food.eaten()
 ```kotlin
 data class Food(var type: String, var energy: Int)
 ```
-```kotlin
-val food: Food = Food("Meat", 100)
-```
 
 ### Destructing Data Class without Type Inference
 ```kotlin
-val (type: String, energy: Int) = food
+val (type: String, energy: Int) = Food("Meat", 100)
 ```
 
 ### Destructing Data Class with Type Inference
 ```kotlin
-val (type, energy) = food
+val (type, energy) = Food("Meat", 100)
 ```
 
 <br />
