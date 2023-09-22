@@ -14,9 +14,9 @@
 | 7.5 | [Unit Functions](#75-unit-functions) |
 | 7.6 | [Named Function Arguments](#76-named-function-arguments) |
 | 7.7 | [Function Overloading](#77-function-overloading) |
-| 7.8 | [Kotlin: TODO()](#78-kotlin-todo) |
-| 7.9 | [Function Names in Backticks](#79-function-names-in-backticks) |
-| 7.10 | [Function Visibility Modifiers](#710-function-visibility-modifiers) |
+| 7.8 | [Function Names in Backticks](#78-function-names-in-backticks) |
+| 7.9 | [Function Visibility Modifiers](#79-function-visibility-modifiers) |
+| 7.10 | [Global: TODO()](#710-global-todo) |
 
 <br />
 
@@ -169,16 +169,7 @@ printWarningMessage("System Failed", LocalDateTime.now())
 
 <br />
 
-## 7.8 [Kotlin: TODO()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html)
-- Always throws NotImplementedError stating that operation is not implemented.
-```kotlin
-fun TODO(): Nothing
-fun TODO(reason: String): Nothing
-```
-
-<br />
-
-## 7.9 Function Names in Backticks
+## 7.8 Function Names in Backticks
 ```kotlin
 fun `@@@ Print Warning Message @@@`() {
     println("Warning")
@@ -190,7 +181,7 @@ fun `@@@ Print Warning Message @@@`() {
 
 <br />
 
-## 7.10 Function Visibility Modifiers
+## 7.9 Function Visibility Modifiers
 - The default visibility modifier of functions is public.
 
 | Visibility Modifier | Description |
@@ -198,5 +189,14 @@ fun `@@@ Print Warning Message @@@`() {
 | public | The function will be accessible outside the file. |
 | private | The function will be accessible only within the same file. |
 | internal | The function will be accessible within the same module. |
+
+<br />
+
+## 7.10 [Global: TODO()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html)
+- Always throws NotImplementedError stating that operation is not implemented.
+```kotlin
+fun TODO(): Nothing
+fun TODO(reason: String): Nothing
+```
 
 <br />

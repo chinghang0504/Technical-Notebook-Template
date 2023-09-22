@@ -10,12 +10,12 @@
 |  | [Using try-catch-finally Expressions](#using-try-catch-finally-expressions) |
 | 11.3 | [Nothing](#113-nothing) |
 | 11.4 | [Precondition Functions](#114-precondition-functions) |
-|  | [Kotlin: check()](#kotlin-check) |
-|  | [Kotlin: checkNotNull()](#kotlin-checknotnull) |
-|  | [Kotlin: require()](#kotlin-require) |
-|  | [Kotlin: requireNotNull()](#kotlin-requirenotnull) |
-|  | [Kotlin: error()](#kotlin-error) |
-|  | [Kotlin: assert()](#kotlin-assert) |
+|  | [Global: check()](#global-check) |
+|  | [Global: checkNotNull()](#global-checknotnull) |
+|  | [Global: require()](#global-require) |
+|  | [Global: requireNotNull()](#global-requirenotnull) |
+|  | [Global: error()](#global-error) |
+|  | [Global: assert()](#global-assert) |
 | 11.5 | [Custom Exceptions](#115-custom-exceptions) |
 
 <br />
@@ -98,7 +98,7 @@ fun systemFailed(): Nothing {
 <br />
 
 ## 11.4 Precondition Functions
-### [Kotlin: check()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check.html)
+### [Global: check()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check.html)
 - Throws an IllegalStateException if the value is false.
 ```kotlin
 fun check(value: Boolean)
@@ -109,7 +109,7 @@ fun check(value: Boolean)
 inline fun check(value: Boolean, lazyMessage: () -> Any)
 ```
 
-### [Kotlin: checkNotNull()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check-not-null.html)
+### [Global: checkNotNull()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check-not-null.html)
 - Throws an IllegalStateException if the value is null. Otherwise returns the not null value.
 ```kotlin
 fun <T : Any> checkNotNull(value: T?): T
@@ -123,7 +123,7 @@ inline fun <T : Any> checkNotNull(
 ): T
 ```
 
-### [Kotlin: require()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require.html)
+### [Global: require()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require.html)
 - Throws an IllegalArgumentException if the value is false.
 ```kotlin
 fun require(value: Boolean)
@@ -134,7 +134,7 @@ fun require(value: Boolean)
 inline fun require(value: Boolean, lazyMessage: () -> Any)
 ```
 
-### [Kotlin: requireNotNull()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require-not-null.html)
+### [Global: requireNotNull()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require-not-null.html)
 - Throws an IllegalArgumentException if the value is null. Otherwise returns the not null value.
 ```kotlin
 fun <T : Any> requireNotNull(value: T?): T
@@ -148,13 +148,13 @@ inline fun <T : Any> requireNotNull(
 ): T
 ```
 
-### [Kotlin: error()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/error.html)
+### [Global: error()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/error.html)
 - Throws an IllegalStateException with the given message.
 ```kotlin
 fun error(message: Any): Nothing
 ```
 
-### [Kotlin: assert()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/assert.html)
+### [Global: assert()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/assert.html)
 - Throws an AssertionError if the value is false and runtime assertions have been enabled on the JVM using the -ea JVM option.
 ```kotlin
 fun assert(value: Boolean)
