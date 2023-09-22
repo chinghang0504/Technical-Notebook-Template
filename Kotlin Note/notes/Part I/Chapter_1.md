@@ -43,72 +43,155 @@ fun main(args: Array<String>) {
 ### [Hard Keywords](https://kotlinlang.org/docs/keyword-reference.html#hard-keywords)
 - The following tokens are always interpreted as keywords and cannot be used as identifiers:
 
-|  |  |  |  |  |
-| :-- | :-- | :-- | :-- | :-- |
-| as | as? | break | class | continue |
-| do | else | false | for | fun |
-| if | in | !in | interface | is |
-| !is | null | object | package | return |
-| super | this | throw | true | try |
-| typealias | typeof | val | var | when |
-| while |  |  |  |  |
+<style>
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<table>
+    <tr>
+        <td>as</td><td>as?</td><td>break</td><td>class</td><td>continue</td>
+    </tr>
+    <tr>
+        <td>do</td><td>else</td><td>false</td><td>for</td><td>fun</td>
+    </tr>
+    <tr>
+        <td>if</td><td>in</td><td>!in</td><td>interface</td><td>is</td>
+    </tr>
+    <tr>
+        <td>!is</td><td>null</td><td>object</td><td>package</td><td>return</td>
+    </tr>
+    <tr>
+        <td>super</td><td>this</td><td>throw</td><td>true</td><td>try</td>
+    </tr>
+    <tr>
+        <td>typealias</td><td>typeof</td><td>val</td><td>var</td><td>when</td>
+    </tr>
+    <tr>
+        <td>while</td><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
 
 ### [Soft Keywords](https://kotlinlang.org/docs/keyword-reference.html#soft-keywords)
 - The following tokens act as keywords in the context in which they are applicable, and they can be used as identifiers in other contexts:
 
-|  |  |  |  |  |
-| :-- | :-- | :-- | :-- | :-- |
-| by | catch | constructor | delegate | dynamic |
-| field | file | finally | get | import |
-| init | param | property | receiver | set |
-| setparam | value | where |  |  |
+<table>
+    <tr>
+        <td>by</td><td>catch</td><td>constructor</td><td>delegate</td><td>dynamic</td>
+    </tr>
+    <tr>
+        <td>field</td><td>file</td><td>finally</td><td>get</td><td>import</td>
+    </tr>
+    <tr>
+        <td>init</td><td>param</td><td>property</td><td>receiver</td><td>set</td>
+    </tr>
+    <tr>
+        <td>setparam</td><td>value</td><td>where</td><td></td><td></td>
+    </tr>
+</table>
 
 ### [Modifier Keywords](https://kotlinlang.org/docs/keyword-reference.html#modifier-keywords)
 - The following tokens act as keywords in modifier lists of declarations, and they can be used as identifiers in other contexts:
 
-|  |  |  |  |  |
-| :-- | :-- | :-- | :-- | :-- |
-| abstract | actual | annotation | companion | const |
-| crossinline | data | enum | expect | external |
-| final | infix | inline | inner | internal |
-| lateinit | noinline | open | operator | out |
-| override | private | protected | public | reified |
-| sealed | suspend | tailrec | vararg |  |
+<table>
+    <tr>
+        <td>abstract</td><td>actual</td><td>annotation</td><td>companion</td><td>const</td>
+    </tr>
+    <tr>
+        <td>crossinline</td><td>data</td><td>enum</td><td>expect</td><td>external</td>
+    </tr>
+    <tr>
+        <td>final</td><td>infix</td><td>inline</td><td>inner</td><td>internal</td>
+    </tr>
+    <tr>
+        <td>lateinit</td><td>noinline</td><td>open</td><td>operator</td><td>out</td>
+    </tr>
+    <tr>
+        <td>override</td><td>private</td><td>protected</td><td>public</td><td>reified</td>
+    </tr>
+    <tr>
+        <td>sealed</td><td>suspend</td><td>tailrec</td><td>vararg</td><td></td>
+    </tr>
+</table>
 
 ### [Special Identifiers](https://kotlinlang.org/docs/keyword-reference.html#special-identifiers)
 - The following identifiers are defined by the compiler in specific contexts, and they can be used as regular identifiers in other contexts:
 
-|  |  |  |  |  |
-| :-- | :-- | :-- | :-- | :-- |
-| field | it |  |  |  |
-
+<table>
+    <tr>
+        <td>field</td><td>it</td>
+    </tr>
+</table>
 
 ### [Operators and Special Symbols](https://kotlinlang.org/docs/keyword-reference.html#operators-and-special-symbols)
 - Kotlin supports the following operators and special symbols:
 
-|  |  |  |  |  |
-| :-- | :-- | :-- | :-- | :-- |
-| + | - | * | / | % |
-| = |  |  |  |  |
-| += | -= | *= | /= | %= |
-| ++ | -- |  |  |  |
-| && | \|\| | ! |  |  |
-| == | != |  |  |  |
-| === | !== |  |  |  |
-| < | > | <= | >= |  |
-| [ | ] |  |  |  |
-| !! |  |  |  |  |
-| ?. |  |  |  |  |
-| ?: |  |  |  |  |
-| :: |  |  |  |  |
-| .. | ..< |  |  |  |
-| : |  |  |  |  |
-| ? |  |  |  |  |
-| -> |  |  |  |  |
-| @ |  |  |  |  |
-| ; |  |  |  |  |
-| $ |  |  |  |  |
-| _ |  |  |  |  |
+<table>
+    <tr>
+        <td>+</td><td>-</td><td>*</td><td>/</td><td>%</td>
+    </tr>
+    <tr>
+        <td>=</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>+=</td><td>-=</td><td>*=</td><td>/=</td><td>%=</td>
+    </tr>
+    <tr>
+        <td>++</td><td>--</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>&&</td><td>||</td><td>!</td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>==</td><td>!=</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>===</td><td>!==</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td><</td><td>></td><td><=</td><td>>=</td><td></td>
+    </tr>
+    <tr>
+        <td>[</td><td>]</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>!!</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>?.</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>?:</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>::</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>..</td><td>..<</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>:</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>?</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>-></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>@</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>;</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>$</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>_</td><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
 
 <br />
 
