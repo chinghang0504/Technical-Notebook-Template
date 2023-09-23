@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 1 Structure
+# [HTML and CSS Note](../../README.md) - Chapter 1 Structure
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [HTML Elements](#11-html-elements) |
@@ -19,10 +19,10 @@
 - Each HTML element tells the browser something about the information that sits between its opening and closing tags.
 
 ### Opening Tags
-![Opening Tag](../resources/image_1_1.PNG)
+![Opening Tag](../../images/Part%20I/image_1_1.PNG)
 
 ### Closing Tags
-![Closing Tag](../resources/image_1_2.PNG)
+![Closing Tag](../../images/Part%20I/image_1_2.PNG)
 
 <br />
 
@@ -39,7 +39,7 @@
 ```
 
 Result
-![Result](../resources/image_1_3.PNG)
+![Result](../../images/Part%20I/image_1_3.PNG)
 
 <br />
 
@@ -48,7 +48,7 @@ Result
 - They appear on the opening tag of the element and are made up of two parts: a name and a value, separated by an equals sign.
 
 HTML Attribute
-![HTML Attribute](../resources/image_1_4.PNG)
+![HTML Attribute](../../images/Part%20I/image_1_4.PNG)
 
 - HTML5 allows you to use uppercase attribute names and omit the quotemarks, but this is not recommended.
 
@@ -85,6 +85,6 @@ you usually type in the URL of the page you want to visit, or on the tab for tha
 ```
 
 Result
-![Result](../resources/image_1_5.PNG)
+![Result](../../images/Part%20I/image_1_5.PNG)
 
 <br />

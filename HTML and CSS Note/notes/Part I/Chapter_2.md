@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 2 Text
+# [HTML and CSS Note](../../README.md) - Chapter 2 Text
 | Chapter | Title |
 | :-: | :- |
 | 2.1 | [Types of Markup](#21-types-of-markup) |
@@ -59,7 +59,7 @@
 ```
 
 Result
-![Result](../resources/image_2_1.PNG)
+![Result](../../images/Part%20I/image_2_1.PNG)
 
 ### Paragraphs \<p>
 - By default, a browser will show each paragraph on a new line with some space between it and any subsequent paragraphs.
@@ -86,7 +86,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_2.PNG)
+![Result](../../images/Part%20I/image_2_2.PNG)
 
 ### Bold \<b>
 - The \<b> element also represents a section of text that would be presented in a visually different way (for example key words in a paragraph) although the use of the \<b> element does not imply any additional meaning.
@@ -102,7 +102,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_3.PNG)
+![Result](../../images/Part%20I/image_2_3.PNG)
 
 ### Italic \<i>
 - The \<i> element also represents a section of text that would be said in a different way from surrounding content — such as technical terms, names of ships, foreign words, thoughts, or other terms that would usually be italicized.
@@ -118,7 +118,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_4.PNG)
+![Result](../../images/Part%20I/image_2_4.PNG)
 
 ### Superscript \<sup>
 - The \<sup> element is used to contain characters that should be superscript such as the suffixes of dates or mathematical concepts like raising a number to a power.
@@ -134,7 +134,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_5.PNG)
+![Result](../../images/Part%20I/image_2_5.PNG)
 
 ### Subscript \<sub>
 - The \<sub> element is used to contain characters that should be subscript.
@@ -151,7 +151,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_6.PNG)
+![Result](../../images/Part%20I/image_2_6.PNG)
 
 ### White Space
 - When the browser comes across two or more spaces next to each other, it only displays one space.
@@ -171,7 +171,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_7.PNG)
+![Result](../../images/Part%20I/image_2_7.PNG)
 
 ### Empty Elements
 - There are a few elements that do not have any words between an opening and closing tag.
@@ -191,7 +191,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_8.PNG)
+![Result](../../images/Part%20I/image_2_8.PNG)
 
 ### Horizontal Rules \<hr />
 - To create a break between themes — such as a change of topic in a book or a new scene in a play — you can add a horizontal rule between sections using the \<hr /> tag.
@@ -207,7 +207,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_9.PNG)
+![Result](../../images/Part%20I/image_2_9.PNG)
 
 <br />
 
@@ -226,7 +226,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_10.PNG)
+![Result](../../images/Part%20I/image_2_10.PNG)
 
 ### Emphasis \<em>
 - The \<em> element indicates emphasis that subtly changes the meaning of a sentence.
@@ -241,7 +241,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_11.PNG)
+![Result](../../images/Part%20I/image_2_11.PNG)
 
 ### Block Quotations \<blockquote>
 - The \<blockquote> element is used for longer quotes that take up an entire paragraph.
@@ -261,7 +261,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_12.PNG)
+![Result](../../images/Part%20I/image_2_12.PNG)
 
 ### Inline Quotations \<q>
 - The \<q> element is used for shorter quotes that sit within a paragraph.
@@ -283,7 +283,7 @@ be a URL that will have more information about the source of the quotation.
 ```
 
 Result
-![Result](../resources/image_2_13.PNG)
+![Result](../../images/Part%20I/image_2_13.PNG)
 
 ### Abbreviations \<abbr>
 - If you use an abbreviation or an acronym, then the \<abbr> element can be used.
@@ -298,7 +298,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_14.PNG)
+![Result](../../images/Part%20I/image_2_14.PNG)
 
 ### Acronyms \<acronym>
 - In HTML 4 there was a separate \<acronym> element for acronyms.
@@ -314,7 +314,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_15.PNG)
+![Result](../../images/Part%20I/image_2_15.PNG)
 
 ### Citation \<cite>
 - When you are referencing a piece of work such as a book, film or research paper, the \<cite> element can be used to indicate where the citation is from.
@@ -330,7 +330,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_16.PNG)
+![Result](../../images/Part%20I/image_2_16.PNG)
 
 ### Definitions \<dfn>
 - The first time you explain some new terminology (perhaps an academic concept or some jargon) in a document, it is known as the defining instance of it.
@@ -347,7 +347,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_17.PNG)
+![Result](../../images/Part%20I/image_2_17.PNG)
 
 ### Addresses \<address>
 - The \<address> element has quite a specific use: to contain contact details for the author of the page.
@@ -367,7 +367,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_18.PNG)
+![Result](../../images/Part%20I/image_2_18.PNG)
 
 ### Inserted \<ins>
 - The \<ins> element can be used to show content that has been inserted into a document.
@@ -382,7 +382,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_19.PNG)
+![Result](../../images/Part%20I/image_2_19.PNG)
 
 ### Delected \<del>
 - The \<del> element can show text that has been deleted from it.
@@ -397,7 +397,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_20.PNG)
+![Result](../../images/Part%20I/image_2_20.PNG)
 
 ### No Longer Accurate or Relevant \<s>
 - The \<s> element indicates something that is no longer accurate or relevant (but that should not be deleted).
@@ -413,6 +413,6 @@ Result
 ```
 
 Result
-![Result](../resources/image_2_21.PNG)
+![Result](../../images/Part%20I/image_2_21.PNG)
 
 <br />

@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 7 Forms
+# [HTML and CSS Note](../../README.md) - Chapter 7 Forms
 | Chapter | Title |
 | :-: | :- |
 | 7.1 | [Forms \<form>](#71-forms-form) |
@@ -107,7 +107,7 @@
 ```
 
 Result
-![Result](../resources/image_7_1.PNG)
+![Result](../../images/Part%20I/image_7_1.PNG)
 
 <br />
 
@@ -129,7 +129,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_2.PNG)
+![Result](../../images/Part%20I/image_7_2.PNG)
 
 - Although the password is hidden on the screen, this does not mean that the data in a password control is sent securely to the server.
 - You should never use these for sending sensitive data such as credit card numbers.
@@ -160,7 +160,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_3.PNG)
+![Result](../../images/Part%20I/image_7_3.PNG)
 
 <br />
 
@@ -195,7 +195,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_4.PNG)
+![Result](../../images/Part%20I/image_7_4.PNG)
 
 - Please note: Once a radio button has been selected it cannot be deselected.
 - The user can only select a different option. If you are only allowing the user one option and want them to be
@@ -231,7 +231,7 @@ able to deselect it (for example if they are indicating they agree to terms and 
 ```
 
 Result
-![Result](../resources/image_7_5.PNG)
+![Result](../../images/Part%20I/image_7_5.PNG)
 
 <br />
 
@@ -267,7 +267,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_6.PNG)
+![Result](../../images/Part%20I/image_7_6.PNG)
 
 - If the user does not select an option, then the first item will be sent to the server as the value for this control.
 
@@ -297,7 +297,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_7.PNG)
+![Result](../../images/Part%20I/image_7_7.PNG)
 
 <br />
 
@@ -323,7 +323,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_8.PNG)
+![Result](../../images/Part%20I/image_7_8.PNG)
 
 <br />
 
@@ -350,7 +350,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_9.PNG)
+![Result](../../images/Part%20I/image_7_9.PNG)
 
 <br />
 
@@ -363,14 +363,14 @@ Result
     <body>
         <form action="http://localhost:8080">
             <p>Google</p>
-            <input type="image" src="../resources/Google_Logo.png" width="50" height="20" />
+            <input type="image" src="../../images/Part%20I/Google_Logo.png" width="50" height="20" />
         </form>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_7_10.PNG)
+![Result](../../images/Part%20I/image_7_10.PNG)
 
 <br />
 
@@ -385,7 +385,7 @@ Result
         <form action="http://localhost:8080">
             <p>Google</p>
             <button>
-                <input type="image" src="../resources/Google_Logo.png" width="50" height="20" />
+                <input type="image" src="../../images/Part%20I/Google_Logo.png" width="50" height="20" />
                 Google Page
             </button>
         </form>
@@ -394,7 +394,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_11.PNG)
+![Result](../../images/Part%20I/image_7_11.PNG)
 
 <br />
 
@@ -411,7 +411,7 @@ in the browser).
         <form action="http://localhost:8080">
             <p>Google</p>
             <button>
-                <input type="image" src="../resources/Google_Logo.png" width="50" height="20" />
+                <input type="image" src="../../images/Part%20I/Google_Logo.png" width="50" height="20" />
                 Google Page
                 <input type="hidden" name="hiddenData" value="hiddenData" />
             </button>
@@ -420,7 +420,7 @@ in the browser).
 </html>
 ```
 Result
-![Result](../resources/image_7_12.PNG)
+![Result](../../images/Part%20I/image_7_12.PNG)
 
 ## 7.14 Label \<label>
 - When introducing form controls, the code was kept simple by indicating the purpose of each one in text next to it. - However, each form control should have its own \<label> element as this makes the form accessible to vision-impaired users.
@@ -466,7 +466,7 @@ covered on page 183.)
 ```
 
 Result
-![Result](../resources/image_7_13.PNG)
+![Result](../../images/Part%20I/image_7_13.PNG)
 
 <br />
 
@@ -495,7 +495,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_14.PNG)
+![Result](../../images/Part%20I/image_7_14.PNG)
 
 <br />
 
@@ -526,7 +526,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_15.PNG)
+![Result](../../images/Part%20I/image_7_15.PNG)
 
 <br />
 
@@ -546,7 +546,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_16.PNG)
+![Result](../../images/Part%20I/image_7_16.PNG)
 
 <br />
 
@@ -567,7 +567,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_17.PNG)
+![Result](../../images/Part%20I/image_7_17.PNG)
 
 <br />
 
@@ -588,7 +588,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_18.PNG)
+![Result](../../images/Part%20I/image_7_18.PNG)
 
 <br />
 
@@ -615,7 +615,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_7_19.PNG)
-![Result](../resources/image_7_20.PNG)
+![Result](../../images/Part%20I/image_7_19.PNG)
+![Result](../../images/Part%20I/image_7_20.PNG)
 
 <br />

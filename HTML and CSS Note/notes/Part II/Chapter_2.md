@@ -1,4 +1,4 @@
-# [CSS Note](../README.md) - Chapter 2 Color
+# [HTML and CSS Note](../../README.md) - Chapter 2 Color
 | Chapter | Title |
 | :-: | :- |
 | 2.1 | [Foreground Color](#21-foreground-color) |
@@ -42,7 +42,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1>Marine Biology</h1>
@@ -67,7 +67,7 @@ p {
 ```
 
 Result
-![Result](../resources/image_2_1.PNG)
+![Result](../../images/Part%20II/image_2_1.PNG)
 
 <br />
 
@@ -81,7 +81,7 @@ Result
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1>Marine Biology</h1>
@@ -110,7 +110,7 @@ p {
 ```
 
 Result
-![Result](../resources/image_2_2.PNG)
+![Result](../../images/Part%20II/image_2_2.PNG)
 
 <br />
 
@@ -118,37 +118,37 @@ Result
 ### RGB Values
 - Values for red, green, and blue are expressed as numbers between 0 and 255.
 
-![RGB Values](../resources/image_2_3.PNG)
+![RGB Values](../../images/Part%20II/image_2_3.PNG)
 
 ### Hex Codes
 - Hex values represent values for red, green, and blue in hexadecimal code.
 
-![Hex Codes](../resources/image_2_4.PNG)
+![Hex Codes](../../images/Part%20II/image_2_4.PNG)
 
 ### Color Names
 - Colors are represented by predefined names. However, they are very limited in number.
 
-![Color Names](../resources/image_2_5.PNG)
+![Color Names](../../images/Part%20II/image_2_5.PNG)
 
 ### Hue
 - Hue is near to the colloquial idea of color.
 - Technically speaking however, a color can also have saturation and brightness as well as hue.
 
-![Hue](../resources/image_2_6.PNG)
+![Hue](../../images/Part%20II/image_2_6.PNG)
 
 ### Saturation
 - Saturation refers to the amount of gray in a color.
 - At maximum saturation, there would be no gray in the color.
 - At minimum saturation, the color would be mostly gray.
 
-![Saturation](../resources/image_2_7.PNG)
+![Saturation](../../images/Part%20II/image_2_7.PNG)
 
 ### Brightness
 - Brightness (or "value") refers to how much black is in a color.
 - At maximum brightness, there would be no black in the color.
 - At minimum brightness, the color would be very dark.
 
-![Brightness](../resources/image_2_8.PNG)
+![Brightness](../../images/Part%20II/image_2_8.PNG)
 
 <br />
 
@@ -156,15 +156,15 @@ Result
 - When picking foreground and background colors, it is important to ensure that there is enough contrast for the text to be legible.
 
 ### Low Contrast
-![Low Contrast](../resources/image_2_9.PNG)
+![Low Contrast](../../images/Part%20II/image_2_9.PNG)
 - Text is harder to read when there is low contrast between background and foreground colors.
 
 ### Medium Contrast
-![Medium Contrast](../resources/image_2_10.PNG)
+![Medium Contrast](../../images/Part%20II/image_2_10.PNG)
 - For long spans of text, reducing the contrast a little bit improves readability.
 
 ### High Contrast
-![High Contrast](../resources/image_2_11.PNG)
+![High Contrast](../../images/Part%20II/image_2_11.PNG)
 - Text is easier to read when there is higher contrast between background and foreground colors.
 
 <br />
@@ -177,7 +177,7 @@ Result
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1 id="first">Marine Biology</h1>
@@ -198,7 +198,7 @@ h1#second {
 ```
 
 Result
-![Result](../resources/image_2_12.PNG)
+![Result](../../images/Part%20II/image_2_12.PNG)
 
 ### Value: rgba
 - The CSS3 rgba property allows you to specify a color, just like you would with an RGB value, but adds a fourth value to indicate opacity.
@@ -209,7 +209,7 @@ Result
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1 id="first">Marine Biology</h1>
@@ -229,7 +229,7 @@ h1#second {
 ```
 
 Result
-![Result](../resources/image_2_13.PNG)
+![Result](../../images/Part%20II/image_2_13.PNG)
 
 <br />
 
@@ -237,19 +237,19 @@ Result
 - CSS3 introduces an entirely new and intuitive way to specify colors using hue, saturation, and lightness values.
 
 ### Hue
-![Hue](../resources/image_2_14.PNG)
+![Hue](../../images/Part%20II/image_2_14.PNG)
 
 - Hue is the colloquial idea of color.
 - In HSL colors, hue is often represented as a color circle where the angle represents the color, although it may also be shown as a slider with values from 0 to 360.
 
 ### Saturation
-![Saturation](../resources/image_2_15.PNG)
+![Saturation](../../images/Part%20II/image_2_15.PNG)
 
 - Saturation is the amount of gray in a color. Saturation is represented as a percentage.
 - 100% is full saturation and 0% is a shade of gray.
 
 ### Lightness
-![Lightness](../resources/image_2_16.PNG)
+![Lightness](../../images/Part%20II/image_2_16.PNG)
 
 - Lightness is the amount of white (lightness) or black (darkness) in a color.
 - Lightness is represented as a percentage.
@@ -268,7 +268,7 @@ Result
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1 id="first">Marine Biology</h1>
@@ -288,7 +288,7 @@ h1#second {
 ```
 
 Result
-![Result](../resources/image_2_17.PNG)
+![Result](../../images/Part%20II/image_2_17.PNG)
 
 ### Value: hsla
 - alpha
@@ -299,7 +299,7 @@ Result
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1 id="first">Marine Biology</h1>
@@ -319,6 +319,6 @@ h1#second {
 ```
 
 Result
-![Result](../resources/image_2_18.PNG)
+![Result](../../images/Part%20II/image_2_18.PNG)
 
 <br />

@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 9 Videos
+# [HTML and CSS Note](../../README.md) - Chapter 9 Videos
 | Chapter | Title |
 | :-: | :- |
 | 9.1 | [HTML5: Videos \<video>](#91-html5-videos-video) |
@@ -36,8 +36,8 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <video src="../resources/sample.mp4"
-            poster="../resources/earth.jpg"
+        <video src="../../images/Part%20I/sample.mp4"
+            poster="../../images/Part%20I/earth.jpg"
             width="400" height="300"
             preload="none"
             controls
@@ -49,7 +49,7 @@
 ```
 
 Result
-![Result](../resources/image_9_1.PNG)
+![Result](../../images/Part%20I/image_9_1.PNG)
 
 <br />
 
@@ -68,14 +68,14 @@ Result
 <!DOCTYPE html>
 <html>
     <body>
-        <video poster="../resources/earth.jpg"
+        <video poster="../../images/Part%20I/earth.jpg"
             width="400" height="300"
             preload="none"
             controls
             loop>
-            <source src="../resources/sample.mp4"
+            <source src="../../images/Part%20I/sample.mp4"
                 type='video/mp4' />
-            <source src="../resources/sample.webm"
+            <source src="../../images/Part%20I/sample.webm"
                 type='video/webm' />
             <p>Earth</p>
         </video>
@@ -84,6 +84,6 @@ Result
 ```
 
 Result
-![Result](../resources/image_9_2.PNG)
+![Result](../../images/Part%20I/image_9_2.PNG)
 
 <br />

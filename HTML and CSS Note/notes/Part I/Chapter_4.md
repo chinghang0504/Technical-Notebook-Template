@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 4 Links
+# [HTML and CSS Note](../../README.md) - Chapter 4 Links
 | Chapter | Title |
 | :-: | :- |
 | 4.1 | [Webpage Links \<a>](#41-webpage-links-a) |
@@ -26,7 +26,7 @@
 ```
 
 Result
-![Result](../resources/image_4_1.PNG)
+![Result](../../images/Part%20I/image_4_1.PNG)
 
 ### Relative URL
 - When you are linking to other pages within the same site, you do not need to specify the domain name in the URL.
@@ -42,7 +42,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_4_2.PNG)
+![Result](../../images/Part%20I/image_4_2.PNG)
 
 <br />
 
@@ -60,7 +60,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_4_3.PNG)
+![Result](../../images/Part%20I/image_4_3.PNG)
 
 <br />
 
@@ -80,8 +80,8 @@ Result
 ```
 
 Result
-![Result](../resources/image_4_4.PNG)
-![Result](../resources/image_4_5.PNG)
+![Result](../../images/Part%20I/image_4_4.PNG)
+![Result](../../images/Part%20I/image_4_5.PNG)
 
 <br />
 
@@ -255,7 +255,7 @@ the href attribute starts with the # symbol, followed by the value of the id att
 ```
 
 Result
-![Result](../resources/image_4_6.PNG)
-![Result](../resources/image_4_7.PNG)
+![Result](../../images/Part%20I/image_4_6.PNG)
+![Result](../../images/Part%20I/image_4_7.PNG)
 
 <br />

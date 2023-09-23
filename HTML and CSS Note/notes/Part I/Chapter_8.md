@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 8 Extra Markup
+# [HTML and CSS Note](../../README.md) - Chapter 8 Extra Markup
 | Chapter | Title |
 | :-: | :- |
 | 8.1 | [Document Type \<!DOCTYPE html>](#81-document-type-doctype-html) |
@@ -113,7 +113,7 @@
 <html>
     <body>
         <div id="header">
-            <img src="../resources/Google_Logo.png" width="300" height="100" /><br />
+            <img src="../../images/Part%20I/Google_Logo.png" width="300" height="100" /><br />
             Google Logo
         </div>
     </body>
@@ -172,7 +172,7 @@
 ```
 
 Result
-![Result](../resources/image_8_1.PNG)
+![Result](../../images/Part%20I/image_8_1.PNG)
 
 ### Attributes: src, height, width, frameborder, scrolling, and seamless
 - scrolling
@@ -202,7 +202,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_8_2.PNG)
+![Result](../../images/Part%20I/image_8_2.PNG)
 
 <br />
 

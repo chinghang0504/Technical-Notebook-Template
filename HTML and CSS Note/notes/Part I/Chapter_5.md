@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 5 Images
+# [HTML and CSS Note](../../README.md) - Chapter 5 Images
 | Chapter | Title |
 | :-: | :- |
 | 5.1 | [Images \<img />](#51-images-img) |
@@ -32,14 +32,14 @@
 <html>
     <body>
         <p>
-            <img  src="../resources/Google_Logo.png" />
+            <img  src="../../images/Part%20I/Google_Logo.png" />
         </p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_1.PNG)
+![Result](../../images/Part%20I/image_5_1.PNG)
 
 ### Attributes: alt and title
 - alt
@@ -52,14 +52,14 @@ Result
 <html>
     <body>
         <p>
-            <img  src="../resources/Google_Logo.png" alt="Google Logo" title="This is a Google Logo in 2015." />
+            <img  src="../../images/Part%20I/Google_Logo.png" alt="Google Logo" title="This is a Google Logo in 2015." />
         </p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_2.PNG)
+![Result](../../images/Part%20I/image_5_2.PNG)
 
 ### Attributes: height and width
 - height
@@ -71,14 +71,14 @@ Result
 <html>
     <body>
         <p>
-            <img  src="../resources/Google_Logo.png" height="500" width="500" />
+            <img  src="../../images/Part%20I/Google_Logo.png" height="500" width="500" />
         </p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_3.PNG)
+![Result](../../images/Part%20I/image_5_3.PNG)
 
 - Images often take longer to load than the HTML code that makes up the rest of the page.
 - It is, therefore, a good idea to specify the size of the image so that the browser can render the rest of the text on the page while leaving the right amount of space for the image that is still loading.
@@ -97,14 +97,14 @@ Result
 ```html
 <html>
     <body>
-        <img  src="../resources/Google_Logo.png" />
+        <img  src="../../images/Part%20I/Google_Logo.png" />
         <p>This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_4.PNG)
+![Result](../../images/Part%20I/image_5_4.PNG)
 
 ### Inside the Start of a Paragraph
 - The first row of text aligns with the bottom of the image.
@@ -112,13 +112,13 @@ Result
 ```html
 <html>
     <body>
-        <p><img  src="../resources/Google_Logo.png" />This is a sentence. This is a sentence. This is a sentence.</p>
+        <p><img  src="../../images/Part%20I/Google_Logo.png" />This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_5.PNG)
+![Result](../../images/Part%20I/image_5_5.PNG)
 
 ### In the Middle of a Paragraph
 - The image is placed between the words of the paragraph that it appears in.
@@ -126,13 +126,13 @@ Result
 ```html
 <html>
     <body>
-        <p>This is a sentence. <img  src="../resources/Google_Logo.png" />This is a sentence. This is a sentence.</p>
+        <p>This is a sentence. <img  src="../../images/Part%20I/Google_Logo.png" />This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_6.PNG)
+![Result](../../images/Part%20I/image_5_6.PNG)
 
 <br />
 
@@ -159,61 +159,61 @@ Result
 ```html
 <html>
     <body>
-        <p><img  src="../resources/Google_Logo.png" align="left" />This is a sentence. This is a sentence. This is a sentence.</p>
+        <p><img  src="../../images/Part%20I/Google_Logo.png" align="left" />This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_7.PNG)
+![Result](../../images/Part%20I/image_5_7.PNG)
 
 ### Value: right
 ```html
 <html>
     <body>
-        <p><img  src="../resources/Google_Logo.png" align="right" />This is a sentence. This is a sentence. This is a sentence.</p>
+        <p><img  src="../../images/Part%20I/Google_Logo.png" align="right" />This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_8.PNG)
+![Result](../../images/Part%20I/image_5_8.PNG)
 
 ### Value: top
 ```html
 <html>
     <body>
-        <p><img  src="../resources/Google_Logo.png" align="top" />This is a sentence. This is a sentence. This is a sentence.</p>
+        <p><img  src="../../images/Part%20I/Google_Logo.png" align="top" />This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_9.PNG)
+![Result](../../images/Part%20I/image_5_9.PNG)
 
 ### Value: middle
 ```html
 <html>
     <body>
-        <p><img  src="../resources/Google_Logo.png" align="middle" />This is a sentence. This is a sentence. This is a sentence.</p>
+        <p><img  src="../../images/Part%20I/Google_Logo.png" align="middle" />This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_10.PNG)
+![Result](../../images/Part%20I/image_5_10.PNG)
 
 ### Value: bottom
 ```html
 <html>
     <body>
-        <p><img  src="../resources/Google_Logo.png" align="bottom" />This is a sentence. This is a sentence. This is a sentence.</p>
+        <p><img  src="../../images/Part%20I/Google_Logo.png" align="bottom" />This is a sentence. This is a sentence. This is a sentence.</p>
     </body>
 </html>
 ```
 
 Result
-![Result](../resources/image_5_11.PNG)
+![Result](../../images/Part%20I/image_5_11.PNG)
 
 <br />
 
@@ -225,7 +225,7 @@ Result
     <body>
         <p>
             <figure>
-                <img src="../resources/Google_Logo.png" />
+                <img src="../../images/Part%20I/Google_Logo.png" />
                 <figcaption>Google Logo</figcaption>
             </figure>
         </p>
@@ -234,6 +234,6 @@ Result
 ```
 
 Result
-![Result](../resources/image_5_12.PNG)
+![Result](../../images/Part%20I/image_5_12.PNG)
 
 <br />

@@ -1,4 +1,4 @@
-# [CSS Note](../README.md) - Chapter 1 Structure
+# [HTML and CSS Note](../../README.md) - Chapter 1 Structure
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Selector and Declaration](#11-selector-and-declaration) |
@@ -28,7 +28,7 @@
 - A CSS rule contains two parts: a selector and a declaration.
 
 Selector and Declaration
-![Selector and Declaration](../resources/image_1_1.PNG)
+![Selector and Declaration](../../images/Part%20II/image_1_1.PNG)
 
 <br />
 
@@ -37,7 +37,7 @@ Selector and Declaration
 - You can specify several properties in one declaration, each separated by a semi-colon.
 
 Property and Value
-![Property and Value](../resources/image_1_2.PNG)
+![Property and Value](../../images/Part%20II/image_1_2.PNG)
 
 <br />
 
@@ -63,7 +63,7 @@ Property and Value
 <html>
     <head>
         <title>This is a title</title>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1>This is a heading</h1>
@@ -82,7 +82,7 @@ h1 {
 ```
 
 Result
-![Result](../resources/image_1_3.PNG)
+![Result](../../images/Part%20II/image_1_3.PNG)
 
 <br />
 
@@ -115,7 +115,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_1_4.PNG)
+![Result](../../images/Part%20II/image_1_4.PNG)
 
 <br />
 
@@ -237,7 +237,7 @@ Important
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <h1>Potatoes</h1>
@@ -288,7 +288,7 @@ p {
 ```
 
 Result
-![Result](../resources/image_1_5.PNG)
+![Result](../../images/Part%20II/image_1_5.PNG)
 
 <br />
 
@@ -302,7 +302,7 @@ Result
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../resources/index.css" type="text/css" rel="stylesheet" />
+        <link href="../../images/Part%20II/index.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <div class="page">
@@ -329,7 +329,7 @@ body {
 ```
 
 Result
-![Result](../resources/image_1_6.PNG)
+![Result](../../images/Part%20II/image_1_6.PNG)
 
 <br />
 

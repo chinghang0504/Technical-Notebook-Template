@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 3 Lists
+# [HTML and CSS Note](../../README.md) - Chapter 3 Lists
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [Types of Lists](#31-types-of-lists) |
@@ -43,7 +43,7 @@
 ```
 
 Result
-![Result](../resources/image_3_1.PNG)
+![Result](../../images/Part%20I/image_3_1.PNG)
 
 <br />
 
@@ -70,7 +70,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_3_2.PNG)
+![Result](../../images/Part%20I/image_3_2.PNG)
 
 <br />
 
@@ -101,7 +101,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_3_3.PNG)
+![Result](../../images/Part%20I/image_3_3.PNG)
 
 <br />
 
@@ -130,6 +130,6 @@ Result
 ```
 
 Result
-![Result](../resources/image_3_4.PNG)
+![Result](../../images/Part%20I/image_3_4.PNG)
 
 <br />

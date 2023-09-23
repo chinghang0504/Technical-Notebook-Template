@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 6 Tables
+# [HTML and CSS Note](../../README.md) - Chapter 6 Tables
 | Chapter | Title |
 | :-: | :- |
 | 6.1 | [Tables \<table>, \<tr>, and \<td>](#61-tables-table-tr-and-td) |
@@ -50,7 +50,7 @@
 ```
 
 Result
-![Result](../resources/image_6_1.PNG)
+![Result](../../images/Part%20I/image_6_1.PNG)
 
 - Some browsers automatically draw lines around the table and/or the individual cells.
 
@@ -102,7 +102,7 @@ heading for either a column or a row. (The th stands for table heading.)
 ```
 
 Result
-![Result](../resources/image_6_2.PNG)
+![Result](../../images/Part%20I/image_6_2.PNG)
 
 <br />
 
@@ -144,7 +144,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_6_3.PNG)
+![Result](../../images/Part%20I/image_6_3.PNG)
 
 <br />
 
@@ -185,7 +185,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_6_4.PNG)
+![Result](../../images/Part%20I/image_6_4.PNG)
 
 <br />
 
@@ -252,7 +252,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_6_5.PNG)
+![Result](../../images/Part%20I/image_6_5.PNG)
 
 <br />
 
@@ -299,7 +299,7 @@ Result
 ```
 
 Result
-![Result](../resources/image_6_6.PNG)
+![Result](../../images/Part%20I/image_6_6.PNG)
 
 <br />
 
@@ -341,6 +341,6 @@ Result
 ```
 
 Result
-![Result](../resources/image_6_7.PNG)
+![Result](../../images/Part%20I/image_6_7.PNG)
 
 <br />

@@ -1,4 +1,4 @@
-# [HTML Note](../README.md) - Chapter 10 Audios
+# [HTML and CSS Note](../../README.md) - Chapter 10 Audios
 | Chapter | Title |
 | :-: | :- |
 | 10.1 | [HTML5: Audios \<audio>](#101-html5-audios-audio) |
@@ -27,7 +27,7 @@ autoplay
 <!DOCTYPE html>
 <html>
     <body>
-        <audio src="../resources/sample.mp3"
+        <audio src="../../images/Part%20I/sample.mp3"
         controls
         autoplay>
             <p>Song</p>
@@ -37,7 +37,7 @@ autoplay
 ```
 
 Result
-![Result](../resources/image_10_1.PNG)
+![Result](../../images/Part%20I/image_10_1.PNG)
 
 <br />
 
@@ -55,8 +55,8 @@ Result
 <html>
     <body>
         <audio controls autoplay>
-            <source src="../resources/sample.mp3" />
-            <source src="../resources/sample.ogg" />
+            <source src="../../images/Part%20I/sample.mp3" />
+            <source src="../../images/Part%20I/sample.ogg" />
             <p>Song</p>
         </audio>
     </body>
@@ -64,6 +64,6 @@ Result
 ```
 
 Result
-![Result](../resources/image_10_2.PNG)
+![Result](../../images/Part%20I/image_10_2.PNG)
 
 <br />
