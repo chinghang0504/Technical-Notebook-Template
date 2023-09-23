@@ -9,12 +9,14 @@
 | 9.4 | [Multiline Strings](#94-multiline-strings) |
 |  | [String: trimIndent()](#string-trimindent) |
 |  | [String: trimMargin()](#string-trimmargin) |
-| 9.5 | [String Concatenation](#95-string-concatenation) |
+| 9.5 | [String Properties](#95-string-properties) |
+|  | [String: length](#string-length) |
+| 9.6 | [String Concatenation](#96-string-concatenation) |
 |  | [Using Plus Operator +](#using-plus-operator) |
-| 9.6 | [String Interpolation](#96-string-interpolation) |
+| 9.7 | [String Interpolation](#97-string-interpolation) |
 |  | [Interpolating Variables](#interpolating-variables) |
 |  | [Interpolating Expressions](#interpolating-expressions) |
-| 9.7 | [Coverting Strings to Numbers](#97-coverting-strings-to-numbers) |
+| 9.8 | [Coverting Strings to Numbers](#98-coverting-strings-to-numbers) |
 |  | [String: toByte()](#string-tobyte) |
 |  | [String: toShort()](#string-toshort) |
 |  | [String: toInt()](#string-toint) |
@@ -27,17 +29,16 @@
 |  | [String: toLongOrNull()](#string-tolongornull) |
 |  | [String: toFloatOrNull()](#string-tofloatornull) |
 |  | [String: toDoubleOrNull()](#string-todoubleornull) |
-| 9.8 | [Formatting Numbers](#98-formatting-numbers) |
+| 9.9 | [Formatting Numbers](#99-formatting-numbers) |
 |  | [String: format()](#string-format) |
-| 9.9 | [Regular Expressions](#99-regular-expressions) |
+| 9.10 | [Regular Expressions](#910-regular-expressions) |
 |  | [String: matches()](#string-matches) |
-| 9.10 | [String Manipulation](#910-string-manipulation) |
+| 9.11 | [String Manipulation](#911-string-manipulation) |
 |  | [String: replace()](#string-replace) |
-| 9.11 | [String Searching](#911-string-searching) |
+| 9.12 | [String Searching](#912-string-searching) |
 |  | [String: contains() or in Keyword](#string-contains-or-in-keyword) |
-| 9.12 | [String Comparsion](#912-string-comparsion) |
-| 9.13 | [String Properties](#913-string-properties) |
-|  | [String: length](#string-length) |
+| 9.13 | [String Comparsion](#913-string-comparsion) |
+
 
 <br />
 
@@ -114,7 +115,16 @@ val str: String = """
 
 <br />
 
-## 9.5 String Concatenation
+## 9.5 String Properties
+### [String: length](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+- Returns the length of this character sequence.
+```kotlin
+val length: Int
+```
+
+<br />
+
+## 9.6 String Concatenation
 ### Using Plus Operator +
 ```kotlin
 val str: String = "Hello" + " World"
@@ -122,7 +132,7 @@ val str: String = "Hello" + " World"
 
 <br />
 
-## 9.6 String Interpolation
+## 9.7 String Interpolation
 ### Interpolating Variables
 ```kotlin
 val world: String = "World"
@@ -136,7 +146,7 @@ val str: String = "Hello ${"world".uppercase()}"
 
 <br />
 
-## 9.7 Coverting Strings to Numbers
+## 9.8 Coverting Strings to Numbers
 ### [String: toByte()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-byte.html)
 - Parses the string as a signed Byte number and returns the result.
 ```kotlin
@@ -219,7 +229,7 @@ fun String.toDoubleOrNull(): Double?
 
 <br />
 
-## 9.8 Formatting Numbers
+## 9.9 Formatting Numbers
 ### [String: format()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/format.html)
 - Uses the provided format as a format string and returns a string obtained by substituting the specified arguments, using the default locale.
 ```kotlin
@@ -238,7 +248,7 @@ val string: String = String.format("%.2f", num)     // 1.68
 
 <br />
 
-## 9.9 Regular Expressions
+## 9.10 Regular Expressions
 ### [String: matches()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/matches.html)
 - Returns true if this char sequence matches the given regular expression.
 ```kotlin
@@ -254,7 +264,7 @@ val isInteger: Boolean = str.matches("""\d+""".toRegex())
 
 <br />
 
-## 9.10 String Manipulation
+## 9.11 String Manipulation
 ### [String: replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 - Returns a new string obtained by replacing all occurrences of the oldValue substring in this string with the specified newValue string.
 ```kotlin
@@ -274,7 +284,7 @@ val string: String = helloWorld.replace("World", "Hello")
 
 <br />
 
-## 9.11 String Searching
+## 9.12 String Searching
 ### [String: contains() or in Keyword](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/contains.html)
 - Returns true if this char sequence contains the specified other sequence of characters as a substring.
 ```kotlin
@@ -306,7 +316,7 @@ println("He" in string)
 
 <br />
 
-## 9.12 String Comparsion
+## 9.13 String Comparsion
 | Operator | Target | Description |
 | :--: | :-- | :-- |
 | < | Value | Less than |
@@ -330,15 +340,6 @@ println(hello == world)     // false
 println(hello != world)     // true
 println(hello === world)    // false
 println(hello !== world)    // true
-```
-
-<br />
-
-## 9.13 String Properties
-### [String: length](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
-- Returns the length of this character sequence.
-```kotlin
-val length: Int
 ```
 
 <br />
