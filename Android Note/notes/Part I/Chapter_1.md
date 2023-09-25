@@ -2,8 +2,8 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Activity](#11-activity) |
-| 1.2 | [Manifest (AndroidManifest.xml)](#12-manifest-androidmanifestxml) |
-| 1.3 | [Gradle Script (build.gradle.kts)](#13-gradle-script-buildgradlekts) |
+| 1.2 | [Gradle Script (build.gradle.kts)](#12-gradle-script-buildgradlekts) |
+| 1.3 | [Manifest (AndroidManifest.xml)](#13-manifest-androidmanifestxml) |
 | 1.4 | [String Resources (strings.xml)](#14-string-resources-stringsxml) |
 | 1.5 | [Activity Layout (activity_main.xml)](#15-activity-layout-activity_mainxml) |
 | 1.6 | [Activity Class (MainActivity.kt)](#16-activity-class-mainactivitykt) |
@@ -25,39 +25,7 @@
 
 <br />
 
-## 1.2 Manifest (AndroidManifest.xml)
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.GeoQuiz"
-        tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-
-</manifest>
-```
-
-<br />
-
-## 1.3 Gradle Script (build.gradle.kts)
+## 1.2 Gradle Script (build.gradle.kts)
 ```kotlin
 plugins {
     id("com.android.application")
@@ -106,6 +74,38 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+```
+
+<br />
+
+## 1.3 Manifest (AndroidManifest.xml)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GeoQuiz"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
 ```
 
 <br />

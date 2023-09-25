@@ -19,12 +19,15 @@
 | 8 | [Multiple Activities with Intent](./notes/Part%20I/Chapter_8.md) |
 | 9 | [Passing Data through Intent](./notes/Part%20I/Chapter_9.md) |
 | 10 | [Getting Result through ActivityResultLauncher](./notes/Part%20I/Chapter_10.md) |
-<!--
-| 11 | [Single Fragment (android:name) with View Binding](./notes/Part%20I/Chapter_11.md) |
-| 12 | [Fragment Lifecycle](./notes/Part%20I/Chapter_12.md) |
-| 13 | [Fragment View Binding Problem](./notes/Part%20I/Chapter_13.md) |
-| 14 | [Single Fragment (FragmentManager)](./notes/Part%20I/Chapter_14.md) |
-| 15 | [Fragment with RecyclerView](./notes/Part%20I/Chapter_15.md) | -->
+
+### Part II: Fundamentals (CriminalIntent)
+| Chapter | Title |
+| :-: | :- |
+| 1 | [Single Fragment with View Binding and android:name](./notes/Part%20II/Chapter_1.md) |
+<!-- | 2 | [Fragment Lifecycle](./notes/Part%20II/Chapter_2.md) |
+| 3 | [Fragment View Binding Problem](./notes/Part%20II/Chapter_3.md) |
+| 4 | [Single Fragment (FragmentManager)](./notes/Part%20II/Chapter_4.md) |
+| 5 | [Fragment with RecyclerView](./notes/Part%20II/Chapter_5.md) | -->
 
 <!-- ### Part II: Special Topics
 | Chapter | Title |

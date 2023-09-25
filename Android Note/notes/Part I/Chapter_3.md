@@ -137,7 +137,9 @@ class MainActivity : AppCompatActivity() {
 ### [Generated Binding Classes: inflate()](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
 - The binding object is created immediately after inflating the layout to make sure the view hierarchy isn't modified before it binds to the views with expressions within the layout. The most common method to bind the object to a layout is to use the static methods on the binding class. You can inflate the view hierarchy and bind the object to it by using the inflate() method of the binding class.
 ```java
-public static @NonNull com.example.geoquiz.databinding.ActivityMainBinding inflate(     @NonNull android.view.LayoutInflater inflater )
+public static @NonNull com.example.geoquiz.databinding.ActivityMainBinding inflate(
+    @NonNull android.view.LayoutInflater inflater
+)
 ```
 
 ### [Generated Binding Classes: root](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
