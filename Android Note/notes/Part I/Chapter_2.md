@@ -1,22 +1,22 @@
 # [Kotlin Note](../../README.md) - Chapter 2 Single Activity with Data Class
 | Chapter | Title |
 | :-: | :- |
-| 2.1 | [String Resources](#21-string-resources) |
+| 2.1 | [String Resources (strings.xml)](#21-string-resources-stringsxml) |
 | 2.2 | [Activity Layout (activity_main.xml)](#22-activity-layout-activity_mainxml) |
 |  | [tools:text](#toolstext) |
 | 2.3 | [Data Class (Question.kt)](#23-data-class-questionkt) |
 |  | [@StringRes](#stringres) |
 | 2.4 | [Activity Class (MainActivity.kt)](#24-activity-class-mainactivitykt) |
-|  | [TextView: setText](#textview-settext) |
+|  | [TextView: setText()](#textview-settext) |
 | 2.5 | [Demonstration](#25-demonstration) |
 
 <br />
 
-## 2.1 String Resources
+## 2.1 String Resources (strings.xml)
 ```xml
 <resources>
     <string name="app_name">GeoQuiz</string>
-    <string name="question_australia">Canberra is the capital of Australia.</string>
+    <string name="question_australia">Canberra is the capital of Australia</string>
     <string name="question_oceans">The Pacific Ocean is larger than the Atlantic Ocean.</string>
     <string name="question_mideast">The Suez Canal connects the Red Sea and the Indian Ocean.</string>
     <string name="question_africa">The source of the Nile River is in Egypt.</string>
@@ -33,11 +33,7 @@
 <br />
 
 ## 2.2 Activity Layout (activity_main.xml)
-In preview
 ![](../../images/Part%20I/image_2_1.PNG)
-
-In app
-![](../../images/Part%20I/image_2_2.PNG)
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -84,6 +80,8 @@ In app
 ```
 
 ### [tools:text](https://developer.android.com/studio/write/tool-attributes#design-time_view_attributes)
+- You can insert sample data in your layout preview by using the tools: prefix instead of android: with any \<View> attribute from the Android framework. This is useful when the attribute's value isn't populated until runtime and you want to see the effect in the layout preview.
+
 - For example, if the android:text attribute value is set at runtime, or you want to see the layout with a value different than the default, you can add tools:text to specify some text for the layout preview only.
 
 <br />
@@ -95,8 +93,8 @@ package com.example.geoquiz
 import androidx.annotation.StringRes
 
 data class Question(
-
-    @StringRes val textResId: Int,
+    
+    @StringRes val textRestId: Int,
     val answer: Boolean
 )
 ```
@@ -158,7 +156,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateQuestion() {
-        val questionTextResId = questionBank[currentIndex].textResId
+        val questionTextResId = questionBank[currentIndex].textRestId
         questionTextView.setText(questionTextResId)
     }
 
@@ -176,19 +174,19 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-### [TextView: setText](https://developer.android.com/reference/kotlin/android/widget/TextView#settext_3)
+### [TextView: setText()](https://developer.android.com/reference/kotlin/android/widget/TextView#settext_3)
+- Sets the text to be displayed using a string resource identifier.
 ```kotlin
 fun setText(resid: Int): Unit
 ```
-- Sets the text to be displayed using a string resource identifier.
 
 <br />
 
 ## 2.5 Demonstration
-After opened the app
-![](../../images/Part%20I/image_2_3.PNG)
+After started the app
+![](../../images/Part%20I/image_2_2.PNG)
 
 After clicked the next button
-![](../../images/Part%20I/image_2_4.PNG)
+![](../../images/Part%20I/image_2_3.PNG)
 
 <br />

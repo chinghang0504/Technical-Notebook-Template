@@ -4,7 +4,7 @@
 | 1.1 | [Activity](#11-activity) |
 | 1.2 | [Manifest (AndroidManifest.xml)](#12-manifest-androidmanifestxml) |
 | 1.3 | [Gradle Script (build.gradle.kts)](#13-gradle-script-buildgradlekts) |
-| 1.4 | [String Resources](#14-string-resources) |
+| 1.4 | [String Resources (strings.xml)](#14-string-resources-stringsxml) |
 | 1.5 | [Activity Layout (activity_main.xml)](#15-activity-layout-activity_mainxml) |
 | 1.6 | [Activity Class (MainActivity.kt)](#16-activity-class-mainactivitykt) |
 |  | [Activity: setContentView()](#activity-setcontentview) |
@@ -110,7 +110,7 @@ dependencies {
 
 <br />
 
-## 1.4 String Resources
+## 1.4 String Resources (strings.xml)
 ```xml
 <resources>
     <string name="app_name">GeoQuiz</string>
