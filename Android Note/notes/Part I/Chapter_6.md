@@ -2,10 +2,11 @@
 | Chapter | Title |
 | :-: | :- |
 | 6.1 | [Problem: Configuration Changes](#61-problem-configuration-changes) |
+|  | [Activity Recreation](#activity-recreation) |
 |  | [Screen Orientation Change](#screen-orientation-change) |
 | 6.2 | [ViewModel](#62-viewmodel) |
-| 6.3 | [Gradle Script](#63-gradle-script) |
-| 6.4 | [ViewModel (QuizViewModel.kt)](#64-viewmodel-quizviewmodelkt) |
+| 6.3 | [Gradle Script (build.gradle.kts)](#63-gradle-script-buildgradlekts) |
+| 6.4 | [Activity ViewModel (QuizViewModel.kt)](#64-activity-viewmodel-quizviewmodelkt) |
 | 6.5 | [Activity Class (MainActivity.kt)](#65-activity-class-mainactivitykt) |
 | 6.6 | [Demonstration](#66-demonstration) |
 
@@ -13,22 +14,26 @@
 
 ## 6.1 [Problem: Configuration Changes](https://developer.android.com/guide/topics/resources/runtime-changes)
 - Some device configurations can change while the app is running. These include, but aren't limited to:
-    - App display size
-    - Screen orientation
-    - Font size and weight
-    - Locale
-    - Dark mode versus light mode
-    - Keyboard availability
+    1. App display size
+    2. Screen orientation
+    3. Font size and weight
+    4. Locale
+    5. Dark mode versus light mode
+    6. Keyboard availability
+
+### [Activity Recreation](https://developer.android.com/guide/topics/resources/runtime-changes#activity-recreation)
 - The system recreates an Activity when a configuration change occurs. To do this, the system calls onDestroy() and destroys the existing Activity instance. It then creates a new instance using onCreate(), and this new Activity instance is initialized with the new, updated configuration. This also means that the system also recreates the UI with the new configuration.
 
+- The recreation behavior helps your application adapt to new configurations by automatically reloading your application with alternative resources that match the new device configuration.
+
 ### Screen Orientation Change
-After opened the app
+After started the app
 ![](../../images/Part%20I/image_6_1.png)
 
 After clicked the next button
 ![](../../images/Part%20I/image_6_2.png)
 
-After rotated
+After rotated the screen
 ![](../../images/Part%20I/image_6_3.png)
 
 <br />
@@ -38,7 +43,7 @@ After rotated
 
 <br />
 
-## 6.3 Gradle Script
+## 6.3 Gradle Script (build.gradle.kts)
 ```kotlin
 plugins {
     id("com.android.application")
@@ -95,7 +100,7 @@ dependencies {
 
 <br />
 
-## 6.4 ViewModel (QuizViewModel.kt)
+## 6.4 Activity ViewModel (QuizViewModel.kt)
 ```kotlin
 package com.example.geoquiz
 
@@ -118,7 +123,7 @@ class QuizViewModel : ViewModel() {
         get() = questionBank[currentIndex].answer
 
     val currentQuestionText: Int
-        get() = questionBank[currentIndex].textResId
+        get() = questionBank[currentIndex].textRestId
 
     fun moveToNext() {
         currentIndex = (currentIndex + 1) % questionBank.size
@@ -149,7 +154,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate Callback")
+        Log.d(TAG, "Calling onCreate()")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -186,27 +191,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG, "onStart Callback")
+        Log.d(TAG, "Calling onStart()")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume Callback")
+        Log.d(TAG, "Calling onResume()")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause Callback")
+        Log.d(TAG, "Calling onPause()")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onStop Callback")
+        Log.d(TAG, "Calling onStop()")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy Callback")
+        Log.d(TAG, "Calling onDestroy()")
     }
 }
 ```
@@ -214,13 +219,13 @@ class MainActivity : AppCompatActivity() {
 <br />
 
 ## 6.6 Demonstration
-After opened the app
+After started the app
 ![](../../images/Part%20I/image_6_4.png)
 
 After clicked the next button
 ![](../../images/Part%20I/image_6_5.png)
 
-After rotated
+After rotated the app
 ![](../../images/Part%20I/image_6_6.png)
 
 <br />
