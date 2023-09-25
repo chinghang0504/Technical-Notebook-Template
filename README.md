@@ -8,11 +8,13 @@
 | Name | Version | Last Modified |
 | :-- | :--: | :--: |
 | [Android Note](./Android%20Note/README.md) |  |  |
+| [Swift Note](./Swift%20Note/README.md) |  |  |
 
 ## Front-End Development
 | Name | Version | Last Modified |
 | :-- | :--: | :--: |
 | [HTML and CSS Note](./HTML%20and%20CSS%20Note/README.md) |  |  |
+| [JavaScript Note](./JavaScript%20Note/README.md) |  |  |
 
 ## Back-End Development
 | Name | Version | Last Modified |
@@ -24,12 +26,10 @@
 ## Templates
 | Name | Version | Last Modified |
 | :-- | :--: | :--: |
+| jQuery |  |  |
+| Ajax |  |  |
 | Kotlin Concurrency Note |  |  |
-| Swift |  |  |
 | iOS |  |  |
 | SQL |  |  |
 | Git |  |  |
-| JavaScript |  |  |
-| jQuery |  |  |
-| Ajax |  |  |
 | TypeScript |  |  |
