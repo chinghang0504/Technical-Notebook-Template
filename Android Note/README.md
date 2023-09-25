@@ -13,7 +13,7 @@
 | 2 | [Single Activity with Data Class](./notes/Part%20I/Chapter_2.md) |
 | 3 | [Single Activity with View Binding](./notes/Part%20I/Chapter_3.md) |
 | 4 | [Icons](./notes/Part%20I/Chapter_4.md) |
-| 5 | [Activity Lifecycle](./notes/Part%20I/Chapter_5.md) |
+<!-- | 5 | [Activity Lifecycle](./notes/Part%20I/Chapter_5.md) |
 | 6 | [Single Activity with ViewModel](./notes/Part%20I/Chapter_6.md) |
 | 7 | [Single Activity with ViewModel and SavedStateHandle](./notes/Part%20I/Chapter_7.md) |
 | 8 | [Multiple Activities](./notes/Part%20I/Chapter_8.md) |
@@ -23,7 +23,7 @@
 | 12 | [Fragment Lifecycle](./notes/Part%20I/Chapter_12.md) |
 | 13 | [Fragment View Binding Problem](./notes/Part%20I/Chapter_13.md) |
 | 14 | [Single Fragment (FragmentManager)](./notes/Part%20I/Chapter_14.md) |
-| 15 | [Fragment with RecyclerView](./notes/Part%20I/Chapter_15.md) |
+| 15 | [Fragment with RecyclerView](./notes/Part%20I/Chapter_15.md) | -->
 
 <!-- ### Part II: Special Topics
 | Chapter | Title |
