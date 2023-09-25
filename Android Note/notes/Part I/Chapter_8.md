@@ -1,19 +1,20 @@
 # [Kotlin Note](../../README.md) - Chapter 8 Multiple Activities
 | Chapter | Title |
 | :-: | :- |
-| 8.1 | [Manifest](#81-manifest) |
-| 8.2 | [String Resources](#82-string-resources) |
+| 8.1 | [Manifest (AndroidManifest.xml)](#81-manifest-androidmanifestxml) |
+| 8.2 | [String Resources (strings.xml)](#82-string-resources-stringsxml) |
 | 8.3 | [Activity Layout (activity_cheat.xml)](#83-activity-layout-activity_cheatxml) |
-| 8.4 | [Activity Layout (activity_main.xml)](#84-activity-layout-activity_mainxml) |
-| 8.5 | [Activity Class (MainActivity.kt)](#85-activity-class-mainactivitykt) |
-|  | [Intent: Intent](#intent-intent) |
-|  | [Activity: startActivity](#activity-startactivity) |
-| 8.6 | [Activity Class (CheatActivity.kt)](#86-activity-class-cheatactivitykt) |
+|  | [tools:context](#toolscontext) |
+| 8.4 | [Activity Class (CheatActivity.kt)](#84-activity-class-cheatactivitykt) |
+| 8.5 | [Activity Layout (activity_main.xml)](#85-activity-layout-activity_mainxml) |
+| 8.6 | [Activity Class (MainActivity.kt)](#86-activity-class-mainactivitykt) |
+|  | [Intent: Intent()](#intent-intent) |
+|  | [Activity: startActivity()](#activity-startactivity) |
 | 8.7 | [Demonstration](#87-demonstration) |
 
 <br />
 
-## 8.1 Manifest
+## 8.1 Manifest (AndroidManifest.xml)
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -45,13 +46,14 @@
 
 </manifest>
 ```
+
 <br />
 
-## 8.2 String Resources
+## 8.2 String Resources (strings.xml)
 ```xml
 <resources>
     <string name="app_name">GeoQuiz</string>
-    <string name="question_australia">Canberra is the capital of Australia.</string>
+    <string name="question_australia">Canberra is the capital of Australia</string>
     <string name="question_oceans">The Pacific Ocean is larger than the Atlantic Ocean.</string>
     <string name="question_mideast">The Suez Canal connects the Red Sea and the Indian Ocean.</string>
     <string name="question_africa">The source of the Nile River is in Egypt.</string>
@@ -62,7 +64,7 @@
     <string name="next_button">Next</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
-    <string name="warning_text">Are you sure want to do this?</string>
+    <string name="warning_text">Are you sure you want to do this?</string>
     <string name="show_answer_button">Show Answer</string>
     <string name="cheat_button">Cheat!</string>
     <string name="judgment_toast">Cheating is wrong.</string>
@@ -105,9 +107,34 @@
 </LinearLayout>
 ```
 
+### [tools:context](https://developer.android.com/studio/write/tool-attributes#toolscontext)
+- This attribute declares which activity this layout is associated with by default. This enables features in the editor or layout preview that require knowledge of the activity, such as what the layout theme is in the preview and where to insert onClick handlers generated from a quickfix.
+
 <br />
 
-## 8.4 Activity Layout (activity_main.xml)
+## 8.4 Activity Class (CheatActivity.kt)
+```kotlin
+package com.example.geoquiz
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.geoquiz.databinding.ActivityCheatBinding
+
+class CheatActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityCheatBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityCheatBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+}
+```
+
+<br />
+
+## 8.5 Activity Layout (activity_main.xml)
 ![](../../images/Part%20I/image_8_2.PNG)
 
 ```xml
@@ -150,7 +177,6 @@
         android:id="@+id/cheat_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="@string/cheat_button"/>
 
     <Button
@@ -166,7 +192,7 @@
 
 <br />
 
-## 8.5 Activity Class (MainActivity.kt)
+## 8.6 Activity Class (MainActivity.kt)
 ```kotlin
 package com.example.geoquiz
 
@@ -188,7 +214,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate Callback")
+        Log.d(TAG, "Calling onCreate()")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -203,7 +229,7 @@ class MainActivity : AppCompatActivity() {
             updateQuestion()
         }
         binding.cheatButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, CheatActivity::class.java)
+            val intent = Intent(this, CheatActivity::class.java)
             startActivity(intent)
         }
 
@@ -229,80 +255,52 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG, "onStart Callback")
+        Log.d(TAG, "Calling onStart()")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume Callback")
+        Log.d(TAG, "Calling onResume()")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause Callback")
+        Log.d(TAG, "Calling onPause()")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onStop Callback")
+        Log.d(TAG, "Calling onStop()")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy Callback")
+        Log.d(TAG, "Calling onDestroy()")
     }
 }
 ```
 
-### [Intent: Intent](https://developer.android.com/reference/kotlin/android/content/Intent#intent_5)
+### [Intent: Intent()](https://developer.android.com/reference/kotlin/android/content/Intent#intent_5)
+- Create an intent for a specific component. All other fields (action, data, type, class) are null, though they can be modified later with explicit calls. This provides a convenient way to create an intent that is intended to execute a hard-coded class name, rather than relying on the system to find an appropriate class for you; see setComponent for more information on the repercussions of this.
 ```kotlin
 Intent(
     packageContext: Context!, 
     cls: Class<*>!)
 ```
-- Create an intent for a specific component. All other fields (action, data, type, class) are null, though they can be modified later with explicit calls. This provides a convenient way to create an intent that is intended to execute a hard-coded class name, rather than relying on the system to find an appropriate class for you; see setComponent for more information on the repercussions of this.
 
-### [Activity: startActivity](https://developer.android.com/reference/kotlin/android/app/Activity#startactivity)
+### [Activity: startActivity()](https://developer.android.com/reference/kotlin/android/app/Activity#startactivity)
+- Same as #startActivity(android.content.Intent,android.os.Bundle) with no options specified.
 ```kotlin
 open fun startActivity(intent: Intent!): Unit
-```
-- Launch a new activity. You will not receive any information about when the activity exits. This implementation overrides the base version, providing information about the activity performing the launch. Because of this additional information, the Intent#FLAG_ACTIVITY_NEW_TASK launch flag is not required; if not specified, the new activity will be added to the task of the caller.
-
-<br />
-
-## 8.6 Activity Class (CheatActivity.kt)
-```kotlin
-package com.example.geoquiz
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.geoquiz.databinding.ActivityCheatBinding
-
-class CheatActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityCheatBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityCheatBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
-}
 ```
 
 <br />
 
 ## 8.7 Demonstration
-After opened the app
+After started the app
 ![](../../images/Part%20I/image_8_3.PNG)
 
-After clicked the next button
-![](../../images/Part%20I/image_8_4.PNG)
-
 After clicked the cheat button
-![](../../images/Part%20I/image_8_5.PNG)
-
-After clicked the back button
-![](../../images/Part%20I/image_8_6.PNG)
+![](../../images/Part%20I/image_8_4.PNG)
 
 <br />
