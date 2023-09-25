@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 8 Multiple Activities
+# [Kotlin Note](../../README.md) - Chapter 8 Multiple Activities with Intent
 | Chapter | Title |
 | :-: | :- |
 | 8.1 | [Manifest (AndroidManifest.xml)](#81-manifest-androidmanifestxml) |
