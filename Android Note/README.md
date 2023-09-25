@@ -18,7 +18,7 @@
 | 7 | [Single Activity with ViewModel and SavedStateHandle](./notes/Part%20I/Chapter_7.md) |
 | 8 | [Multiple Activities with Intent](./notes/Part%20I/Chapter_8.md) |
 | 9 | [Passing Data through Intent](./notes/Part%20I/Chapter_9.md) |
-<!--| 10 | [Multiple Activities with Intent and ActivityResultLauncher](./notes/Part%20I/Chapter_10.md) |
+| 10 | [Getting Result through ActivityResultLauncher](./notes/Part%20I/Chapter_10.md) |
 <!--
 | 11 | [Single Fragment (android:name) with View Binding](./notes/Part%20I/Chapter_11.md) |
 | 12 | [Fragment Lifecycle](./notes/Part%20I/Chapter_12.md) |
