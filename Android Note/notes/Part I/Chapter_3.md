@@ -2,10 +2,11 @@
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [View Binding](#31-view-binding) |
-| 3.2 | [Gradle Script](#32-gradle-script) |
+| 3.2 | [Gradle Script (build.gradle.kts)](#32-gradle-script-buildgradlekts) |
 | 3.3 | [Activity Class (MainActivity.kt)](#33-activity-class-mainactivitykt) |
-|  | [Generated Binding Class: inflate](#generated-binding-class-inflate) |
-|  | [Activity: setContentView](#activity-setcontentview) |
+|  | [Generated Binding Classes: inflate()](#generated-binding-classes-inflate) |
+|  | [Generated Binding Classes: root](#generated-binding-classes-root) |
+|  | [Activity: setContentView()](#activity-setcontentview) |
 | 3.4 | [Demonstration](#34-demonstration) |
 
 <br />
@@ -15,7 +16,7 @@
 
 <br />
 
-## 3.2 Gradle Script
+## 3.2 Gradle Script (build.gradle.kts)
 ```kotlin
 plugins {
     id("com.android.application")
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateQuestion() {
-        val questionTextResId = questionBank[currentIndex].textResId
+        val questionTextResId = questionBank[currentIndex].textRestId
         binding.questionTextView.setText(questionTextResId)
     }
 
@@ -133,24 +134,27 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-### [Generated Binding Class: inflate](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
-```java
-public static @NonNull com.example.geoquiz.databinding.ActivityMainBinding inflate(
-    @NonNull android.view.LayoutInflater inflater
-)
-```
+### [Generated Binding Classes: inflate()](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
 - The binding object is created immediately after inflating the layout to make sure the view hierarchy isn't modified before it binds to the views with expressions within the layout. The most common method to bind the object to a layout is to use the static methods on the binding class. You can inflate the view hierarchy and bind the object to it by using the inflate() method of the binding class.
+```java
+public static @NonNull com.example.geoquiz.databinding.ActivityMainBinding inflate(     @NonNull android.view.LayoutInflater inflater )
+```
 
-### [Activity: setContentView](https://developer.android.com/reference/kotlin/android/app/Activity#setcontentview_1)
+### [Generated Binding Classes: root](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
+```kotlin
+public android.widget.LinearLayout getRoot()
+```
+
+### [Activity: setContentView()](https://developer.android.com/reference/kotlin/android/app/Activity#setcontentview_1)
+- Set the activity content to an explicit view. This view is placed directly into the activity's view hierarchy. It can itself be a complex view hierarchy. When calling this method, the layout parameters of the specified view are ignored. Both the width and the height of the view are set by default to ViewGroup.LayoutParams#MATCH_PARENT. To use your own layout parameters, invoke setContentView(android.view.View,android.view.ViewGroup.LayoutParams) instead.
 ```kotlin
 open fun setContentView(view: View!): Unit
 ```
-- Set the activity content to an explicit view. This view is placed directly into the activity's view hierarchy. It can itself be a complex view hierarchy. When calling this method, the layout parameters of the specified view are ignored. Both the width and the height of the view are set by default to ViewGroup.LayoutParams#MATCH_PARENT. To use your own layout parameters, invoke setContentView(android.view.View,android.view.ViewGroup.LayoutParams) instead.
 
 <br />
 
 ## 3.4 Demonstration
-After opened the app
+After started the app
 ![](../../images/Part%20I/image_3_1.PNG)
 
 After clicked the next button
