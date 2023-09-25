@@ -2,26 +2,30 @@
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Activity](#11-activity) |
-| 1.2 | [Manifest](#12-manifest) |
-| 1.3 | [Gradle Script](#13-gradle-script) |
+| 1.2 | [Manifest (AndroidManifest.xml)](#12-manifest-androidmanifestxml) |
+| 1.3 | [Gradle Script (build.gradle.kts)](#13-gradle-script-buildgradlekts) |
 | 1.4 | [String Resources](#14-string-resources) |
 | 1.5 | [Activity Layout (activity_main.xml)](#15-activity-layout-activity_mainxml) |
 | 1.6 | [Activity Class (MainActivity.kt)](#16-activity-class-mainactivitykt) |
-|  | [Activity: setContentView](#activity-setcontentview) |
-|  | [Activity: findViewById](#activity-findviewbyid) |
-|  | [View: setOnClickListener](#view-setonclicklistener) |
-|  | [Toast: makeText](#toast-maketext) |
-|  | [Toast: show](#toast-show) |
+|  | [Activity: setContentView()](#activity-setcontentview) |
+|  | [Activity: findViewById()](#activity-findviewbyid) |
+|  | [View: setOnClickListener()](#view-setonclicklistener) |
+|  | [Toast: makeText()](#toast-maketext) |
+|  | [Toast: show()](#toast-show) |
 | 1.7 | [Demonstration](#17-demonstration) |
 
 <br />
 
-## 1.1 [Activity](https://developer.android.com/reference/android/app/Activity)
-- An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View). While activities are often presented to the user as full-screen windows, they can also be used in other ways: as floating windows (via a theme with R.attr.windowIsFloating set), Multi-Window mode or embedded into other windows.
+## 1.1 [Activity](https://developer.android.com/reference/kotlin/android/app/Activity)
+- An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with #setContentView. While activities are often presented to the user as full-screen windows, they can also be used in other ways: as floating windows (via a theme with android.R.attr#windowIsFloating set), Multi-Window mode or embedded into other windows. There are two methods almost all subclasses of Activity will implement:
+
+    1. #onCreate is where you initialize your activity. Most importantly, here you will usually call setContentView(int) with a layout resource defining your UI, and using findViewById to retrieve the widgets in that UI that you need to interact with programmatically.
+
+    2. onPause is where you deal with the user pausing active interaction with the activity. Any changes made by the user should at this point be committed (usually to the android.content.ContentProvider holding the data). In this state the activity is still visible on screen.
 
 <br />
 
-## 1.2 Manifest
+## 1.2 Manifest (AndroidManifest.xml)
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -53,7 +57,7 @@
 
 <br />
 
-## 1.3 Gradle Script
+## 1.3 Gradle Script (build.gradle.kts)
 ```kotlin
 plugins {
     id("com.android.application")
@@ -110,7 +114,7 @@ dependencies {
 ```xml
 <resources>
     <string name="app_name">GeoQuiz</string>
-    <string name="question_text">Canberra is the capital of Australia.</string>
+    <string name="question_text">Canberra is the capital of Australia</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
     <string name="correct_toast">Correct!</string>
@@ -121,7 +125,7 @@ dependencies {
 <br />
 
 ## 1.5 Activity Layout (activity_main.xml)
-![](../../images/Part%20I/image_1_1.png)
+![](../../images/Part%20I/image_1_1.PNG)
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -191,25 +195,26 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-### [Activity: setContentView](https://developer.android.com/reference/kotlin/android/app/Activity#setcontentview)
+### [Activity: setContentView()](https://developer.android.com/reference/kotlin/android/app/Activity#setcontentview)
+- Set the activity content from a layout resource. The resource will be inflated, adding all top-level views to the activity.
 ```kotlin
 open fun setContentView(layoutResID: Int): Unit
 ```
-- Set the activity content from a layout resource. The resource will be inflated, adding all top-level views to the activity.
 
-### [Activity: findViewById](https://developer.android.com/reference/kotlin/android/app/Activity#findviewbyid)
+### [Activity: findViewById()](https://developer.android.com/reference/kotlin/android/app/Activity#findviewbyid)
+- Finds a view that was identified by the android:id XML attribute that was processed in #onCreate.
 ```kotlin
 open fun <T : View!> findViewById(id: Int): T
 ```
-- Finds a view that was identified by the android:id XML attribute that was processed in #onCreate.
 
-### [View: setOnClickListener](https://developer.android.com/reference/kotlin/android/view/View#setonclicklistener)
+### [View: setOnClickListener()](https://developer.android.com/reference/kotlin/android/view/View#setonclicklistener)
+- Register a callback to be invoked when this view is clicked. If this view is not clickable, it becomes clickable.
 ```kotlin
 open fun setOnClickListener(l: View.OnClickListener?): Unit
 ```
-- Register a callback to be invoked when this view is clicked. If this view is not clickable, it becomes clickable.
 
-### [Toast: makeText](https://developer.android.com/reference/kotlin/android/widget/Toast#maketext_1)
+### [Toast: makeText()](https://developer.android.com/reference/kotlin/android/widget/Toast#maketext_1)
+- Make a standard toast that just contains text from a resource.
 ```kotlin
 open static fun makeText(
     context: Context!, 
@@ -217,18 +222,17 @@ open static fun makeText(
     duration: Int
 ): Toast!
 ```
-- Make a standard toast that just contains text from a resource.
 
-### [Toast: show](https://developer.android.com/reference/kotlin/android/widget/Toast#show)
+### [Toast: show()](https://developer.android.com/reference/kotlin/android/widget/Toast#show)
+- Show the view for the specified duration.
 ```kotlin
 open fun show(): Unit
 ```
-- Show the view for the specified duration.
 
 <br />
 
 ## 1.7 Demonstration
-After opened the app
+After started the app
 ![](../../images/Part%20I/image_1_2.PNG)
 
 After clicked the true button

@@ -1,7 +1,7 @@
 # [Technical Notebook](../README.md) - Android Note
 ## References
-- [Android Programming: The Big Nerd Ranch Guide (5th Edition](https://bignerdranch.com/books/android-programming-the-big-nerd-ranch-guide-5th-edition/)
 - [Android Developer Kotlin Reference](https://developer.android.com/reference/kotlin/android/app/package-summary)
+- [Android Programming: The Big Nerd Ranch Guide (5th Edition](https://bignerdranch.com/books/android-programming-the-big-nerd-ranch-guide-5th-edition/)
 
 <br />
 
