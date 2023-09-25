@@ -15,10 +15,10 @@
 | 4 | [Icons](./notes/Part%20I/Chapter_4.md) |
 | 5 | [Activity Lifecycle](./notes/Part%20I/Chapter_5.md) |
 | 6 | [Single Activity with ViewModel](./notes/Part%20I/Chapter_6.md) |
-<!-- | 7 | [Single Activity with ViewModel and SavedStateHandle](./notes/Part%20I/Chapter_7.md) |
+| 7 | [Single Activity with ViewModel and SavedStateHandle](./notes/Part%20I/Chapter_7.md) |
 
-### Part II: 
-| 8 | [Multiple Activities](./notes/Part%20I/Chapter_8.md) |
+<!-- ### Part II: 
+<!-- | 8 | [Multiple Activities](./notes/Part%20I/Chapter_8.md) |
 | 9 | [Multiple Activities with Intent](./notes/Part%20I/Chapter_9.md) |
 | 10 | [Multiple Activities with Intent and ActivityResultLauncher](./notes/Part%20I/Chapter_10.md) |
 | 11 | [Single Fragment (android:name) with View Binding](./notes/Part%20I/Chapter_11.md) |
