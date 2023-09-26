@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 4 Single Fragment with FragmentManager
+# [Kotlin Note](../../README.md) - Chapter 4 Fragment with FragmentManager
 | Chapter | Title |
 | :-: | :- |
 | 4.1 | [FragmentManager](#41-fragmentmanager) |

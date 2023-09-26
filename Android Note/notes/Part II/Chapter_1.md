@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 1 Single Fragment with View Binding and android:name
+# [Kotlin Note](../../README.md) - Chapter 1 Fragment with View Binding and android:name
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Fragment](#11-fragment) |

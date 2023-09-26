@@ -23,10 +23,10 @@
 ### Part II: Fundamentals (CriminalIntent)
 | Chapter | Title |
 | :-: | :- |
-| 1 | [Single Fragment with View Binding and android:name](./notes/Part%20II/Chapter_1.md) |
+| 1 | [Fragment with View Binding and android:name](./notes/Part%20II/Chapter_1.md) |
 | 2 | [Fragment Lifecycle](./notes/Part%20II/Chapter_2.md) |
 | 3 | [Fragment View Binding Problem](./notes/Part%20II/Chapter_3.md) |
-| 4 | [Single Fragment with FragmentManager](./notes/Part%20II/Chapter_4.md) |
+| 4 | [Fragment with FragmentManager](./notes/Part%20II/Chapter_4.md) |
 <!-- | 5 | [Fragment with RecyclerView](./notes/Part%20II/Chapter_5.md) | -->
 
 <!-- ### Part II: Special Topics
