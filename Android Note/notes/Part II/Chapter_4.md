@@ -1,23 +1,23 @@
-# [Kotlin Note](../../README.md) - Chapter 4 Single Fragment (FragmentManager)
+# [Kotlin Note](../../README.md) - Chapter 4 Single Fragment with FragmentManager
 | Chapter | Title |
 | :-: | :- |
-| 14.1 | [FragmentManager](#141-fragmentmanager) |
-| 14.2 | [Activity Layout (activity_main.xml)](#142-activity-layout-activity_mainxml) |
-| 14.3 | [Activity Class (MainActivity.kt)](#143-activity-class-mainactivitykt) |
-|  | [FragmentActivity: getSupportFragmentManager](#fragmentactivity-getsupportfragmentmanager) |
-|  | [FragmentManager: beginTransaction](#fragmentmanager-begintransaction) |
-|  | [FragmentTransaction: add](#fragmenttransaction-add) |
-|  | [FragmentTransaction: commit](#fragmenttransaction-commit) |
+| 4.1 | [FragmentManager](#41-fragmentmanager) |
+| 4.2 | [Activity Layout (activity_main.xml)](#42-activity-layout-activity_mainxml) |
+| 4.3 | [Activity Class (MainActivity.kt)](#43-activity-class-mainactivitykt) |
+|  | [FragmentActivity: supportFragmentManager](#fragmentactivity-supportfragmentmanager) |
+|  | [FragmentManager: beginTransaction()](#fragmentmanager-begintransaction) |
+|  | [FragmentTransaction: add()](#fragmenttransaction-add) |
+|  | [FragmentTransaction: commit()](#fragmenttransaction-commit) |
 
 <br />
 
-## 14.1 [FragmentManager](https://developer.android.com/guide/fragments/fragmentmanager)
+## 4.1 [FragmentManager](https://developer.android.com/guide/fragments/fragmentmanager)
 - FragmentManager is the class responsible for performing actions on your app's fragments, such as adding, removing, or replacing them and adding them to the back stack.
 
 <br />
 
-## 14.2 Activity Layout (activity_main.xml)
-![](../../images/Part%20I/image_14_1.png)
+## 4.2 Activity Layout (activity_main.xml)
+![](../../images/Part%20II/image_4_1.png)
 
 ```xml
 <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +30,7 @@
 
 <br />
 
-## 14.3 Activity Class (MainActivity.kt)
+## 4.3 Activity Class (MainActivity.kt)
 ```kotlin
 package com.example.criminalintent
 
@@ -51,34 +51,28 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-### [FragmentActivity: getSupportFragmentManager](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentActivity#getSupportFragmentManager())
+### [FragmentActivity: supportFragmentManager](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentActivity#getSupportFragmentManager())
+- Return the FragmentManager for interacting with fragments associated with this activity.
 ```kotlin
 fun getSupportFragmentManager(): FragmentManager
 ```
-- Return the FragmentManager for interacting with fragments associated with this activity.
 
-### [FragmentManager: beginTransaction](https://developer.android.com/reference/kotlin/android/app/FragmentManager#begintransaction)
-Deprecated in API level 28
-```kotlin
-abstract fun beginTransaction(): FragmentTransaction!
-```
+### [FragmentManager: beginTransaction()](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentManager#beginTransaction())
 - Start a series of edit operations on the Fragments associated with this FragmentManager.
-
-### [FragmentTransaction: add](https://developer.android.com/reference/kotlin/android/app/FragmentTransaction#add_1)
-Deprecated in API level 28
 ```kotlin
-abstract fun add(
-    containerViewId: Int, 
-    fragment: Fragment!
-): FragmentTransaction!
+fun beginTransaction(): FragmentTransaction
 ```
-- Add a fragment to the activity state. This fragment may optionally also have its view (if Fragment.onCreateView returns non-null) inserted into a container view of the activity.
 
-### [FragmentTransaction: commit](https://developer.android.com/reference/kotlin/android/app/FragmentTransaction#commit)
-Deprecated in API level 28
+### [FragmentTransaction: add()](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentTransaction#add(int,androidx.fragment.app.Fragment))
+- Add a fragment to the activity state. This fragment may optionally also have its view (if Fragment.onCreateView returns non-null) into a container view of the activity.
+```kotlin
+fun add(containerViewId: @IdRes Int, fragment: Fragment): FragmentTransaction
+```
+
+### [FragmentTransaction: commit()](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentTransaction#commit())
+- Schedules a commit of this transaction. The commit does not happen immediately; it will be scheduled as work on the main thread to be done the next time that thread is ready.
 ```kotlin
 abstract fun commit(): Int
 ```
-- Schedules a commit of this transaction. The commit does not happen immediately; it will be scheduled as work on the main thread to be done the next time that thread is ready.
 
 <br />
