@@ -1,18 +1,17 @@
 # [Kotlin Note](../../README.md) - Chapter 3 Fragment View Binding Problem
 | Chapter | Title |
 | :-: | :- |
-| 13.1 | [Problem: Fragment View Binding](#131-problem-fragment-view-binding) |
-| 13.2 | [Fragment Class (CrimeDetailFragment.kt)](#132-fragment-class-crimedetailfragmentkt) |
-|  | [Checks: checkNotNull](#checks-checknotnull) |
+| 3.1 | [Problem: Unable to Free Memory of Fragment Views](#31-problem-unable-to-free-memory-of-fragment-views) |
+| 3.2 | [Fragment Class (CrimeDetailFragment.kt)](#32-fragment-class-crimedetailfragmentkt) |
 
 <br />
 
-## 13.1 Problem: Fragment View Binding
-- The OS cannot free the fragment view in the memory, because the app are holding a reference to the binding property.
+## 3.1 Problem: Unable to Free Memory of Fragment Views
+- Since the fragment holds a reference to the binding property, the system will not free the memory of fragment views.
 
 <br />
 
-## 13.2 Fragment Class (CrimeDetailFragment.kt)
+## 3.2 Fragment Class (CrimeDetailFragment.kt)
 ```kotlin
 package com.example.criminalintent
 
@@ -47,14 +46,20 @@ class CrimeDetailFragment : Fragment() {
         )
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentCrimeDetailBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         binding.apply {
-            crimeTitle.doOnTextChanged { text, _, _, _ ->
+            crimeTitle.doOnTextChanged { text, start, before, count ->
                 crime = crime.copy(title = text.toString())
             }
 
@@ -63,7 +68,7 @@ class CrimeDetailFragment : Fragment() {
                 isEnabled = false
             }
 
-            crimeSolved.setOnCheckedChangeListener { _, b ->
+            crimeSolved.setOnCheckedChangeListener { compoundButton, b ->
                 crime = crime.copy(isSolved = b)
             }
         }
@@ -75,11 +80,6 @@ class CrimeDetailFragment : Fragment() {
         _binding = null
     }
 }
-```
-
-### [Checks: checkNotNull](https://developer.android.com/reference/kotlin/androidx/test/espresso/intent/Checks#checkNotNull(T,java.lang.Object))
-```kotlin
-java-static fun <T> checkNotNull(reference: T!, errorMessage: Any!): T!
 ```
 
 <br />
