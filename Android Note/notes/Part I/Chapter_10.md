@@ -1,7 +1,7 @@
 # [Kotlin Note](../../README.md) - Chapter 10 Getting Result through ActivityResultLauncher
 | Chapter | Title |
 | :-: | :- |
-| 10.1 | [ViewModel (QuizViewModel.kt)](#101-viewmodel-quizviewmodelkt) |
+| 10.1 | [Activity ViewModel (QuizViewModel.kt)](#101-activity-viewmodel-quizviewmodelkt) |
 | 10.2 | [Activity Class (MainActivity.kt)](#102-activity-class-mainactivitykt) |
 |  | [ActivityResultCaller: registerForActivityResult()](#activityresultcaller-registerforactivityresult) |
 |  | [ActivityResultContracts.StartActivityForResult: ActivityResultContracts.StartActivityForResult()](#activityresultcontractsstartactivityforresult-activityresultcontractsstartactivityforresult) |
@@ -14,7 +14,7 @@
 
 <br />
 
-## 10.1 ViewModel (QuizViewModel.kt)
+## 10.1 Activity ViewModel (QuizViewModel.kt)
 ```kotlin
 package com.example.geoquiz
 

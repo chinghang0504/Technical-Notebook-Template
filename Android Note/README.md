@@ -27,7 +27,7 @@
 | 2 | [Fragment Lifecycle](./notes/Part%20II/Chapter_2.md) |
 | 3 | [Fragment View Binding Problem](./notes/Part%20II/Chapter_3.md) |
 | 4 | [Fragment with FragmentManager](./notes/Part%20II/Chapter_4.md) |
-<!-- | 5 | [Fragment with RecyclerView](./notes/Part%20II/Chapter_5.md) | -->
+| 5 | [Fragment with ViewModel and RecyclerView](./notes/Part%20II/Chapter_5.md) |
 
 <!-- ### Part II: Special Topics
 | Chapter | Title |

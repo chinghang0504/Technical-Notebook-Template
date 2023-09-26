@@ -4,7 +4,7 @@
 | 7.1 | [Problem: System-Initiated UI State Dismissal](#71-problem-system-initiated-ui-state-dismissal) |
 |  | [Options for Preserving UI State](#options-for-preserving-ui-state) |
 | 7.2 | [Destroying Activity for Testing](#72-destroying-activity-for-testing) |
-| 7.3 | [ViewModel (QuizViewModel.kt)](#73-viewmodel-quizviewmodelkt) |
+| 7.3 | [Activity ViewModel (QuizViewModel.kt)](#73-activity-viewmodel-quizviewmodelkt) |
 |  | [SavedStateHandle: get()](#savedstatehandle-get) |
 |  | [SavedStateHandle: set()](#savedstatehandle-set) |
 | 7.4 | [Demonstration](#74-demonstration) |
@@ -48,7 +48,7 @@ After clicked the app
 
 <br />
 
-## 7.3 ViewModel (QuizViewModel.kt)
+## 7.3 Activity ViewModel (QuizViewModel.kt)
 ```kotlin
 package com.example.geoquiz
 
