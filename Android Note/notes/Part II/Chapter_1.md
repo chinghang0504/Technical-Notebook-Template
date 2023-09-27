@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 1 Fragment with View Binding and android:name
+# [Kotlin Note](../../README.md) - Chapter 1 Fragment
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Fragment](#11-fragment) |
@@ -8,7 +8,6 @@
 | 1.5 | [Data Class (Crime.kt)](#15-data-class-crimekt) |
 | 1.6 | [Fragment Layout (fragment_crime_detail.xml)](#16-fragment-layout-fragment_crime_detailxml) |
 | 1.7 | [Fragment Class (CrimeDetailFragment.kt)](#17-fragment-class-crimedetailfragmentkt) |
-|  | [Generated Binding Classes: inflate()](#generated-binding-classes-inflate) |
 |  | [TextView: doOnTextChanged()](#textview-doontextchanged) |
 |  | [CompoundButton: setOnCheckedChangeListener()](#compoundbutton-setoncheckedchangelistener) |
 | 1.8 | [Activity Layout (activity_main.xml)](#18-activity-layout-activity_mainxml) |
@@ -59,9 +58,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 
@@ -198,15 +194,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import com.example.criminalintent.databinding.FragmentCrimeDetailBinding
 import java.util.Date
 import java.util.UUID
 
 class CrimeDetailFragment : Fragment() {
 
-    private lateinit var binding: FragmentCrimeDetailBinding
+    private lateinit var crimeTitle: EditText
+    private lateinit var crimeDate: Button
+    private lateinit var crimeSolved: CheckBox
 
     private lateinit var crime: Crime
 
@@ -226,39 +226,30 @@ class CrimeDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCrimeDetailBinding.inflate(layoutInflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_crime_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.apply {
-            crimeTitle.doOnTextChanged { text, start, before, count ->
-                crime = crime.copy(title = text.toString())
-            }
+        crimeTitle = view.findViewById(R.id.crime_title)
+        crimeDate = view.findViewById(R.id.crime_date)
+        crimeSolved = view.findViewById(R.id.crime_solved)
 
-            crimeDate.apply {
-                text = crime.date.toString()
-                isEnabled = false
-            }
+        crimeTitle.doOnTextChanged { text, start, before, count ->
+            crime = crime.copy(title = text.toString())
+        }
 
-            crimeSolved.setOnCheckedChangeListener { compoundButton, b ->
-                crime = crime.copy(isSolved = b)
-            }
+        crimeDate.apply {
+            text = crime.date.toString()
+            isEnabled = false
+        }
+
+        crimeSolved.setOnCheckedChangeListener { compoundButton, b ->
+            crime = crime.copy(isSolved = b)
         }
     }
 }
-```
-
-### [Generated Binding Classes: inflate()](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
-- There is an alternate version of the inflate() method that takes a ViewGroup object in addition to the LayoutInflater object.
-```java
-public static @NonNull com.example.criminalintent.databinding.FragmentCrimeDetailBinding inflate(
-    @NonNull android.view.LayoutInflater inflater,
-    @Nullable android.view.ViewGroup parent,
-    boolean attachToParent
-)
 ```
 
 ### [TextView: doOnTextChanged()](https://developer.android.com/reference/kotlin/androidx/core/widget/package-summary#(android.widget.TextView).doOnTextChanged(kotlin.Function4))

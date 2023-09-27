@@ -1,166 +1,299 @@
-# [Kotlin Note](../../README.md) - Chapter 2 Fragment Lifecycle
+# [Kotlin Note](../../README.md) - Chapter 2 Fragment with View Binding
 | Chapter | Title |
 | :-: | :- |
-| 2.1 | [Fragment Lifecycle](#21-fragment-lifecycle) |
-| 2.2 | [Fragment Lifecycle States and Callbacks](#22-fragment-lifecycle-states-and-callbacks) |
-|  | [Upward State: Fragment CREATED](#upward-state-fragment-created) |
-|  | [Upward State: Fragment CREATED and View INITIALIZED](#upward-state-fragment-created-and-view-initialized) |
-|  | [Upward State: Fragment and View CREATED](#upward-state-fragment-and-view-created) |
-|  | [Upward State: Fragment and View STARTED](#upward-state-fragment-and-view-started) |
-|  | [Upward State: Fragment and View RESUMED](#upward-state-fragment-and-view-resumed) |
-|  | [Downward State: Fragment and View STARTED](#downward-state-fragment-and-view-started) |
-|  | [Downward State: Fragment and View CREATED](#downward-state-fragment-and-view-created) |
-|  | [Downward State: Fragment CREATED and View DESTROYED](#downward-state-fragment-created-and-view-destroyed) |
-|  | [Downward State: Fragment DESTROYED](#downward-state-fragment-destroyed) |
-| 2.3 | [Fragment Callbacks](#23-fragment-callbacks) |
-|  | [Fragment: onCreate()](#fragment-oncreate) |
-|  | [Fragment: onCreateView()](#fragment-oncreateview) |
-|  | [Fragment: onViewCreated()](#fragment-onviewcreated) |
-|  | [Fragment: onViewStateRestored()](#fragment-onviewstaterestored) |
-|  | [Fragment: onStart()](#fragment-onstart) |
-|  | [Fragment: onResume()](#fragment-onresume) |
-|  | [Fragment: onPause()](#fragment-onpause) |
-|  | [Fragment: onStop()](#fragment-onstop) |
-|  | [Fragment: onSaveInstanceState()](#fragment-onsaveinstancestate) |
-|  | [Fragment: onDestroyView()](#fragment-ondestroyview) |
-|  | [Fragment: onDestroy()](#fragment-ondestroy) |
+| 2.1 | [Fragment](#21-fragment) |
+| 2.2 | [Gradle Script (build.gradle.kts)](#22-gradle-script-buildgradlekts) |
+| 2.3 | [Manifest (AndroidManifest.xml)](#23-manifest-androidmanifestxml) |
+| 2.4 | [String Resources (strings.xml)](#24-string-resources-stringsxml) |
+| 2.5 | [Data Class (Crime.kt)](#25-data-class-crimekt) |
+| 2.6 | [Fragment Layout (fragment_crime_detail.xml)](#26-fragment-layout-fragment_crime_detailxml) |
+| 2.7 | [Fragment Class (CrimeDetailFragment.kt)](#27-fragment-class-crimedetailfragmentkt) |
+|  | [Generated Binding Classes: inflate()](#generated-binding-classes-inflate) |
+| 2.8 | [Activity Layout (activity_main.xml)](#28-activity-layout-activity_mainxml) |
+| 2.9 | [Activity Class (MainActivity.kt)](#29-activity-class-mainactivitykt) |
+| 2.10 | [Demonstration](#210-demonstration) |
 
 <br />
 
-## 2.1 [Fragment Lifecycle](https://developer.android.com/guide/fragments/lifecycle)
-- Each Fragment instance has its own lifecycle. When a user navigates and interacts with your app, your fragments transition through various states in their lifecycle as they are added, removed, and enter or exit the screen.
-
-- To manage lifecycle, Fragment implements LifecycleOwner, exposing a Lifecycle object that you can access through the getLifecycle() method.
-
-- Each possible Lifecycle state is represented in the Lifecycle.State enum.
-    1. INITIALIZED
-    2. CREATED
-    3. STARTED
-    4. RESUMED
-    5. DESTROYED
+## 2.1 [Fragment](https://developer.android.com/guide/fragments)
+- A Fragment represents a reusable portion of your app's UI. A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events. Fragments can't live on their own. They must be hosted by an activity or another fragment. The fragment’s view hierarchy becomes part of, or attaches to, the host’s view hierarchy.
 
 <br />
 
-## 2.2 [Fragment Lifecycle States and Callbacks](https://developer.android.com/guide/fragments/lifecycle#states)
+## 2.2 Gradle Script (build.gradle.kts)
+```kotlin
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+    namespace = "com.example.criminalintent"
+    compileSdk = 33
+
+    defaultConfig {
+        applicationId = "com.example.criminalintent"
+        minSdk = 24
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+```
+
+<br />
+
+## 2.3 Manifest (AndroidManifest.xml)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CriminalIntent"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+<br />
+
+## 2.4 String Resources (strings.xml)
+```xml
+<resources>
+    <string name="app_name">CriminalIntent</string>
+    <string name="crime_title_hint">Enter a title for the crime.</string>
+    <string name="crime_title_label">Title</string>
+    <string name="crime_details_label">Details</string>
+    <string name="crime_solved_label">Solved</string>
+</resources>
+```
+
+<br />
+
+## 2.5 Data Class (Crime.kt)
+```kotlin
+package com.example.criminalintent
+
+import java.util.Date
+import java.util.UUID
+
+data class Crime(
+
+    val id: UUID,
+    val title: String,
+    val date: Date,
+    val isSolved: Boolean
+)
+```
+
+<br />
+
+## 2.6 Fragment Layout (fragment_crime_detail.xml)
 ![](../../images/Part%20II/image_2_1.png)
 
-### [Upward State: Fragment CREATED](https://developer.android.com/guide/fragments/lifecycle#fragment_created)
-- When your fragment reaches the CREATED state, it has been added to a FragmentManager and the onAttach() method has already been called.
+```xml
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp">
 
-### [Upward State: Fragment CREATED and View INITIALIZED](https://developer.android.com/guide/fragments/lifecycle#fragment_created_and_view_initialized)
-- The fragment's view Lifecycle is created only when your Fragment provides a valid View instance. In most cases, you can use the fragment constructors that take a @LayoutId, which automatically inflates the view at the appropriate time. You can also override onCreateView() to programmatically inflate or create your fragment's view.
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:text="@string/crime_title_label"/>
 
-### [Upward State: Fragment and View CREATED](https://developer.android.com/guide/fragments/lifecycle#fragment_and_view_created)
-- After the fragment's view has been created, the previous view state, if any, is restored, and the view's Lifecycle is then moved into the CREATED state. The view lifecycle owner also emits the ON_CREATE event to its observers. Here you should restore any additional state associated with the fragment's view.
+    <EditText
+        android:id="@+id/crime_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/crime_title_hint"
+        android:importantForAutofill="no"
+        android:inputType="text"/>
 
-### [Upward State: Fragment and View STARTED](https://developer.android.com/guide/fragments/lifecycle#fragment_and_view_started)
-- It is strongly recommended to tie Lifecycle-aware components to the STARTED state of a fragment, as this state guarantees that the fragment's view is available, if one was created, and that it is safe to perform a FragmentTransaction on the child FragmentManager of the fragment. If the fragment's view is non-null, the fragment's view Lifecycle is moved to STARTED immediately after the fragment's Lifecycle is moved to STARTED.
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:text="@string/crime_details_label"/>
 
-### [Upward State: Fragment and View RESUMED](https://developer.android.com/guide/fragments/lifecycle#fragment_and_view_resumed)
-- When the fragment is visible, all Animator and Transition effects have finished, and the fragment is ready for user interaction. The fragment's Lifecycle moves to the RESUMED state, and the onResume() callback is invoked.
+    <Button
+        android:id="@+id/crime_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Wed May 11 11:56 EST 2022"/>
 
-### [Downward State: Fragment and View STARTED](https://developer.android.com/guide/fragments/lifecycle#fragment_and_view_started_2)
-- As the user begins to leave the fragment, and while the fragment is still visible, the Lifecycles for the fragment and for its view are moved back to the STARTED state and emit the ON_PAUSE event to their observers. The fragment then invokes its onPause() callback.
+    <CheckBox
+        android:id="@+id/crime_solved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crime_solved_label"/>
 
-### [Downward State: Fragment and View CREATED](https://developer.android.com/guide/fragments/lifecycle#fragment_and_view_created_2)
-- Once the fragment is no longer visible, the Lifecycles for the fragment and for its view are moved into the CREATED state and emit the ON_STOP event to their observers. This state transition is triggered not only by the parent activity or fragment being stopped, but also by the saving of state by the parent activity or fragment. This behavior guarantees that the ON_STOP event is invoked before the fragment's state is saved. This makes the ON_STOP event the last point where it is safe to perform a FragmentTransaction on the child FragmentManager.
-
-### [Downward State: Fragment CREATED and View DESTROYED](https://developer.android.com/guide/fragments/lifecycle#fragment_created_and_view_destroyed)
-- After all of the exit animations and transitions have completed, and the fragment's view has been detached from the window, the fragment's view Lifecycle is moved into the DESTROYED state and emits the ON_DESTROY event to its observers. The fragment then invokes its onDestroyView() callback. At this point, the fragment's view has reached the end of its lifecycle and getViewLifecycleOwnerLiveData() returns a null value.
-
-### [Downward State: Fragment DESTROYED](https://developer.android.com/guide/fragments/lifecycle#fragment_destroyed)
-- If the fragment is removed, or if the FragmentManager is destroyed, the fragment's Lifecycle is moved into the DESTROYED state and sends the ON_DESTROY event to its observers. The fragment then invokes its onDestroy() callback. At this point, the fragment has reached the end of its lifecycle.
+</LinearLayout>
+```
 
 <br />
 
-## 2.3 Fragment Callbacks
-### [Fragment: onCreate()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onCreate(android.os.Bundle))
-- Called to do initial creation of a fragment. This is called after onAttach and before onCreateView.
+## 2.7 Fragment Class (CrimeDetailFragment.kt)
 ```kotlin
-@MainThread
-@CallSuper
-fun onCreate(savedInstanceState: Bundle?): Unit
+package com.example.criminalintent
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
+import com.example.criminalintent.databinding.FragmentCrimeDetailBinding
+import java.util.Date
+import java.util.UUID
+
+class CrimeDetailFragment : Fragment() {
+
+    private lateinit var binding: FragmentCrimeDetailBinding
+
+    private lateinit var crime: Crime
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        crime = Crime(
+            id = UUID.randomUUID(),
+            title = "",
+            date = Date(),
+            isSolved = false
+        )
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentCrimeDetailBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            crimeTitle.doOnTextChanged { text, start, before, count ->
+                crime = crime.copy(title = text.toString())
+            }
+
+            crimeDate.apply {
+                text = crime.date.toString()
+                isEnabled = false
+            }
+
+            crimeSolved.setOnCheckedChangeListener { compoundButton, b ->
+                crime = crime.copy(isSolved = b)
+            }
+        }
+    }
+}
 ```
 
-### [Fragment: onCreateView()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle))
-- Called to have the fragment instantiate its user interface view. This is optional, and non-graphical fragments can return null. This will be called between onCreate and onViewCreated.
-```kotlin
-@MainThread
-fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-): View?
+### [Generated Binding Classes: inflate()](https://developer.android.com/topic/libraries/data-binding/generated-binding#create)
+- There is an alternate version of the inflate() method that takes a ViewGroup object in addition to the LayoutInflater object.
+```java
+public static @NonNull com.example.criminalintent.databinding.FragmentCrimeDetailBinding inflate(
+    @NonNull android.view.LayoutInflater inflater,
+    @Nullable android.view.ViewGroup parent,
+    boolean attachToParent
+)
 ```
 
-### [Fragment: onViewCreated()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onViewCreated(android.view.View,android.os.Bundle))
-- Called immediately after onCreateView has returned, but before any saved state has been restored in to the view. This gives subclasses a chance to initialize themselves once they know their view hierarchy has been completely created. The fragment's view hierarchy is not however attached to its parent at this point.
-```kotlin
-@MainThread
-fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit
+<br />
+
+## 2.8 Activity Layout (activity_main.xml)
+![](../../images/Part%20II/image_2_2.png)
+
+```xml
+<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:name="com.example.criminalintent.CrimeDetailFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"/>
 ```
 
-### [Fragment: onViewStateRestored()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onViewStateRestored(android.os.Bundle))
-- Called when all saved state has been restored into the view hierarchy of the fragment. This can be used to do initialization based on saved state that you are letting the view hierarchy track itself, such as whether check box widgets are currently checked. This is called after onViewCreated and before onStart.
+<br />
+
+## 2.9 Activity Class (MainActivity.kt)
 ```kotlin
-@MainThread
-@CallSuper
-fun onViewStateRestored(savedInstanceState: Bundle?): Unit
+package com.example.criminalintent
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
 ```
 
-### [Fragment: onStart()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onStart())
-- Called when the Fragment is visible to the user. This is generally tied to Activity.onStart of the containing Activity's lifecycle.
-```kotlin
-@MainThread
-@CallSuper
-fun onStart(): Unit
-```
+<br />
 
-### [Fragment: onResume()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onResume())
-- Called when the fragment is visible to the user and actively running. This is generally tied to Activity.onResume of the containing Activity's lifecycle.
-```kotlin
-@MainThread
-@CallSuper
-fun onResume(): Unit
-```
-
-### [Fragment: onPause()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onPause())
-- Called when the Fragment is no longer resumed. This is generally tied to Activity.onPause of the containing Activity's lifecycle.
-```kotlin
-@MainThread
-@CallSuper
-fun onPause(): Unit
-```
-
-### [Fragment: onStop()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onStop())
-- Called when the Fragment is no longer started. This is generally tied to Activity.onStop of the containing Activity's lifecycle.
-```kotlin
-@MainThread
-@CallSuper
-fun onStop(): Unit
-```
-
-### [Fragment: onSaveInstanceState()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onSaveInstanceState(android.os.Bundle))
-- Called to ask the fragment to save its current dynamic state, so it can later be reconstructed in a new instance if its process is restarted. If a new instance of the fragment later needs to be created, the data you place in the Bundle here will be available in the Bundle given to onCreate, onCreateView, and onViewCreated.
-```kotlin
-@MainThread
-fun onSaveInstanceState(outState: Bundle): Unit
-```
-
-### [Fragment: onDestroyView()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onDestroyView())
-- Called when the view previously created by onCreateView has been detached from the fragment. The next time the fragment needs to be displayed, a new view will be created. This is called after onStop and before onDestroy. It is called regardless of whether onCreateView returned a non-null view. Internally it is called after the view's state has been saved but before it has been removed from its parent.
-```kotlin
-@MainThread
-@CallSuper
-fun onDestroyView(): Unit
-```
-
-### [Fragment: onDestroy()](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#onDestroy())
-- Called when the fragment is no longer in use. This is called after onStop and before onDetach.
-```kotlin
-@MainThread
-@CallSuper
-fun onDestroy(): Unit
-```
+## 2.10 Demonstration
+After started the app
+![](../../images/Part%20II/image_2_3.png)
 
 <br />

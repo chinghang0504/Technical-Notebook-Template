@@ -1,78 +1,85 @@
-# [Kotlin Note](../../README.md) - Chapter 4 Fragment with FragmentManager
+# [Kotlin Note](../../README.md) - Chapter 4 Fragment View Binding Problem
 | Chapter | Title |
 | :-: | :- |
-| 4.1 | [FragmentManager](#41-fragmentmanager) |
-| 4.2 | [Activity Layout (activity_main.xml)](#42-activity-layout-activity_mainxml) |
-| 4.3 | [Activity Class (MainActivity.kt)](#43-activity-class-mainactivitykt) |
-|  | [FragmentActivity: supportFragmentManager](#fragmentactivity-supportfragmentmanager) |
-|  | [FragmentManager: beginTransaction()](#fragmentmanager-begintransaction) |
-|  | [FragmentTransaction: add()](#fragmenttransaction-add) |
-|  | [FragmentTransaction: commit()](#fragmenttransaction-commit) |
+| 4.1 | [Problem: Unable to Free Memory of Fragment Views](#41-problem-unable-to-free-memory-of-fragment-views) |
+| 4.2 | [Fragment Class (CrimeDetailFragment.kt)](#42-fragment-class-crimedetailfragmentkt) |
 
 <br />
 
-## 4.1 [FragmentManager](https://developer.android.com/guide/fragments/fragmentmanager)
-- FragmentManager is the class responsible for performing actions on your app's fragments, such as adding, removing, or replacing them and adding them to the back stack.
+## 4.1 Problem: Unable to Free Memory of Fragment Views
+- Since the fragment holds a reference to the binding property, the system will not free the memory of fragment views.
 
 <br />
 
-## 4.2 Activity Layout (activity_main.xml)
-![](../../images/Part%20II/image_4_1.png)
-
-```xml
-<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
-```
-
-<br />
-
-## 4.3 Activity Class (MainActivity.kt)
+## 4.2 Fragment Class (CrimeDetailFragment.kt)
 ```kotlin
 package com.example.criminalintent
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
+import com.example.criminalintent.databinding.FragmentCrimeDetailBinding
+import java.util.Date
+import java.util.UUID
 
-class MainActivity : AppCompatActivity() {
+class CrimeDetailFragment : Fragment() {
+
+    private var _binding: FragmentCrimeDetailBinding? = null
+    private val binding
+        get() = checkNotNull(_binding) {
+            "Cannot access binding because it is null. Is the view visible?"
+        }
+
+    private lateinit var crime: Crime
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val fragment = CrimeDetailFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_container, fragment)
-            .commit()
+        crime = Crime(
+            id = UUID.randomUUID(),
+            title = "",
+            date = Date(),
+            isSolved = false
+        )
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentCrimeDetailBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            crimeTitle.doOnTextChanged { text, start, before, count ->
+                crime = crime.copy(title = text.toString())
+            }
+
+            crimeDate.apply {
+                text = crime.date.toString()
+                isEnabled = false
+            }
+
+            crimeSolved.setOnCheckedChangeListener { compoundButton, b ->
+                crime = crime.copy(isSolved = b)
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 }
-```
-
-### [FragmentActivity: supportFragmentManager](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentActivity#getSupportFragmentManager())
-- Return the FragmentManager for interacting with fragments associated with this activity.
-```kotlin
-fun getSupportFragmentManager(): FragmentManager
-```
-
-### [FragmentManager: beginTransaction()](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentManager#beginTransaction())
-- Start a series of edit operations on the Fragments associated with this FragmentManager.
-```kotlin
-fun beginTransaction(): FragmentTransaction
-```
-
-### [FragmentTransaction: add()](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentTransaction#add(int,androidx.fragment.app.Fragment))
-- Add a fragment to the activity state. This fragment may optionally also have its view (if Fragment.onCreateView returns non-null) into a container view of the activity.
-```kotlin
-fun add(containerViewId: @IdRes Int, fragment: Fragment): FragmentTransaction
-```
-
-### [FragmentTransaction: commit()](https://developer.android.com/reference/kotlin/androidx/fragment/app/FragmentTransaction#commit())
-- Schedules a commit of this transaction. The commit does not happen immediately; it will be scheduled as work on the main thread to be done the next time that thread is ready.
-```kotlin
-abstract fun commit(): Int
 ```
 
 <br />
