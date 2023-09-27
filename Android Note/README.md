@@ -29,33 +29,6 @@
 | 4 | [Fragment View Binding Problem](./notes/Part%20II/Chapter_4.md) |
 | 5 | [Fragment with FragmentManager](./notes/Part%20II/Chapter_5.md) |
 | 6 | [Fragment with ViewModel and RecyclerView](./notes/Part%20II/Chapter_6.md) |
-
-<!-- ### Part II: Special Topics
-| Chapter | Title |
-| :-: | :- |
-| 1 | [Debugging](./notes/Part%20II/Chapter_1.md) |
-| 2 | [Testing](./notes/Part%20II/Chapter_2.md) |
-| 3 | [SDK Versions and Compatibility](./notes/Part%20II/Chapter_3.md) | -->
-
-<!-- ### Part III: App Classes
-| Chapter | Title |
-| :-: | :- |
-| 1 | [Activity](./notes/Part%20III/Chapter_1.md) | -->
-
-<!-- ### Part IV: View Classes
-| Chapter | Title |
-| :-: | :- |
-| 1 | [View](./notes/Part%20IV/Chapter_1.md) | -->
-
-<!-- ### Part V: Widget Classes
-| Chapter | Title |
-| :-: | :- |
-| 1 | [Toast](./notes/Part%20V/Chapter_1.md) |
-| 2 | [TextView](./notes/Part%20V/Chapter_2.md) | -->
-
-<!-- ### Part VI: Other Classes
-| Chapter | Title |
-| :-: | :- |
-| 1 | [Log](./notes/Part%20VI/Chapter_1.md) | -->
+| 7 | [Fragment with Dynamic RecyclerView](./notes/Part%20II/Chapter_7.md) |
 
 <br />

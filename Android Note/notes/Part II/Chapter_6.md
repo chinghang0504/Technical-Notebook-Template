@@ -7,7 +7,7 @@
 | 6.4 | [Fragment Class (CrimeListFragment.kt)](#64-fragment-class-crimelistfragmentkt) |
 | 6.5 | [Activity Layout (activity_main.xml)](#65-activity-layout-activity_mainxml) |
 | 6.6 | [RecyclerView ViewHolder Layout (list_item_crime.xml)](#66-recyclerview-viewholder-layout-list_item_crimexml) |
-| 6.7 | [RecyclerView Adapter (CrimeListAdapter.kt)](#67-recyclerview-adapter-crimelistadapterkt) |
+| 6.7 | [RecyclerView Adapter Class (CrimeListAdapter.kt)](#67-recyclerview-adapter-class-crimelistadapterkt) |
 | 6.8 | [Demonstration](#68-demonstration) |
 
 <br />
@@ -201,7 +201,7 @@ class CrimeListFragment : Fragment() {
 
 <br />
 
-## 6.7 RecyclerView Adapter (CrimeListAdapter.kt)
+## 6.7 RecyclerView Adapter Class (CrimeListAdapter.kt)
 ```kotlin
 package com.example.criminalintent
 
