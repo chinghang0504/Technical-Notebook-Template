@@ -1,26 +1,14 @@
 # [Kotlin Note](../../README.md) - Chapter 2 Fragment with View Binding
 | Chapter | Title |
 | :-: | :- |
-| 2.1 | [Fragment](#21-fragment) |
-| 2.2 | [Gradle Script (build.gradle.kts)](#22-gradle-script-buildgradlekts) |
-| 2.3 | [Manifest (AndroidManifest.xml)](#23-manifest-androidmanifestxml) |
-| 2.4 | [String Resources (strings.xml)](#24-string-resources-stringsxml) |
-| 2.5 | [Data Class (Crime.kt)](#25-data-class-crimekt) |
-| 2.6 | [Fragment Layout (fragment_crime_detail.xml)](#26-fragment-layout-fragment_crime_detailxml) |
-| 2.7 | [Fragment Class (CrimeDetailFragment.kt)](#27-fragment-class-crimedetailfragmentkt) |
+| 2.1 | [Gradle Script (build.gradle.kts)](#21-gradle-script-buildgradlekts) |
+| 2.2 | [Fragment Class (CrimeDetailFragment.kt)](#22-fragment-class-crimedetailfragmentkt) |
 |  | [Generated Binding Classes: inflate()](#generated-binding-classes-inflate) |
-| 2.8 | [Activity Layout (activity_main.xml)](#28-activity-layout-activity_mainxml) |
-| 2.9 | [Activity Class (MainActivity.kt)](#29-activity-class-mainactivitykt) |
-| 2.10 | [Demonstration](#210-demonstration) |
+| 2.3 | [Demonstration](#23-demonstration) |
 
 <br />
 
-## 2.1 [Fragment](https://developer.android.com/guide/fragments)
-- A Fragment represents a reusable portion of your app's UI. A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events. Fragments can't live on their own. They must be hosted by an activity or another fragment. The fragment’s view hierarchy becomes part of, or attaches to, the host’s view hierarchy.
-
-<br />
-
-## 2.2 Gradle Script (build.gradle.kts)
+## 2.1 Gradle Script (build.gradle.kts)
 ```kotlin
 plugins {
     id("com.android.application")
@@ -76,118 +64,7 @@ dependencies {
 
 <br />
 
-## 2.3 Manifest (AndroidManifest.xml)
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.CriminalIntent"
-        tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-
-</manifest>
-```
-
-<br />
-
-## 2.4 String Resources (strings.xml)
-```xml
-<resources>
-    <string name="app_name">CriminalIntent</string>
-    <string name="crime_title_hint">Enter a title for the crime.</string>
-    <string name="crime_title_label">Title</string>
-    <string name="crime_details_label">Details</string>
-    <string name="crime_solved_label">Solved</string>
-</resources>
-```
-
-<br />
-
-## 2.5 Data Class (Crime.kt)
-```kotlin
-package com.example.criminalintent
-
-import java.util.Date
-import java.util.UUID
-
-data class Crime(
-
-    val id: UUID,
-    val title: String,
-    val date: Date,
-    val isSolved: Boolean
-)
-```
-
-<br />
-
-## 2.6 Fragment Layout (fragment_crime_detail.xml)
-![](../../images/Part%20II/image_2_1.png)
-
-```xml
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="16dp">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceHeadline5"
-        android:text="@string/crime_title_label"/>
-
-    <EditText
-        android:id="@+id/crime_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/crime_title_hint"
-        android:importantForAutofill="no"
-        android:inputType="text"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceHeadline5"
-        android:text="@string/crime_details_label"/>
-
-    <Button
-        android:id="@+id/crime_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Wed May 11 11:56 EST 2022"/>
-
-    <CheckBox
-        android:id="@+id/crime_solved"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/crime_solved_label"/>
-
-</LinearLayout>
-```
-
-<br />
-
-## 2.7 Fragment Class (CrimeDetailFragment.kt)
+## 2.2 Fragment Class (CrimeDetailFragment.kt)
 ```kotlin
 package com.example.criminalintent
 
@@ -260,40 +137,8 @@ public static @NonNull com.example.criminalintent.databinding.FragmentCrimeDetai
 
 <br />
 
-## 2.8 Activity Layout (activity_main.xml)
-![](../../images/Part%20II/image_2_2.png)
-
-```xml
-<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_container"
-    android:name="com.example.criminalintent.CrimeDetailFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
-```
-
-<br />
-
-## 2.9 Activity Class (MainActivity.kt)
-```kotlin
-package com.example.criminalintent
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}
-```
-
-<br />
-
-## 2.10 Demonstration
+## 2.3 Demonstration
 After started the app
-![](../../images/Part%20II/image_2_3.png)
+![](../../images/Part%20II/image_2_1.png)
 
 <br />
