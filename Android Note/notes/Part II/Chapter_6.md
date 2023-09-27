@@ -207,6 +207,7 @@ package com.example.criminalintent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.criminalintent.databinding.ListItemCrimeBinding
 
@@ -215,6 +216,10 @@ class CrimeHolder(val binding: ListItemCrimeBinding) : RecyclerView.ViewHolder(b
     fun bind(crime: Crime) {
         binding.crimeTitle.text = crime.title
         binding.crimeDate.text = crime.date.toString()
+
+        binding.root.setOnClickListener {
+            Toast.makeText(binding.root.context, "${crime.title} clicked!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
@@ -240,5 +245,8 @@ class CrimeListAdapter(private val crimes: List<Crime>) : RecyclerView.Adapter<C
 ## 6.8 Demonstration
 After started the app
 ![](../../images/Part%20II/image_6_4.png)
+
+After clicked a recycler view item
+![](../../images/Part%20II/image_6_5.png)
 
 <br />
