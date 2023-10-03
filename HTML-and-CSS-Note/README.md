@@ -11,15 +11,17 @@
 | :-: | :- |
 | 1 | [Basics](notes/Part-I/Chapter-1.md)
 | 2 | [Text](notes/Part-I/Chapter-2.md)
-| 3 | [Lists](notes/Part-I/Chapter-3.md)
-| 4 | [Organization](notes/Part-I/Chapter-4.md)
-| 5 | [Information](notes/Part-I/Chapter-5.md)
-<!-- | 6 | Links |
-| 7 | Images |
-| 8 | Tables |
-| 9 | Forms |
-| 10 | Media |
-| 11 | Extra Markup | -->
+| 3 | [Information](notes/Part-I/Chapter-3.md)
+| 4 | [Lists](notes/Part-I/Chapter-4.md)
+| 5 | [Organization](notes/Part-I/Chapter-5.md)
+| 6 | [Links](notes/Part-I/Chapter-6.md)
+| 7 | [Images](notes/Part-I/Chapter-7.md)
+| 8 | [Tables](notes/Part-I/Chapter-8.md)
+| 9 | [Forms](notes/Part-I/Chapter-9.md)
+| 10 | [Media](notes/Part-I/Chapter-10.md)
+| 11 | [Extra Markup](notes/Part-I/Chapter-11.md)
+| 12 | [Global Attributes](notes/Part-I/Chapter-12.md)
+| 13 | [Special Topics](notes/Part-I/Chapter-13.md)
 
 <!-- ### Part II: CSS
 | Chapter | Title |

@@ -1,100 +1,47 @@
-# [Kotlin Note](../../README.md) - Chapter 3 Lists
+# [Kotlin Note](../../README.md) - Chapter 3 Information
 | Chapter | Title |
 | :-: | :- |
-| 3.1 | [Types of Lists](#31-types-of-lists) |
-| 3.2 | [Unordered Lists](#32-unordered-lists) |
-|  | [\<ul>](#ul) |
-|  | [\<li>](#li) |
-| 3.3 | [Ordered Lists](#33-ordered-lists) |
-|  | [\<ol>](#ol) |
-|  | [\<li>](#li-1) |
-| 3.4 | [Description Lists](#34-description-lists) |
-|  | [\<dl>](#dl) |
-|  | [\<dt>](#dt) |
-|  | [\<dd>](#dd) |
+| 3.1 | [Long Quotations \<blockquote>](#31-long-quotations-blockquote) |
+| 3.2 | [Short Quotations \<q>](#32-short-quotations-q) |
+| 3.3 | [Addresses \<address>](#33-addresses-address) |
 
 <br>
 
-## 3.1 Types of Lists
-1. Unordered Lists
-    - Collections of items that appear in no particular order
-2. Ordered Lists
-    - Lists in which the sequence of the items is important
-3. Description Lists
-    - Lists that consist of name and value pairs, including but not limited to terms and definitions
-
-<br>
-
-## 3.2 Unordered Lists
+## 3.1 Long Quotations \<blockquote>
+- A lengthy, block-level quotation
 ```html
-<ul>
-    <li>Serif</li>
-    <li>Sans-serif</li>
-    <li>Script</li>
-    <li>Display</li>
-    <li>Dingbats</li>
-</ul>
+<p>Renowned type designer, Matthew Carter, has this to say about his
+profession:</p>
+
+<blockquote>
+    <p>Our alphabet hasn't changed in eons; there isn't much latitude in
+    what a designer can do with the individual letters.</p>
+    <p>Much like a piece of classical music, the score is written
+    down. It's not something that is tampered with, and yet, each
+    conductor interprets that score differently. There is tension in
+    the interpretation.</p>
+</blockquote>
 ```
-![](../../images/Part-I/image_3_1.PNG)
-
-### \<ul>
-- Unordered list
-
-### \<li>
-- List item within an unordered list
+![](../../images/Part-I/image-3-1.PNG)
 
 <br>
 
-## 3.3 Ordered Lists
+## 3.2 Short Quotations \<q>
 ```html
-<ol>
-    <li>Gutenberg develops moveable type (1450s)</li>
-    <li>Linotype is introduced (1890s)</li>
-    <li>Photocomposition catches on (1950s)</li>
-    <li>Type goes digital (1980s)</li>
-</ol>
+<p>Matthew Carter says, <q>Our alphabet hasn't changed in eons.</q></p>
 ```
-![](../../images/Part-I/image_3_2.PNG)
-
-### \<ol>
-- Ordered list
-
-### \<li>
-- List item within an ordered list
+![](../../images/Part-I/image-3-2.PNG)
 
 <br>
 
-## 3.4 Description Lists
+## 3.3 Addresses \<address>
+- Contact information
 ```html
-<dl>
-    <dt>Linotype</dt>
-    <dd>Line-casting allowed type to be selected, used, then recirculated
-    into the machine automatically. This advance increased the speed of
-    typesetting and printing dramatically.</dd>
-
-    <dt>Photocomposition</dt>
-    <dd>Typefaces are stored on film then projected onto photo-sensitive
-    paper. Lenses adjust the size of the type.</dd>
-
-    <dt>Digital type</dt>
-    <dd><p>Digital typefaces store the outline of the font shape in a
-    format such as Postscript. The outline may be scaled to any size for
-    output.</p>
-    <p>Postscript emerged as a standard due to its support of
-    graphics and its early support on the Macintosh computer and Apple
-    laser printer.</p>
-    </dd>
-</dl>
+<address>
+Contributed by <a href="../authors/robbins/">Jennifer Robbins</a>,
+<a href="http://www.oreilly.com/">O'Reilly Media</a>
+</address>
 ```
-![](../../images/Part-I/image_3_3.PNG)
-
-### \<dl>
-- A description list
-
-### \<dt>
-- A name, such as a term or label
-
-### \<dd>
-- A value, such as a description or definition
+![](../../images/Part-I/image-3-3.PNG)
 
 <br>
