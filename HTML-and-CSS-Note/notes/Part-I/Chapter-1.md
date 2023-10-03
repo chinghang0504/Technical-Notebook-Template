@@ -8,15 +8,17 @@
 |  | [Block Elements](#block-elements) |
 |  | [Inline Elements](#inline-elements) |
 | 1.3 | [HTML Element Attributes and Values](#13-html-element-attributes-and-values) |
+|  | [No Attribute](#no-attribute) |
+|  | [Single Attribute](#single-attribute) |
+|  | [Multiple Attributes](#multiple-attributes) |
 | 1.4 | [HTML Document Structure](#14-html-document-structure) |
-| 1.5 | [HTML Basic Elements](#15-html-basic-elements) |
 |  | [\<!DOCTYPE html>](#doctype-html) |
 |  | [\<html>](#html) |
 |  | [\<head>](#head) |
 |  | [\<meta>](#meta) |
 |  | [\<title>](#title) |
 |  | [\<body>](#body) |
-|  | [Comments \<!-- -->](#comments) |
+| 1.5 | [Comments \<!-- -->](#15-comments) |
 
 <br>
 
@@ -43,7 +45,7 @@
 
 ## 1.2 HTML Elements
 ### Nonempty Elements
-- An element consists of both the content and its markup
+- An element consists of both the content and its markup.
 ```html
 <h1>Black Goose Bistro</h1>
 ```
@@ -63,6 +65,17 @@
 <br>
 
 ## 1.3 HTML Element Attributes and Values
+### No Attribute
+```html
+<hr>
+```
+
+### Single Attribute
+```html
+<meta charset="utf-8">
+```
+
+### Multiple Attributes
 ```html
 <img src="bird.jpg" alt="photo of bird">
 ```
@@ -83,9 +96,6 @@
 </html>
 ```
 
-<br>
-
-## 1.5 HTML Basic Elements
 ### \<!DOCTYPE html>
 - Identifies the document as written in HTML5.
 
@@ -104,8 +114,9 @@
 ### \<body>
 - Identifies the body of the document that holds the content.
 
-### Comments \<!-- -->
-- Anything you put between comment tags (\<!-- -->) will not display in the browser and will not have any effect on the rest of the source.
+<br>
+
+## 1.5 Comments \<!-- -->
 ```html
 <!-- Comment -->
 ```

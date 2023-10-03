@@ -10,11 +10,11 @@
 | Chapter | Title |
 | :-: | :- |
 | 1 | [Basics](notes/Part-I/Chapter-1.md)
-<!-- | 2 | Text |
-| 3 | Lists |
-| 4 | Structures |
-| 5 | Information |
-| 6 | Links |
+| 2 | [Text](notes/Part-I/Chapter-2.md)
+| 3 | [Lists](notes/Part-I/Chapter-3.md)
+| 4 | [Organization](notes/Part-I/Chapter-4.md)
+| 5 | [Information](notes/Part-I/Chapter-5.md)
+<!-- | 6 | Links |
 | 7 | Images |
 | 8 | Tables |
 | 9 | Forms |
