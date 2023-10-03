@@ -10,6 +10,9 @@
 | 5.7 | [Navigation \<nav>](#57-navigation-nav) |
 | 5.8 | [Generic Block-Level Element \<div>](#58-generic-block-level-element-div) |
 | 5.9 | [Generic Inline Element \<span>](#59-generic-inline-element-span) |
+| 5.10 | [Figures](#510-figures) |
+|  | [\<figure>](#figure) |
+|  | [\<figcaption>](#figcaption) |
 
 <br>
 
@@ -187,5 +190,34 @@ pages…</p>
     <li>Ringo: <span class="tel">999.3220</span></li>
 </ul>
 ```
+
+<br>
+
+## 5.10 Figures
+```html
+<figure>
+    <img src="piechart.png" alt="chart showing fonts on mobile devices">
+</figure>
+```
+```html
+<figure>
+    <pre>
+        <code>
+body {
+    background-color: #000;
+    color: red;
+}
+        </code>
+    </pre>
+    <figcaption>Sample CSS rule.</figcaption>
+</figure>
+```
+![](../../images/Part-I/image-5-1.PNG)
+
+### \<figure>
+- Related image or resource
+
+### \<figcaption>
+- Text description of a figure
 
 <br>
