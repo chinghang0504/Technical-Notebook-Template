@@ -13,7 +13,7 @@
 ## Front-End Development
 | Name | Version | Last Modified |
 | :-- | :--: | :--: |
-| [HTML and CSS Note](./HTML%20and%20CSS%20Note/README.md) |  |  |
+| [HTML and CSS Note](HTML-and-CSS-Note/README.md) |  |  |
 | [JavaScript Note](./JavaScript%20Note/README.md) |  |  |
 
 ## Back-End Development

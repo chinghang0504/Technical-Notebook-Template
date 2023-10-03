@@ -9,7 +9,7 @@
 ### Part I: HTML
 | Chapter | Title |
 | :-: | :- |
-| 1 | [Basics](notes/Part%20I/Chapter_1.md)
+| 1 | [Basics](notes/Part-I/Chapter-1.md)
 <!-- | 2 | Text |
 | 3 | Lists |
 | 4 | Structures |
