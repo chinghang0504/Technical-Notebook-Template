@@ -1,90 +1,113 @@
-# [HTML and CSS Note](../../README.md) - Chapter 1 Structure
+# [Kotlin Note](../../README.md) - Chapter 1 Basics
 | Chapter | Title |
 | :-: | :- |
-| 1.1 | [HTML Elements](#11-html-elements) |
-|  | [Opening Tags](#opening-tags) |
-|  | [Closing Tags](#closing-tags) |
-| 1.2 | [Structure of Pages](#12-structure-of-pages) |
-| 1.3 | [HTML Attributes](#13-html-attributes) |
-| 1.4 | [Structure Elements](#14-structure-elements) |
-|  | [HTML \<html>](#html-html) |
-|  | [Body \<body>](#body-body) |
-|  | [Head \<head>](#head-head) |
-|  | [Title \<title>](#title-title) |
+| 1.1 | [Naming Conventions](#11-naming-conventions) |
+| 1.2 | [HTML Elements](#12-html-elements) |
+|  | [Nonempty Elements](#nonempty-elements) |
+|  | [Empty Elements](#empty-elements) |
+|  | [Block Elements](#block-elements) |
+|  | [Inline Elements](#inline-elements) |
+| 1.3 | [HTML Element Attributes and Values](#13-html-element-attributes-and-values) |
+| 1.4 | [HTML Document Structure](#14-html-document-structure) |
+| 1.5 | [HTML Basic Elements](#15-html-basic-elements) |
+|  | [\<!DOCTYPE html>](#doctype-html) |
+|  | [\<html>](#html) |
+|  | [\<head>](#head) |
+|  | [\<meta>](#meta) |
+|  | [\<title>](#title) |
+|  | [\<body>](#body) |
+|  | [Comments \<!-- -->](#comments) |
 
-<br />
+<br>
 
-## 1.1 HTML Elements
-- Elements are usually made up of two tags: an opening tag and a closing tag.
-- Each HTML element tells the browser something about the information that sits between its opening and closing tags.
+## 1.1 Naming Conventions
+1. Use proper suffixes for your files.
+    - HTML files must end with .html or .htm. Web graphics must be labeled according to their file format: .gif, .png, .jpg (.jpeg is also acceptable, although less common), or .svg.
 
-### Opening Tags
-![Opening Tag](../../images/Part%20I/image_1_1.PNG)
+2. Never use character spaces within filenames.
+    - It is common to use an underline character or hyphen to visually separate words within filenames, such as robbins_bio.html or robbinsbio.html.
 
-### Closing Tags
-![Closing Tag](../../images/Part%20I/image_1_2.PNG)
+3. Avoid special characters such as ?, %, #, /, :, ;, •, etc.
+    - Limit filenames to letters, numbers, underscores, hyphens, and periods. It is also best to avoid international characters, such as the Swedish å.
 
-<br />
+4. Filenames may be case-sensitive, depending on your server configuration.
+    - Consistently using all lowercase letters in filenames, although not required, is one way to make your filenames easier to manage.
 
-## 1.2 Structure of Pages
+5. Keep filenames short.
+    - Long names are more likely to be misspelled, and short names shave a few extra bytes off the file size. If you really must give the file a long, multiword name, you can separate words with hyphens, such as a-long-document-title.html, to improve readability.
+
+6. Self-imposed conventions.
+    - It is helpful to develop a consistent naming scheme for huge sites—for instance, always using lowercase with hyphens between words. This takes some of the guesswork out of remembering what you named a file when you go to link to it later.
+
+<br>
+
+## 1.2 HTML Elements
+### Nonempty Elements
+- An element consists of both the content and its markup
 ```html
-<html>
-    <head>
+<h1>Black Goose Bistro</h1>
+```
 
-    </head>
-    <body>
-        
-    </body>
+### Empty Elements
+- An element consists of its markup only.
+```html
+<hr>
+```
+
+### Block Elements
+- Each block element begins on a new line, and some space is also usually added above and below the entire element by default.
+
+### Inline Elements
+- Inline elements do not start new lines; they just go with the flow.
+
+<br>
+
+## 1.3 HTML Element Attributes and Values
+```html
+<img src="bird.jpg" alt="photo of bird">
+```
+
+<br>
+
+## 1.4 HTML Document Structure
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+</body>
 </html>
 ```
 
-Result
-![Result](../../images/Part%20I/image_1_3.PNG)
+<br>
 
-<br />
+## 1.5 HTML Basic Elements
+### \<!DOCTYPE html>
+- Identifies the document as written in HTML5.
 
-## 1.3 HTML Attributes
-- Attributes provide additional information about the contents of an element.
-- They appear on the opening tag of the element and are made up of two parts: a name and a value, separated by an equals sign.
+### \<html>
+- Is the root element that contains all the other elements.
 
-HTML Attribute
-![HTML Attribute](../../images/Part%20I/image_1_4.PNG)
+### \<head>
+- Identifies the head of the document that contains information about the document itself.
 
-- HTML5 allows you to use uppercase attribute names and omit the quotemarks, but this is not recommended.
+### \<meta>
+- Provides information about the document.
 
-<br />
+### \<title>
+- Gives the page a title.
 
-## 1.4 Structure Elements
-### HTML \<html>
-- The opening \<html> tag indicates that anything between it and a closing \</html> tag is HTML code.
+### \<body>
+- Identifies the body of the document that holds the content.
 
-### Body \<body>
-- The \<body> tag indicates that anything between it and the closing \</body> tag should be shown inside the main browser window.
-
-### Head \<head>
-- Before the \<body> element you will often see a \<head> element.
-- This contains information about the page (rather than information that is shown within the main part of the browser window that is highlighted in blue on the opposite page).
-- You will usually find a \<title> element inside the \<head> element.
-
-### Title \<title>
-- The contents of the \<title> element are either shown in the top of the browser, above where
-you usually type in the URL of the page you want to visit, or on the tab for that page (if your browser uses tabs to allow you to view multiple pages at the same time).
-
+### Comments \<!-- -->
+- Anything you put between comment tags (\<!-- -->) will not display in the browser and will not have any effect on the rest of the source.
 ```html
-<html>
-    <head>
-        <title>This is a title</title>
-    </head>
-    <body>
-        <h1>This is a heading</h1>
-        <p>
-            This is a paragraph.
-        </p>
-    </body>
-</html>
+<!-- Comment -->
 ```
 
-Result
-![Result](../../images/Part%20I/image_1_5.PNG)
-
-<br />
+<br>

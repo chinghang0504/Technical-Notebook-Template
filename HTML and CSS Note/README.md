@@ -1,34 +1,36 @@
 # [Technical Notebook](../README.md) - HTML and CSS Note
 ## References
+- [Learning Web Design, 5th Edition](https://learning.oreilly.com/library/view/learning-web-design/9781491960196/)
 - [HTML and CSS: Design and Build Websites](https://www.wiley.com/en-gb/HTML+and+CSS%3A+Design+and+Build+Websites-p-9781118008188)
 
-<br />
+<br>
 
 ## Table of Contents
 ### Part I: HTML
 | Chapter | Title |
 | :-: | :- |
-| 1 | [Structure](./notes/Part%20I/Chapter_1.md) |
-| 2 | [Text](./notes/Part%20I/Chapter_2.md) |
-| 3 | [Lists](./notes/Part%20I/Chapter_3.md) |
-| 4 | [Links](./notes/Part%20I/Chapter_4.md) |
-| 5 | [Images](./notes/Part%20I/Chapter_5.md) |
-| 6 | [Tables](./notes/Part%20I/Chapter_6.md) |
-| 7 | [Forms](./notes/Part%20I/Chapter_7.md) |
-| 8 | [Extra Markup](./notes/Part%20I/Chapter_8.md) |
-| 9 | [Videos](./notes/Part%20I/Chapter_9.md) |
-| 10 | [Audios](./notes/Part%20I/Chapter_10.md) |
+| 1 | [Basics](notes/Part%20I/Chapter_1.md)
+<!-- | 2 | Text |
+| 3 | Lists |
+| 4 | Structures |
+| 5 | Information |
+| 6 | Links |
+| 7 | Images |
+| 8 | Tables |
+| 9 | Forms |
+| 10 | Media |
+| 11 | Extra Markup | -->
 
-### Part II: CSS
+<!-- ### Part II: CSS
 | Chapter | Title |
 | :-: | :- |
-| 1 | [Structure](./notes/Part%20II/Chapter_1.md) |
-| 2 | [Color](./notes/Part%20II/Chapter_2.md) |
-| 3 | [Text](./notes/Part%20II/Chapter_3.md) |
-| 4 | Boxes |
-| 5 | Lists, Tables, and Forms |
-| 6 | Layout |
-| 7 | Images |
-| 8 | HTML5 Layout |
+| 1 | Basics |
+| 2 | Text |
+| 3 | Colors |
+| 4 | Box |
+| 5 | Layout |
+| 6 | Flexbox and Grid |
+| 7 | Responsive Web Design |
+| 8 | Animation | -->
 
-<br />
+<br>

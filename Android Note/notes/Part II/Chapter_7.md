@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 7 Fragment with Dynamic RecyclerView
+# [Kotlin Note](../../README.md) - Chapter 7 Fragment with RecyclerView and ConstraintLayout
 | Chapter | Title |
 | :-: | :- |
 | 7.1 | [Drawable (ic_solved.xml)](#71-drawable-ic_solvedxml) |

@@ -29,6 +29,7 @@
 | 4 | [Fragment View Binding Problem](./notes/Part%20II/Chapter_4.md) |
 | 5 | [Fragment with FragmentManager](./notes/Part%20II/Chapter_5.md) |
 | 6 | [Fragment with ViewModel and RecyclerView](./notes/Part%20II/Chapter_6.md) |
-| 7 | [Fragment with Dynamic RecyclerView](./notes/Part%20II/Chapter_7.md) |
+| 7 | [Fragment with RecyclerView and ConstraintLayout](./notes/Part%20II/Chapter_7.md) |
+| 8 | [Database and Coroutines](./notes/Part%20II/Chapter_8.md) |
 
 <br />
