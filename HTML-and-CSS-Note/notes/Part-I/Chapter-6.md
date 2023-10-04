@@ -10,10 +10,10 @@
 |  | [Linking to a Higher Directory](#linking-to-a-higher-directory) |
 |  | [Linking with Site Root Relative Pathnames](#linking-with-site-root-relative-pathnames) |
 | 6.4 | [Linking to a Speicifc Point in a Page](#64-linking-to-a-speicifc-point-in-a-page) |
-|  | [Using id Attribute](#using-id-attribute) |
+|  | [Using Attribute: id](#using-attribute-id) |
 | 6.5 | [Opening a New Browser Window](#65-opening-a-new-browser-window) |
-|  | [Attribute: target="_blank"](#attribute-target_blank) |
-|  | [Attribute: target="any-window-name"](#attribute-targetany-window-name) |
+|  | [Using Attribute: target="_blank"](#using-attribute-target_blank) |
+|  | [Using Attribute: target="window-name"](#using-attribute-targetwindow-name) |
 | 6.6 | [Mail Links](#66-mail-links) |
 | 6.7 | [Telephone Links](#67-telephone-links) |
 
@@ -72,7 +72,7 @@ href="recipes/index.html"
 <br>
 
 ## 6.4 Linking to a Speicifc Point in a Page
-### Using id Attribute
+### Using Attribute: id
 ```html
 <h2 id="startH">H</h2>
 <dl>
@@ -86,13 +86,13 @@ href="recipes/index.html"
 <br>
 
 ## 6.5 Opening a New Browser Window
-### Attribute: target="_blank"
+### Using Attribute: target="_blank"
 - Setting target="_blank" always causes the browser to open a fresh window.
 ```html
 <a href="http://www.oreilly.com" target="_blank">O'Reilly</a>
 ```
 
-### Attribute: target="any-window-name"
+### Using Attribute: target="window-name"
 - The browser opens on the specific window.
 ```html
 <a href="http://www.oreilly.com" target="display">O'Reilly</a>
