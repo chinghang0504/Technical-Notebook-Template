@@ -2,6 +2,7 @@
 ## References
 - [Learning Web Design, 5th Edition](https://learning.oreilly.com/library/view/learning-web-design/9781491960196/)
 - [HTML and CSS: Design and Build Websites](https://www.wiley.com/en-gb/HTML+and+CSS%3A+Design+and+Build+Websites-p-9781118008188)
+- [Mozilla HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 <br>
 
