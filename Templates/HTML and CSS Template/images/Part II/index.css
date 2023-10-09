@@ -1,0 +1,7 @@
+h1#first {
+    background-color: rgb(255, 0, 0);
+}
+
+h1#second {
+    background-color: hsla(0, 100%, 50%, 0.5);
+}

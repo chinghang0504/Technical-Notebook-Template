@@ -9,17 +9,18 @@
 ### Part I: Fundamentals
 | Chapter | Title |
 | :-: | :- |
-| 1 | Data Types |
-| 2 | Variables |
-| 3 | Expressions |
-| 4 | Operators |
-| 5 | Statements |
-| 6 | Objects |
-| 7 | Arrays |
-| 8 | Functions |
-| 9 | Classes |
-| 10 | Modules |
-| 11 | JavaScript Standard Library |
-| 12 | Iterators and Generators |
+| 1 | [Basics](notes/Part-I/Chapter-1.md) |
+| 2 | Data Types |
+| 3 | Variables |
+| 4 | Expressions |
+| 5 | Operators |
+| 6 | Statements |
+| 7 | Objects |
+| 8 | Arrays |
+| 9 | Functions |
+| 10 | Classes |
+| 11 | Modules |
+| 12 | JavaScript Standard Library |
+| 13 | Iterators and Generators |
 
 <br>
