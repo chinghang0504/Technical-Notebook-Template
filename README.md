@@ -21,16 +21,6 @@
 | Name | Version | Last Modified |
 | :-- | :--: | :--: |
 | [Spring Note](./Spring%20Note/README.md) |  |  |
+| [SQL](./SQL%20Note/README.md) |  |  |
 
-<br />
-
-## Templates
-| Name | Version | Last Modified |
-| :-- | :--: | :--: |
-| jQuery |  |  |
-| Ajax |  |  |
-| Kotlin Concurrency Note |  |  |
-| iOS |  |  |
-| SQL |  |  |
-| Git |  |  |
-| TypeScript |  |  |
+<br>
