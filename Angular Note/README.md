@@ -17,7 +17,7 @@
 | 9 | [Lifecycle](./notes/Chapter_9.md) |
 | 10 | [Custom Directives](./notes/Chapter_10.md) |
 | 11 | [Services](./notes/Chapter_11.md) |
-| 12 | [](./notes/Chapter_12.md) |
+| 12 | [Routing](./notes/Chapter_12.md) |
 | 13 | [](./notes/Chapter_13.md) |
 | 14 | [](./notes/Chapter_14.md) |
 | 15 | [](./notes/Chapter_15.md) |
