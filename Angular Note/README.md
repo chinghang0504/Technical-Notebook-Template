@@ -1,7 +1,4 @@
 # [Technical Notebook](../README.md) - Angular Note
-## References
-
-<br>
 
 ## Table of Contents
 | Chapter | Title |
@@ -18,6 +15,16 @@
 | 10 | [Custom Directives](./notes/Chapter_10.md) |
 | 11 | [Services](./notes/Chapter_11.md) |
 | 12 | [Routing](./notes/Chapter_12.md) |
-| 13 | [](./notes/Chapter_13.md) |
-| 14 | [](./notes/Chapter_14.md) |
-| 15 | [](./notes/Chapter_15.md) |
+| 13 | Observables |
+| 14 | Forms |
+| 15 | Pipes |
+| 16 | HTTP |
+| 17 | Authentication |
+| 18 | Dynamic Components |
+| 19 | Optimization |
+| 20 | Deploying |
+| 21 | Standalone |
+| 22 | Singals |
+| 23 | Animations |
+
+<br>
