@@ -17,6 +17,10 @@
 | [HTML and CSS Note](HTML-and-CSS-Note/README.md) |  |  |
 | [JavaScript Note](./JavaScript%20Note/README.md) |  |  |
 | [Angular](./Angular%20Note/README.md) |  |  |
+| [TypeScript Note]() |  |  |
+| [jQuery Note]() |  |  |
+| [Ajax Note]() |  |  |
+| [RxJava]() |  |  |
 
 ## Back-End Development
 | Name | Version | Last Modified |
