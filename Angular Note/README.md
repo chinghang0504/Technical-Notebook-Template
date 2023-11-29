@@ -15,16 +15,17 @@
 | 10 | [Custom Directives](./notes/Chapter_10.md) |
 | 11 | [Services](./notes/Chapter_11.md) |
 | 12 | [Routing](./notes/Chapter_12.md) |
-| 13 | Observables |
-| 14 | Forms |
-| 15 | Pipes |
-| 16 | HTTP |
-| 17 | Authentication |
-| 18 | Dynamic Components |
-| 19 | Optimization |
-| 20 | Deploying |
-| 21 | Standalone |
-| 22 | Singals |
-| 23 | Animations |
+| 13 | [Observables](./notes/Chapter_13.md) |
+| 14 | [Forms (Template-Driven)](./notes/Chapter_14.md) |
+| 15 | [Forms (Reactive)](./notes/Chapter_15.md) |
+| 16 | Pipes |
+| 17 | HTTP |
+| 18 | Authentication |
+| 19 | Dynamic Components |
+| 20 | Optimization |
+| 21 | Deploying |
+| 22 | Standalone |
+| 23 | Singals |
+| 24 | Animations |
 
 <br>
