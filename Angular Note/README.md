@@ -19,8 +19,8 @@
 | 14 | [Forms (Template-Driven)](./notes/Chapter_14.md) |
 | 15 | [Forms (Reactive)](./notes/Chapter_15.md) |
 | 16 | [Pipes](./notes/Chapter_16.md) |
-| 17 | [HTTP](./notes/Chapter_17.md) |
-| 18 | Authentication |
+| 17 | [HTTP (Firebase)](./notes/Chapter_17.md) |
+| 18 | [Authentication (Firebase)](./notes/Chapter_18.md) |
 | 19 | Dynamic Components |
 | 20 | Optimization |
 | 21 | Deploying |
