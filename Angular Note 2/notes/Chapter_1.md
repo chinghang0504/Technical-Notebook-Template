@@ -36,7 +36,7 @@ npm install bootstrap
 
 File: angular.json
 
-```typescript
+```json
 "styles": [
     "node_modules/bootstrap/dist/css/bootstrap.min.css"
 ],
@@ -56,7 +56,7 @@ npm install bootstrap-icons
 
 File: angular.json
 
-```typescript
+```json
 "styles": [
     "node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
 ],
