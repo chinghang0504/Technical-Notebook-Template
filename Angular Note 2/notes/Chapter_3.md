@@ -15,7 +15,7 @@
 
 File: app.module.ts
 
-```typescript
+```ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -38,7 +38,7 @@ export class AppModule {}
 
 File: app.component.ts
 
-```typescript
+```ts
 import { Component } from "@angular/core";
 
 @Component({
@@ -58,7 +58,7 @@ export class AppComponent {
 
 File: app-routing.module.ts
 
-```typescript
+```ts
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
