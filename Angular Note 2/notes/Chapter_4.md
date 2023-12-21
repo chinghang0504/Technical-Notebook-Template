@@ -15,6 +15,8 @@
 
 ### 4.1 Component Template
 
+File: first-component.component.ts
+
 ```ts
 import { Component } from "@angular/core";
 
@@ -24,6 +26,23 @@ import { Component } from "@angular/core";
   styleUrl: "./first-component.component.css",
 })
 export class FirstComponentComponent {}
+```
+
+File: app.module.ts
+
+```ts
+@NgModule({
+  declarations: [
+    AppComponent,
+    FirstComponentComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
 ```
 
 <br>
