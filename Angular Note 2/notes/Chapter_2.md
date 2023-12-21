@@ -46,6 +46,8 @@ ng serve
 ng s
 ```
 
+- Local Link: [http://localhost:4200/](http://localhost:4200/)
+
 [Common Arguments](https://angular.io/cli/serve)
 
 | Argument | Description                       | Value Type | Default Value |
