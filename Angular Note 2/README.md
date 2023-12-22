@@ -11,9 +11,8 @@
 | 4.2 | [Components: Lifecycle](./notes/Chapter_4_2.md) |
 | 4.3 | [Components: View Encapsulation](./notes/Chapter_4_3.md) |
 | 4.4 | [Components: Interaction](./notes/Chapter_4_4.md) |
-| 4.5 | [Components: Sharing Data between Child and Parent Components](./notes/Chapter_4_5.md) |
-| 4.6 | [Components: Content Projection](./notes/Chapter_4_6.md) |
-| 4.7 | [Components: Dynamic Components](./notes/Chapter_4_7.md) |
+| 4.5 | [Components: Content Projection](./notes/Chapter_4_5.md) |
+| 4.6 | [Components: Dynamic Components](./notes/Chapter_4_6.md) |
 | 5 | Templates |
 | 5.1 | [Templates: Binding](./notes/Chapter_5_1.md) |
 | 5.2 | [Templates: Pipes](./notes/Chapter_5_2.md) |
