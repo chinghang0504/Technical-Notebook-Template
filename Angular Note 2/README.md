@@ -23,7 +23,7 @@
 | 6.2 | [Directives: Attribute Directives](./notes/Chapter_6_2.md) |
 | 6.3 | [Directives: Custom Directives](./notes/Chapter_6_3.md) |
 | 7 | [Services](./notes/Chapter_7.md) |
-| 8 | Routing |
+| 8 | [Routing](./notes/Chapter_8.md) |
 | 9 | Observables |
 | 10 | Forms |
 | 10.1 | Forms: Template-Driven |
