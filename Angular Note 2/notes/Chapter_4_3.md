@@ -9,7 +9,7 @@
 <br>
 <hr>
 
-### 4.3.1 Modes of View Encapsulation
+### 4.3.1 [Modes of View Encapsulation](https://angular.io/guide/view-encapsulation)
 | Mode | Details |
 | :- | :- |
 | ViewEncapsulation.ShadowDom | Angular uses the browser's built-in Shadow DOM API to enclose the component's view inside a ShadowRoot, used as the component's host element, and apply the provided styles in an isolated manner. |

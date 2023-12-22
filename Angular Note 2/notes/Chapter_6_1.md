@@ -1,20 +1,20 @@
-# [Angular Note 2](../README.md) - Chapter 6.1 Directives: Built-In
+# [Angular Note 2](../README.md) - Chapter 6.1 Directives: Structural Directives
 
 ### Table of Contents
 | Chapter | Title |
 | :-: | :- |
-| 6.1 | [NgIf](#61-ngif) |
-| 6.2 | [NgIf and NgTemplate](#62-ngif-and-ngtemplate) |
-| 6.3 | [NgFor](#63-ngfor) |
-| 6.4 | [NgSwitch, NgSwitchCase, and NgSwitchDefault](#64-ngswitch-ngswitchcase-and-ngswitchdefault) |
-| 6.5 | [@if, @else if, and @else](#65-if-else-if-and-else) |
-| 6.6 | [@for](#66-for) |
-| 6.7 | [@switch, @case, and @default](#67-switch-case-and-default) |
+| 6.1.1 | [NgIf](#611-ngif) |
+| 6.1.2 | [NgIf and NgTemplate](#612-ngif-and-ngtemplate) |
+| 6.1.3 | [NgFor](#613-ngfor) |
+| 6.1.4 | [NgSwitch, NgSwitchCase, and NgSwitchDefault](#614-ngswitch-ngswitchcase-and-ngswitchdefault) |
+| 6.1.5 | [@if, @else if, and @else](#615-if-else-if-and-else) |
+| 6.1.6 | [@for](#616-for) |
+| 6.1.7 | [@switch, @case, and @default](#617-switch-case-and-default) |
 
 <br>
 <hr>
 
-### 6.1 NgIf
+### 6.1.1 NgIf
 ```html
 <p *ngIf="errorOccured">Error occurred!</p>
 ```
@@ -28,7 +28,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.2 NgIf and NgTemplate
+### 6.1.2 NgIf and NgTemplate
 ```html
 <p *ngIf="errorOccured; else normal">Error occurred!</p>
 <ng-template #normal>
@@ -63,7 +63,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.3 NgFor
+### 6.1.3 NgFor
 ```html
 <div *ngFor="let item of items">
     <p>{{ item }}</p>
@@ -106,7 +106,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.4 NgSwitch, NgSwitchCase, and NgSwitchDefault
+### 6.1.4 NgSwitch, NgSwitchCase, and NgSwitchDefault
 ```html
 <div [ngSwitch]="target">
     <p *ngSwitchCase="1">Item 1</p>
@@ -125,7 +125,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.5 @if, @else if, and @else
+### 6.1.5 @if, @else if, and @else
 ```html
 @if (errorOccured) {
     <p>Error occurred!</p>
@@ -176,7 +176,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.6 @for
+### 6.1.6 @for
 ```html
 @for (item of items; track $index) {
     <p>{{ $index }}: {{ item }}</p>
@@ -192,7 +192,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.7 @switch, @case, and @default
+### 6.1.7 @switch, @case, and @default
 ```html
 @switch (target) {
     @case (1) {
