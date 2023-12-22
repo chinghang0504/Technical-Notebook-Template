@@ -6,10 +6,10 @@
 | 6.1 | [Types of Data Binding](#61-types-of-data-binding) |
 | 6.2 | [Interpolation](#62-interpolation) |
 | 6.3 | [Property Binding](#63-property-binding) |
-| 6.4 | [Class Binding](#64-class-binding) |
-| 6.5 | [Style Binding](#65-style-binding) |
+| 6.4 | [Class Binding (NgClass)](#64-class-binding-ngclass) |
+| 6.5 | [Style Binding (NgStyle)](#65-style-binding-ngstyle) |
 | 6.6 | [Event Binding](#66-event-binding) |
-| 6.7 | [NgModel](#67-ngmodel) |
+| 6.7 | [Two-Way Binding (NgModel)](#67-two-way-binding-ngmodel) |
 
 <br>
 <hr>
@@ -59,7 +59,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.4 Class Binding
+### 6.4 Class Binding (NgClass)
 ```html
 <button [ngClass]="{ 'btn btn-primary': useBootstrap }">Click Me</button>
 ```
@@ -73,7 +73,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.5 Style Binding
+### 6.5 Style Binding (NgStyle)
 ```html
 <button [ngStyle]="{ 'background-color': color }">Click Me</button>
 ```
@@ -116,7 +116,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.7 NgModel
+### 6.7 Two-Way Binding (NgModel)
 ```html
 <input type="text" [(ngModel)]="username">
 ```
