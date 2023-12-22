@@ -1,20 +1,20 @@
-# [Angular Note 2](../README.md) - Chapter 6 Data Binding
+# [Angular Note 2](../README.md) - Chapter 5.1 Templates: Data Binding
 
 ### Table of Contents
 | Chapter | Title |
 | :-: | :- |
-| 6.1 | [Types of Data Binding](#61-types-of-data-binding) |
-| 6.2 | [Interpolation](#62-interpolation) |
-| 6.3 | [Property Binding](#63-property-binding) |
-| 6.4 | [Class Binding (NgClass)](#64-class-binding-ngclass) |
-| 6.5 | [Style Binding (NgStyle)](#65-style-binding-ngstyle) |
-| 6.6 | [Event Binding](#66-event-binding) |
-| 6.7 | [Two-Way Binding (NgModel)](#67-two-way-binding-ngmodel) |
+| 5.1 | [Types of Data Binding](#51-types-of-data-binding) |
+| 5.2 | [Interpolation](#52-interpolation) |
+| 5.3 | [Property Binding](#53-property-binding) |
+| 5.4 | [Class Binding (NgClass)](#54-class-binding-ngclass) |
+| 5.5 | [Style Binding (NgStyle)](#55-style-binding-ngstyle) |
+| 5.6 | [Event Binding](#56-event-binding) |
+| 5.7 | [Two-Way Binding (NgModel)](#57-two-way-binding-ngmodel) |
 
 <br>
 <hr>
 
-### 6.1 Types of Data Binding
+### 5.1 Types of Data Binding
 - One-Way Data Binding (From Data Source to View Target)
 - One-Way Data Binding (From View Target to Data Source)
 - Two-Way Data Binding
@@ -31,7 +31,7 @@
 <br>
 <hr>
 
-### 6.2 Interpolation
+### 5.2 Interpolation
 ```html
 <p>{{ message }}</p>
 ```
@@ -45,7 +45,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.3 Property Binding
+### 5.3 Property Binding
 ```html
 <button [disabled]="isDisabling">Click Me</button>
 ```
@@ -59,7 +59,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.4 Class Binding (NgClass)
+### 5.4 Class Binding (NgClass)
 ```html
 <button [ngClass]="{ 'btn btn-primary': useBootstrap }">Click Me</button>
 ```
@@ -73,7 +73,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.5 Style Binding (NgStyle)
+### 5.5 Style Binding (NgStyle)
 ```html
 <button [ngStyle]="{ 'background-color': color }">Click Me</button>
 ```
@@ -87,7 +87,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.6 Event Binding
+### 5.6 Event Binding
 ```html
 <button (click)="onClick()">Click Me</button>
 ```
@@ -116,7 +116,7 @@ export class FirstComponentComponent {
 <br>
 <hr>
 
-### 6.7 Two-Way Binding (NgModel)
+### 5.7 Two-Way Binding (NgModel)
 ```html
 <input type="text" [(ngModel)]="username">
 ```

@@ -1,18 +1,17 @@
-# [Angular Note 2](../README.md) - Chapter 4 Components
+# [Angular Note 2](../README.md) - Chapter 4.1 Components: Basics
 
 ### Table of Contents
 | Chapter | Title |
 | :-: | :- |
-| 4.1 | [Component Template](#41-component-template) |
-| 4.2 | [Inline HTML](#42-inline-html) |
-| 4.3 | [Inline CSS](#43-inline-css) |
-| 4.4 | [Showing Components](#44-showing-components) |
-| 4.5 | [Disabling View Encapsulation](#45-disabling-view-encapsulation) |
+| 4.1.1 | [Component Template](#411-component-template) |
+| 4.1.2 | [Inline HTML](#412-inline-html) |
+| 4.1.3 | [Inline CSS](#413-inline-css) |
+| 4.1.4 | [Using Components](#414-using-components) |
 
 <br>
 <hr>
 
-### 4.1 Component Template
+### 4.1.1 Component Template
 File: first-component.component.ts
 ```ts
 import { Component } from '@angular/core';
@@ -46,7 +45,7 @@ File: app.module.ts
 <br>
 <hr>
 
-### 4.2 Inline HTML
+### 4.1.2 Inline HTML
 ```ts
 @Component({
   selector: 'app-first-component',
@@ -58,7 +57,7 @@ File: app.module.ts
 <br>
 <hr>
 
-### 4.3 Inline CSS
+### 4.1.3 Inline CSS
 ```ts
 @Component({
   selector: 'app-first-component',
@@ -70,22 +69,7 @@ File: app.module.ts
 <br>
 <hr>
 
-### 4.4 Showing Components
+### 4.1.4 Using Components
 ```html
 <app-first-component></app-first-component>
-```
-
-<br>
-<hr>
-
-### 4.5 Disabling View Encapsulation
-```ts
-import { Component, ViewEncapsulation } from '@angular/core';
-
-@Component({
-  selector: 'app-first-component',
-  templateUrl: './first-component.component.html',
-  styleUrl: './first-component.component.css',
-  encapsulation: ViewEncapsulation.None
-})
 ```

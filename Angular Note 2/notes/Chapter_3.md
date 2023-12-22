@@ -1,4 +1,4 @@
-# [Angular Note 2](../README.md) - Chapter 3 App (Standalone Disable)
+# [Angular Note 2](../README.md) - Chapter 3 App (Without Standalone)
 
 ### Table of Contents
 | Chapter | Title |
