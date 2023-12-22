@@ -3,10 +3,10 @@
 ### Table of Contents
 | Chapter | Title |
 | :-: | :- |
-| 4.4.1 | [Passing Data to Child (@Input)]() |
-| 4.4.2 | [Listening Child Events (@Output)]() |
-| 4.4.3 | [Interacting with Child though Local Variables]() |
-| 4.4.4 | [Interacting with Child though Local Variables (@ViewChild)]() |
+| 4.4.1 | [Passing Data to Child (@Input)](#441-passing-data-to-child-input) |
+| 4.4.2 | [Listening Child Events (@Output)](#442-listening-child-events-output) |
+| 4.4.3 | [Interacting with Child though Local Variables](#443-interacting-with-child-though-local-variables) |
+| 4.4.4 | [Interacting with Child though Local Variables (@ViewChild)](#444-interacting-with-child-though-local-variables-viewchild) |
 
 <br>
 <hr>
