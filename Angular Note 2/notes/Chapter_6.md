@@ -52,7 +52,7 @@ export class FirstComponentComponent {
 ```ts
 export class FirstComponentComponent {
 
-  isDisabling: boolean = false;
+  isDisabling: boolean = true;
 }
 ```
 
@@ -60,11 +60,29 @@ export class FirstComponentComponent {
 <hr>
 
 ### 6.4 Class Binding
+```html
+<button [ngClass]="{ 'btn btn-primary': useBootstrap }">Click Me</button>
+```
+```ts
+export class FirstComponentComponent {
+
+  useBootstrap: boolean = true;
+}
+```
 
 <br>
 <hr>
 
 ### 6.5 Style Binding
+```html
+<button [ngStyle]="{ 'background-color': color }">Click Me</button>
+```
+```ts
+export class FirstComponentComponent {
+
+  color: string = 'red';
+}
+```
 
 <br>
 <hr>
