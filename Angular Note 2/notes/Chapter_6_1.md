@@ -6,6 +6,7 @@
 | 6.1.1 | [NgIf](#611-ngif) |
 | 6.1.2 | [NgIf and NgTemplate](#612-ngif-and-ngtemplate) |
 | 6.1.3 | [NgFor](#613-ngfor) |
+| | [NgFor and Index](#ngfor-and-index) |
 | 6.1.4 | [NgSwitch, NgSwitchCase, and NgSwitchDefault](#614-ngswitch-ngswitchcase-and-ngswitchdefault) |
 | 6.1.5 | [@if, @else if, and @else](#615-if-else-if-and-else) |
 | 6.1.6 | [@for](#616-for) |

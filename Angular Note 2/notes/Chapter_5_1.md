@@ -9,6 +9,7 @@
 | 5.1.4 | [Class Binding (NgClass)](#514-class-binding-ngclass) |
 | 5.1.5 | [Style Binding (NgStyle)](#515-style-binding-ngstyle) |
 | 5.1.6 | [Event Binding](#516-event-binding) |
+| | [Passing Event as Argument](#passing-event-as-argument) |
 | 5.1.7 | [Two-Way Binding (NgModel)](#517-two-way-binding-ngmodel) |
 
 <br>
