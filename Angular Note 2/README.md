@@ -26,8 +26,8 @@
 | 8 | [Routing](./notes/Chapter_8.md) |
 | 9 | Observables |
 | 10 | Forms |
-| 10.1 | Forms: Template-Driven |
-| 10.2 | Forms: Reactive |
+| 10.1 | Forms: Template-Driven Forms |
+| 10.2 | Forms: Reactive Forms |
 | 11 | Optimization |
 | 12 | Standalone |
 | 13 | Signals |
