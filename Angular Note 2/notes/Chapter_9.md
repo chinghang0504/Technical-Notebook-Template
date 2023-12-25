@@ -228,3 +228,47 @@ export class FirstComponentComponent implements OnInit, OnDestroy {
 <hr>
 
 ### 9.5 Subjects
+```ts
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+
+@Component({
+  selector: 'app-first-component',
+  templateUrl: './first-component.component.html',
+  styleUrl: './first-component.component.css'
+})
+export class FirstComponentComponent implements OnInit, OnDestroy {
+
+  private count = 0;
+  private subject: Subject<number>;
+
+  ngOnInit(): void {
+    this.subject = new Subject<number>();
+    this.subject.subscribe({
+      next(value) {
+        console.log(value);
+      },
+      error(err) {
+        console.log(`Error: ${err}`);
+      },
+      complete() {
+        console.log('System: Completed!');
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subject.unsubscribe();
+  }
+
+  onClick() {
+    if (this.count === 9) {
+      this.subject.error('Reached 9');
+    } else if (this.count === 10) {
+      this.subject.complete();
+    } else {
+      this.subject.next(this.count++);
+    }
+  }
+}
+```

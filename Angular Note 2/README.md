@@ -24,7 +24,7 @@
 | 6.3 | [Directives: Custom Directives](./notes/Chapter_6_3.md) |
 | 7 | [Services](./notes/Chapter_7.md) |
 | 8 | [Routing](./notes/Chapter_8.md) |
-| 9 | Observables |
+| 9 | [Observables](./notes/Chapter_9.md) |
 | 10 | Forms |
 | 10.1 | Forms: Template-Driven Forms |
 | 10.2 | Forms: Reactive Forms |
