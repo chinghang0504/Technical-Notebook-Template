@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 11 Extra Markup
+# [HTML and CSS Note](../../README.md) - Chapter 11 Extra Markup
 | Chapter | Title |
 | :-: | :- |
 | 11.1 | [Horizontal Rule \<hr>](#111-horizontal-rule-hr) |

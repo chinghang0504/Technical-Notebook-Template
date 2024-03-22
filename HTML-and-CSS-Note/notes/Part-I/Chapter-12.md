@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 12 Global Attributes
+# [HTML and CSS Note](../../README.md) - Chapter 12 Global Attributes
 | Chapter | Title |
 | :-: | :- |
 | 12.1 | [Global Attribute: id](#121-global-attribute-id) |

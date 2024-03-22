@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 13 Special Topics
+# [HTML and CSS Note](../../README.md) - Chapter 13 Special Topics
 | Chapter | Title |
 | :-: | :- |
 | 13.1 | [Characters](#131-characters) |

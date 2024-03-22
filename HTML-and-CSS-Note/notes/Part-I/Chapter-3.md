@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 3 Information
+# [HTML and CSS Note](../../README.md) - Chapter 3 Information
 | Chapter | Title |
 | :-: | :- |
 | 3.1 | [Long Quotations \<blockquote>](#31-long-quotations-blockquote) |

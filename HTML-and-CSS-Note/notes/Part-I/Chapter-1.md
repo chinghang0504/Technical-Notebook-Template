@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 1 Basics
+# [HTML and CSS Note](../../README.md) - Chapter 1 Basics
 | Chapter | Title |
 | :-: | :- |
 | 1.1 | [Naming Conventions](#11-naming-conventions) |

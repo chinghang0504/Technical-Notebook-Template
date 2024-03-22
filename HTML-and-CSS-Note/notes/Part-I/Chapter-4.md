@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 4 Lists
+# [HTML and CSS Note](../../README.md) - Chapter 4 Lists
 | Chapter | Title |
 | :-: | :- |
 | 4.1 | [Types of Lists](#41-types-of-lists) |

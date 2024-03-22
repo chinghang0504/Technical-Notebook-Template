@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 6 Links
+# [HTML and CSS Note](../../README.md) - Chapter 6 Links
 | Chapter | Title |
 | :-: | :- |
 | 6.1 | [Links \<a>](#61-links-a) |

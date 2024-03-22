@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 8 Tables
+# [HTML and CSS Note](../../README.md) - Chapter 8 Tables
 | Chapter | Title |
 | :-: | :- |
 | 8.1 | [Tables](#81-tables) |

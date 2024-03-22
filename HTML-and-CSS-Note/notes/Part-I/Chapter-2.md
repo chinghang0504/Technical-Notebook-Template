@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 2 Text
+# [HTML and CSS Note](../../README.md) - Chapter 2 Text
 | Chapter | Title |
 | :-: | :- |
 | 2.1 | [Paragraphs \<p>](#21-paragraphs-p) |

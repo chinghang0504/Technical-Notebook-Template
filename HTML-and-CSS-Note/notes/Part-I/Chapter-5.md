@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 5 Organization
+# [HTML and CSS Note](../../README.md) - Chapter 5 Organization
 | Chapter | Title |
 | :-: | :- |
 | 5.1 | [Main Content \<main>](#51-main-content-main) |

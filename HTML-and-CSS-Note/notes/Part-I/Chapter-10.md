@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 10 Media
+# [HTML and CSS Note](../../README.md) - Chapter 10 Media
 | Chapter | Title |
 | :-: | :- |
 | 10.1 | [Inline Frames \<iframe>](#101-inline-frames-iframe) |

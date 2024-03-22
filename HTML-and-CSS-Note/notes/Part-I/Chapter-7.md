@@ -1,4 +1,4 @@
-# [Kotlin Note](../../README.md) - Chapter 7 Images
+# [HTML and CSS Note](../../README.md) - Chapter 7 Images
 | Chapter | Title |
 | :-: | :- |
 | 7.1 | [Images \<img>](#71-images-img) |
