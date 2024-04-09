@@ -6,6 +6,7 @@
 | 4.1.2 | [Array Declaration with Specified Size](#412-array-declaration-with-specified-size) |
 | 4.1.3 | [Array Declaration with Empty Array Initializer](#413-array-declaration-with-empty-array-initializer) |
 | 4.1.4 | [Array Declaration with Array Initializer](#414-array-declaration-with-array-initializer) |
+| 4.1.5 | [Array Declaration with Array Initializer and new Keyword](#415-array-declaration-with-array-initializer-and-new-keyword) |
 | 4.2 | [Array Fields and Methods](#42-array-fields-and-methods) |
 | 4.2.1 | [Getting Array Elements](#421-getting-array-elements) |
 | 4.2.2 | [Setting Array Elements](#422-setting-array-elements) |
@@ -47,6 +48,26 @@ int[] a = {};
 ### 4.1.4 Array Declaration with Array Initializer
 ```java
 int[] a = { 1, 2, 3 };
+```
+
+<br>
+
+### 4.1.5 Array Declaration with Array Initializer and new Keyword
+```java
+int[] a = new int[]{ 1, 2, 3 };
+```
+```java
+int[] fun() {
+    return new int[]{ 1, 2, 3 };
+}
+```
+- Usually used in returning an array
+
+Error: Without the new Keyword
+```java
+int[] fun() {
+    return { 1, 2, 3 };
+}
 ```
 
 <br>

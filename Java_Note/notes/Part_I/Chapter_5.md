@@ -129,9 +129,6 @@
 
 ## 5.6 ?: Operator
 ```java
-boolean_expression ? true_expression : false_expression;
-```
-```java
 variable = boolean_expression ? true_expression : false_expression;
 ```
 
